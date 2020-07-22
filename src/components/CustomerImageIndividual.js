@@ -4,7 +4,7 @@ class CImage extends Component {
     render(){
         return(
             <div>
-                <image src="" alt="image here">Single Image</image>
+                <img src="" alt="picture will go here"></img>
             </div>
         )
     }

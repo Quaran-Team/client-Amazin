@@ -8,7 +8,7 @@ class CImagesAll extends Component {
                 <h2>
                     Customer Images
                 </h2>
-                    <CImage/>
+                    <CImage/>   
                 <div>
                     <a>See all customer images </a>
                 </div>
