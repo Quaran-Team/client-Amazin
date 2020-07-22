@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ReviewProduct from "./components/ReviewProduct"
-import CustomerImages from './components/CustomerImages';
-import ReviewMentions from './components/ReviewMentions';
-import StarRating from './components/StarRating';
+import ReviewProduct from "./ReviewProduct"
+import CustomerImages from './CustomerImages';
+import ReviewMentions from './ReviewMentions';
+import StarRating from './StarRating';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 
