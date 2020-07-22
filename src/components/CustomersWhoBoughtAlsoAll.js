@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CWBAIndividual from './CustomerWhoBoughtAlsoIndividual'
 
 class CWBA extends Component {
     render(){
@@ -12,7 +13,7 @@ class CWBA extends Component {
                 </h5>
                 <button>Left</button>
                 <div>
-                    This is where the other items will go
+                    <CWBAIndividual/>
                 </div>
                 <button>Right</button>
             </div>

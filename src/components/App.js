@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CWBA from './CustomersWhoBoughtAlso'
+import CWBA from './CustomersWhoBoughtAlsoAll'
 
 class App extends Component {
     render(){
