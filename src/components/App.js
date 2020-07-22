@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CWBA from './CustomersWhoBoughtAlsoAll'
+import QAcomponent from './QAcomponent';
 
 class App extends Component {
     render(){
@@ -7,9 +8,11 @@ class App extends Component {
             <div>
                 <h1>My React App</h1>
                 <CWBA/>
+                <QAcomponent />
             </div>
         )
     }
 }
 
 export default App;
+
