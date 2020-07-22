@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // import "./stars.css"
 
+// four (4) star mock summary
+
 export default class GoodStar extends Component {
   render() {
     return (
@@ -25,18 +27,23 @@ export default class GoodStar extends Component {
           style={{
             position: "relative",
             top: "-8px",
-            'font-size': "10px",
+            fontSize: "10px",
             padding: "0px 20px 0px 5px"
           }}
         >
           {" "}
           v{" "}
         </span>
-        <a  style={{'font-size': "13px"}} href="#"> 26,547 ratings</a>
-        <span className="line" style={{padding: "10px", 'font-size': "13px"}}> | </span>
+        <a  style={{fontSize: "13px"}} href="#"> 26,547 ratings</a>
+        <span className="line" style={{padding: "10px", fontSize: "13px"}}> | </span>
         
-        <a  style={{'font-size': "13px"}} href="#">800 answered questions</a>
+        <a  style={{fontSize: "13px"}} href="#">800 answered questions</a>
       </div>
     );
   }
 }
+
+
+// Q: What kind of stars wear sunglasses?
+// A: Movie stars
+// :-)

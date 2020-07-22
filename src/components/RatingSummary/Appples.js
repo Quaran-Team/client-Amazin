@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import BadStar from "./RatingSummary/badStar";
-import LowStar from "./RatingSummary/lowStar";
-import MidStar from "./RatingSummary/midStar";
-import GoodStar from "./RatingSummary/goodStar";
-import HighStar from "./RatingSummary/highStar";
+import BadStar from "./badStar";
+import LowStar from "./lowStar";
+import MidStar from "./midStar";
+import GoodStar from "./goodStar";
+import HighStar from "./highStar";
 
-class App extends Component {
+export default class Appples extends Component {
   render() {
     return (
       <div>
@@ -28,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default App;
+

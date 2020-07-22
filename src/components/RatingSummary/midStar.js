@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 // import "./stars.css"
 
+// mock for a three (3) star summary rating
+
+// here's a 3 star joke...
+// Orion’s Belt is a big waist of space! 
+
 export default class MidStar extends Component {
   render() {
     return (
@@ -25,17 +30,17 @@ export default class MidStar extends Component {
           style={{
             position: "relative",
             top: "-8px",
-            'font-size': "10px",
+            fontSize: "10px",
             padding: "0px 20px 0px 5px"
           }}
         >
           {" "}
           v{" "}
         </span>
-        <a  style={{'font-size': "13px"}}  href="#"> 458 ratings</a>
-        <span className="line" style={{padding: "10px", 'font-size': "13px"}}> | </span>
+        <a  style={{fontSize: "13px"}}  href="#"> 458 ratings</a>
+        <span className="line" style={{padding: "10px", fontSize: "13px"}}> | </span>
         
-        <a  style={{'font-size': "13px"}}  href="#"> 72 answered questions</a>
+        <a  style={{fontSize: "13px"}}  href="#"> 72 answered questions</a>
       </div>
     );
   }

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 // import "./stars.css"
 
+// mock for two (2) stars summary rating
+
+//   Sirius, the dog star, is moving closer to Earth at a rate of nine miles per second.
+//  This means someday we could be in Sirius trouble.  ( -:
+
 export default class LowStar extends Component {
   render() {
     return (
@@ -25,17 +30,17 @@ export default class LowStar extends Component {
           style={{
             position: "relative",
             top: "-8px",
-            'font-size': "10px",
+            fontSize: "10px",
             padding: "0px 20px 0px 5px"
           }}
         >
           {" "}
           v{" "}
         </span>
-        <a  style={{'font-size': "13px"}}  href="#"> 4,158 ratings</a>
-        <span className="line" style={{padding: "10px", 'font-size': "13px"}}> | </span>
+        <a  style={{fontSize: "13px"}}  href="#"> 4,158 ratings</a>
+        <span className="line" style={{padding: "10px", fontSize: "13px"}}> | </span>
         
-        <a  style={{'font-size': "13px"}}  href="#"> 723 answered questions</a>
+        <a  style={{fontSize: "13px"}}  href="#"> 723 answered questions</a>
       </div>
     );
   }
