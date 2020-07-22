@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config ./jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,12 @@
   },
   "homepage": "https://github.com/Quaran-Team/client-Amazin#readme",
   "dependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest-enzyme": "^7.1.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -33,6 +37,7 @@
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
     "http-server": "^0.12.3",
+    "jest": "^26.1.0",
     "jsx-loader": "^0.12.2",
     "react-hot-loader": "^4.12.21",
     "style-loader": "^1.2.1",
