@@ -1,16 +1,16 @@
 import React from 'react'; 
 
-function Options() {
+function Hello() {
     return(
         <div>
             <div>All options populated here</div>
             <hr />
             <div><p>
-                    <strong>About this item</strong>
+                    <strong>AHHHHHH!</strong>
                 </p>
             </div>
         </div>
     )
 }
 
-export default Options;
+export default Hello;

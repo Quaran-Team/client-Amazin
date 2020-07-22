@@ -7,7 +7,7 @@ import './product.css'
 
 function Product() {
     return(
-        <div>
+        <div className="productVariant">
             <Header />
             <hr />
             <Availability />
