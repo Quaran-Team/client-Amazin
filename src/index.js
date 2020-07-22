@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App'
+import CustomerReviewsContainer from './CustomerReviewsContainer'
 
-ReactDOM.render(<App />, document.getElementById("app"))
+ReactDOM.render(<CustomerReviewsContainer />, document.getElementById("app"))
