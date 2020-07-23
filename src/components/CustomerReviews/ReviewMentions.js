@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./CustomerReviews.css" 
 
 
 class ReviewMentions extends Component {
@@ -8,18 +9,26 @@ class ReviewMentions extends Component {
 
         return ( 
             <div>
-                <h3>Read reviews that mention</h3>
-                <span><button>filtered button</button></span>
+                <div className="review-mention">
+                    <h3>Read reviews that mention</h3>
+                    <span><button className="button">filtered button</button></span>
+                </div>
+                   <span><button>top reviews</button></span>
                 <br />
                 <br />
-                <span><button>top reviews</button></span>
-                <div><img src=""></img></div>
-                <br />
-                <p><div>star rating ***</div><h3><a href="/">Review headline</a></h3></p>
-                <p><div>Country & Date</div></p>
-                <p><div>Verified Purchase</div></p>
+                <div>
+                    <div className="profile-avatar"><img className="profile-avatar-img" src="https://www.amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"></img>
+                    <span className="profile-name">Customer Name</span></div>
+                </div>
 
-                <p>submitted review form goes here</p>
+                <div >
+                    <span>*Star rating icon* <a href="link to customer review summary page">Review title!</a></span>
+                </div>
+                    <span>Review Date</span>
+                <div>
+                    <span>Verified Purchase</span>
+                </div>
+                <div><p>Submitted review form goes here</p></div>
             </div>
          );
     }
