@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`This snapshot test should pass for 4 stars Should render as expected! 1`] = `
+<div
+  className="goodstar"
+>
+  <span
+    className="gold"
+    style={
+      Object {
+        "color": "rgb(255, 188, 40)",
+      }
+    }
+  >
+    ★
+  </span>
+  <span
+    className="gold"
+    style={
+      Object {
+        "color": "rgb(255, 188, 40)",
+      }
+    }
+  >
+    ★
+  </span>
+  <span
+    className="gold"
+    style={
+      Object {
+        "color": "rgb(255, 188, 40)",
+      }
+    }
+  >
+    ★
+  </span>
+  <span
+    className="gold"
+    style={
+      Object {
+        "color": "rgb(255, 188, 40)",
+      }
+    }
+  >
+    ★
+  </span>
+  <span
+    className="gray"
+    style={
+      Object {
+        "color": "gray",
+      }
+    }
+  >
+    ★
+  </span>
+  <span
+    className="tiny"
+    style={
+      Object {
+        "fontSize": "10px",
+        "padding": "0px 20px 0px 5px",
+        "position": "relative",
+        "top": "-8px",
+      }
+    }
+  >
+     
+    v
+     
+  </span>
+  <a
+    href="#"
+    style={
+      Object {
+        "fontSize": "13px",
+      }
+    }
+  >
+     26,547 ratings
+  </a>
+  <span
+    className="line"
+    style={
+      Object {
+        "fontSize": "13px",
+        "padding": "10px",
+      }
+    }
+  >
+     | 
+  </span>
+  <a
+    href="#"
+    style={
+      Object {
+        "fontSize": "13px",
+      }
+    }
+  >
+    800 answered questions
+  </a>
+</div>
+`;
