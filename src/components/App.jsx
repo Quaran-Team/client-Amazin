@@ -4,6 +4,7 @@ import CustomerReviewsContainer from './CustomerReviewsContainer';
 import CWBA from './CustomersWhoBoughtAlsoAll'
 import QAcomponent from './QAcomponent';
 import Appples from "./RatingSummary/Appples";
+import CImagesAll from './CustomerImagesAll';
 
 class App extends Component {
     render(){
@@ -15,6 +16,7 @@ class App extends Component {
                 <CustomerReviewsContainer />
                 <QAcomponent />
                 <Appples />
+                <CImagesAll />
             </div>
         )
     }
