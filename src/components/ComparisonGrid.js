@@ -34,7 +34,7 @@ export default function SimpleTable() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell>Products</TableCell>
             <TableCell align="right">Power&nbsp;(Watts)</TableCell>
             <TableCell align="right">Automatic Programs</TableCell>
             <TableCell align="right">Manual Programs</TableCell>
