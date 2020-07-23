@@ -1,6 +1,29 @@
 import React, { Component } from 'react';
+import CustomerWhoBoughtAlsoDataService from '../../service/CustomerWhoBoughtAlsoDataService'
 
 class CWBAIndividual extends Component {
+
+    constructor(props) {
+        super(props)
+            this.state = {
+            response: null,
+        }
+        this.refreshCourses = this.refreshCourses.bind(this)
+    }
+    
+    componentDidMount() {
+        this.refreshCourses();
+    }
+
+    refreshCourses() { //retrieve data currently set to one id. not dynamic
+        CustomerWhoBoughtAlsoDataService.retrieveCustomerWhoBoughtAlso(1)
+            .then(
+                response => {
+                    this.setState({ response: response.data })
+                }
+            )
+    }
+
     render(){
         return(
             <div>
