@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Product from './productVariant/Product.jsx'
 import CustomerReviewsContainer from './CustomerReviewsContainer';
-import CWBA from './CustomersWhoBoughtAlsoAll'
+import CWBA from './CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll'
 import QAcomponent from './QAcomponent';
 import ComparisonGrid from './ComparisonGrid';
-import CImagesAll from './CustomerImagesAll';
+import CImagesAll from './CustomerImageCmpnt/CustomerImagesAll';
 
 class App extends Component {
     render(){
@@ -12,11 +12,11 @@ class App extends Component {
             <div>
                 <h1>My React App</h1>
                 <Product />
-                <CWBA/>
                 <CustomerReviewsContainer />
                 <QAcomponent />
                 <ComparisonGrid/>
                 <CImagesAll />
+                <CWBA/>
             </div>
         )
     }
