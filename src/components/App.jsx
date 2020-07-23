@@ -3,6 +3,7 @@ import Product from './productVariant/Product.jsx'
 import CustomerReviewsContainer from './CustomerReviewsContainer';
 import CWBA from './CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll'
 import QAcomponent from './QAcomponent';
+import ComparisonGrid from './ComparisonGrid';
 import CImagesAll from './CustomerImageCmpnt/CustomerImagesAll';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
                 <Product />
                 <CustomerReviewsContainer />
                 <QAcomponent />
+                <ComparisonGrid/>
                 <CImagesAll />
                 <CWBA/>
             </div>
