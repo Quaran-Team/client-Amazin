@@ -10,9 +10,8 @@ export default class Appples extends Component {
   render() {
     return (
       <div>
-        <h1>My React App</h1>
+        <h1>mock star summary ratings</h1>
 
-        <h2>testing</h2>
         <h3>Bad</h3>
         <BadStar />
         <h3>Low</h3>

@@ -5,6 +5,7 @@ import CWBA from './CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll'
 import QAcomponent from './QAcomponent';
 import ComparisonGrid from './ComparisonGrid';
 import CImagesAll from './CustomerImageCmpnt/CustomerImagesAll';
+import Appples from './RatingSummary/Appples';
 
 class App extends Component {
     render(){
@@ -17,6 +18,7 @@ class App extends Component {
                 <ComparisonGrid/>
                 <CImagesAll />
                 <CWBA/>
+                <Appples/>
             </div>
         )
     }
