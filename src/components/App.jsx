@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Product from './productVariant/Product.jsx'
 import CustomerReviewsContainer from './CustomerReviewsContainer';
-import CWBA from './CustomersWhoBoughtAlsoAll'
+import CWBA from './CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll'
 import QAcomponent from './QAcomponent';
-import CImagesAll from './CustomerImagesAll';
+import CImagesAll from './CustomerImageCmpnt/CustomerImagesAll';
 
 class App extends Component {
     render(){
