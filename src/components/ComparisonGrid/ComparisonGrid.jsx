@@ -32,13 +32,13 @@ export default function ComparisonGrid() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div >
       <ComparisonItem />
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Category</TableCell>
+              <TableCell data-testid="comparisonGrid">Category</TableCell>
               <TableCell align="right">Product #1</TableCell>
               <TableCell align="right">Product #2</TableCell>
               <TableCell align="right">Product #3</TableCell>
