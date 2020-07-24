@@ -22,7 +22,12 @@ export default class Appples extends Component {
         <GoodStar />
         <h3>High</h3>
         <HighStar />
+        <h3>bwl wuz here</h3>
+        <p>lorem
+          
+        </p>
       </div>
+      
     );
   }
 }
