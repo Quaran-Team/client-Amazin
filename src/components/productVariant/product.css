@@ -1,6 +1,7 @@
-h1{
-    color: green;
-}
-hr {
-    opacity: .3;
-}
+#ad-feedback-sprite-hero-quick-promo{
+    display: inline-block; 
+    vertical-align: top; 
+    margin: 1px 0px; 
+    width: 14px; 
+    height: 12px; 
+    background: url("https://images-na.ssl-images-amazon.com/images/G/01/ad-feedback/info_icon_1Xsprite._CB431021510_.png") 0px 0px no-repeat scroll transparent }

@@ -12,11 +12,11 @@ class App extends Component {
             <div>
                 <h1>My React App</h1>
                 <Product />
-                <CustomerReviewsContainer />
+                {/* <CustomerReviewsContainer />
                 <QAcomponent />
                 <ComparisonGrid/>
                 <CImagesAll />
-                <CWBA/>
+                <CWBA/> */}
             </div>
         )
     }
