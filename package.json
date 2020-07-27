@@ -27,10 +27,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@material-ui/core": "^4.11.0",
-<<<<<<< HEAD
-=======
     "@testing-library/jest-dom": "^5.11.1",
->>>>>>> 2e47309595f3ad4b55d9ca76825a5d2c345cd224
     "axios": "^0.19.2",
     "babel-core": "^7.0.0-0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -46,14 +43,11 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-=======
     "@testing-library/react": "^10.4.7",
->>>>>>> 2e47309595f3ad4b55d9ca76825a5d2c345cd224
     "babel-jest": "^26.1.0",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
     "http-server": "^0.12.3",
