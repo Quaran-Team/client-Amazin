@@ -4,11 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/index.js', 
     output : {
-        path: path.join(__dirname, '/dist'), 
-        filename: 'index_bundle.js'
+        path: path.join(__dirname, 'public'), 
+        filename: 'bundle.js'
     }, 
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
-        port: 3000
+        port: 3000 ,
+        contentBase: path.join(__dirname, "public"), 
+        historyApiFallback: true
       },
       module: {
         loaders: [
@@ -50,7 +53,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './public/index.html'
         })
     ]
 }
