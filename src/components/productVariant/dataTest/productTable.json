@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "seller": "S.L.", 
+        "rating": 3.4,
+        "user_rating": "34,000", 
+        "tag": 1, 
+        "tag_title": "amazin choice",
+        "category": "skillet",
+        "category_link": "https://amazon.com/",
+        "similar_item": "https://www.clipartmax.com/png/middle/208-2086714_frying-pan-png-clipart-frying-pan-png.png"
+    }, 
+    {
+        "id": 2,
+        "seller": "K.S.", 
+        "rating": 4,
+        "user_rating": "24,500", 
+        "tag": 0, 
+        "tag_title": "",
+        "category": "computer",
+        "category_link": "https://amazon.com/",
+        "similar_item": "https://i7.pngguru.com/preview/279/252/41/personal-computer-laptop-icon-desktop-computer-computer-desktop-pc-png-image.jpg"
+    }, 
+    {
+        "id": 3,
+        "seller": "P.T.", 
+        "rating": 1.1,
+        "user_rating": "115,600", 
+        "tag": 0, 
+        "tag_title": "",
+        "category": "dolls",
+        "category_link": "https://amazon.com/",
+        "similar_item": "https://www.vhv.rs/dpng/d/80-804590_creepy-doll-transparent-background-hd-png-download.png"
+    }
+]
