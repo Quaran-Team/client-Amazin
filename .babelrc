@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "presets": [
     [
       "@babel/preset-env",
@@ -15,3 +16,11 @@
     "transform-object-rest-spread"
   ]
 }
+=======
+    "presets": [
+        "@babel/preset-env", 
+        "@babel/preset-react"
+    ]
+
+}
+>>>>>>> 2e47309595f3ad4b55d9ca76825a5d2c345cd224
