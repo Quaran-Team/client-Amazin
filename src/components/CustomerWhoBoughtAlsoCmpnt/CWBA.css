@@ -1,0 +1,64 @@
+.CWBAPagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+} 
+.CWBAPagination button {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    background:  linear-gradient(rgb(247, 248, 250), rgb(231, 233, 236));
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+    text-decoration: none;
+    color: #0066c0;
+    border-radius: 2px;
+    border-color: rgba(207,209,212,1);
+    border-width: 1px;
+}
+.CWBASet{
+    margin: 0px 0px 0px 20px;
+}
+.CWBAHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.CWBAHeading h1, .CWBAHeading p {
+    width: 50%;
+}
+.CWBAHeading h1{
+    text-align: left;
+    color: rgba(0,0,0,1);
+}
+.CWBAHeading p{
+    text-align: right;
+    color: rgba(59,59,59,1);
+}
+body{
+    font-family: Arial,sans-serif;
+    color: rgba(43,45,54,1);
+}
+a {
+    color: rgba(0,102,192,1);
+    font-size: 13px;
+    text-decoration: none;
+}
+.starSection{
+    font-size: 12px;
+}
+
+.priceAnd{
+    font-size: 13px;
+    color: rgba(177, 39,4,1);
+}
+
+h2{
+    font-size: 21px;
+}
+h3{
+    font-size: 17px;
+}
+.PageOf{
+    font-size: 13px;
+}
