@@ -4,10 +4,31 @@ import CustomerImages from './CustomerImages';
 import ReviewMentions from './ReviewMentions';
 import StarRating from './StarRating';
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
+import CustomerReviewsDataService from '../../service/CustomerReviewsDataService'
+
 
 class CustomerReviewsContainer extends Component {
     
+    constructor(props) {
+        super(props)
+        this.state = {
+            response:null,
+        }
+        this.refreshCustomerReviews = this.refreshCustomerReviews.bind(this)
+    }
+
+    componentDidMount() {
+        this.refreshCustomerReviews();
+    }
+
+    refreshCustomerReviews() {
+        CustomerReviewsDataService.retrieveCustomerReviews(1)
+        .then(
+            response => {
+                this.setState({ response: response.data })
+            }
+        )
+    }
     
     render() { 
         return ( 
@@ -16,7 +37,6 @@ class CustomerReviewsContainer extends Component {
                 <Grid container justify="flex-start" alignItems="flex-start">
                     <Grid item sm={4}>
                         <div><StarRating /></div>
-                          <Divider variant="middle" />
                           <br />
                         <div><ReviewProduct /></div>
                     </Grid>
