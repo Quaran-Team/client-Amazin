@@ -29,6 +29,9 @@ class ReviewMentions extends Component {
                     <span>Verified Purchase</span>
                 </div>
                 <div><p>Submitted review form goes here</p></div>
+                <div className="row"><button>Helpful</button>
+                    <a href="/">Comment</a>
+                </div>
             </div>
          );
     }

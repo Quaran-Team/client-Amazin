@@ -30,8 +30,9 @@
     font-size: 15px;
 }
 
-/* .inline {
-
-    width: 25%;
-    margin: 10px;
-} */
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+} 
