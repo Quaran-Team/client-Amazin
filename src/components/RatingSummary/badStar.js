@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import "./stars.css"
 import Tooltip from "@material-ui/core/Tooltip";
+import BadChartMock from './badChartmock';
 
 // this is for a one (1) star summary rating mock ...
 // so here's a one star joke ...
@@ -10,9 +11,32 @@ import Tooltip from "@material-ui/core/Tooltip";
 // Oh wait, it’s just a satellite    :-)
 
 export default class BadStar extends Component {
+  constructor(props) {
+    super(props);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.state = {
+      isHovering: false,
+    };
+  }
+
+  handleMouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering,
+    };
+  }
+
   render() {
     return (
-      <div className="badstar">
+      <div>
+      <div
+        className="badstar"
+        onMouseEnter={this.handleMouseHover}
+        onMouseLeave={this.handleMouseHover}
+      >
         <Tooltip title="1 out of 5 stars" aria-label="1 out of 5 stars">
           <div className="badhover" style={{ display: "inline-block" }}>
             <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
@@ -48,6 +72,7 @@ export default class BadStar extends Component {
               v{" "}
             </span>
           </div>
+        
         </Tooltip>
         <div className="bsratQs" style={{ display: "inline-block" }}>
           <a style={{ fontSize: "13px" }} href="#">
@@ -63,6 +88,10 @@ export default class BadStar extends Component {
             1000+ answered questions
           </a>
         </div>
+      </div>
+      {/* {this.state.isHovering && <div style={{position:"absolute" ,margin:"40px 5px", zIndex:"2", background:"yellow",width:"100px", height:"100px"}} >Hovering right meow! 🐱</div>} */}
+      {/* // temp mock up above  */}
+      {this.state.isHovering && <div> <BadChartMock/> </div>}
       </div>
     );
   }
