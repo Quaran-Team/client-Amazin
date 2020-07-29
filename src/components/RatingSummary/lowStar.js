@@ -4,6 +4,10 @@ import Tooltip from "@material-ui/core/Tooltip";
 import LowChartMock from "./lowChartMock";
 // mock for two (2) stars summary rating
 
+require("react-dom");
+window.React2 = require("react");
+console.log(window.React1 === window.React2);
+
 //   Sirius, the dog star, is moving closer to Earth at a rate of nine miles per second.
 //  This means someday we could be in Sirius trouble.  ( -:
 
@@ -33,7 +37,7 @@ export default class LowStar extends Component {
           onMouseEnter={this.handleMouseHover}
           onMouseLeave={this.handleMouseHover}
         >
-          <Tooltip title="2.2 out of 5 stars" aria-label="2.2 out of 5 stars">
+          {/* <Tooltip title="2.2 out of 5 stars" aria-label="2.2 out of 5 stars"> */}
             <div className="lowhover" style={{ display: "inline-block" }}>
               <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
                 &#9733;
@@ -63,7 +67,7 @@ export default class LowStar extends Component {
                 v{" "}
               </span>
             </div>
-          </Tooltip>
+          {/* </Tooltip> */}
           <div className="lsratQs" style={{ display: "inline-block" }}>
             <a style={{ fontSize: "13px" }} href="#">
               {" "}

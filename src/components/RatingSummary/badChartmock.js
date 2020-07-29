@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./chartMock.css";
+// import "./chartMock.css";
 
 export default class BadChartMock extends Component {
   render() {

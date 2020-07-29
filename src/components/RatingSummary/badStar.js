@@ -37,7 +37,7 @@ export default class BadStar extends Component {
           onMouseEnter={this.handleMouseHover}
           onMouseLeave={this.handleMouseHover}
         >
-          <Tooltip title="1.2 out of 5 stars" aria-label="1.2 out of 5 stars">
+          {/* <Tooltip title="1.2 out of 5 stars" aria-label="1.2 out of 5 stars"> */}
             <div className="badhover" style={{ display: "inline-block" }}>
               <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
                 &#9733;
@@ -72,7 +72,7 @@ export default class BadStar extends Component {
                 v{" "}
               </span>
             </div>
-          </Tooltip>
+          {/* </Tooltip> */}
           <div className="bsratQs" style={{ display: "inline-block" }}>
             <a style={{ fontSize: "13px" }} href="#">
               {" "}

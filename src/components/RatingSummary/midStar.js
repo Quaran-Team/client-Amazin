@@ -31,11 +31,11 @@ export default class MidStar extends Component {
       <div className="midstar" 
       onMouseEnter={this.handleMouseHover}
       onMouseLeave={this.handleMouseHover}>
-        <Tooltip
+        {/* <Tooltip
           title="3.3 out of 5 stars"
           aria-label="3.3 out of 5 stars"
           placement="bottom"
-        >
+        > */}
           <div className="midhover" style={{display:"inline-block"}}>
             <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
               &#9733;
@@ -66,7 +66,7 @@ export default class MidStar extends Component {
               v{" "}
             </span>
           </div>
-        </Tooltip>
+        {/* </Tooltip> */}
         <div className="msratQs"style={{display:"inline-block"}} >
         <a style={{ fontSize: "13px" }} href="#">
           {" "}

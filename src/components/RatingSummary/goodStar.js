@@ -28,11 +28,11 @@ export default class GoodStar extends Component {
       <div className="goodstar"
       onMouseEnter={this.handleMouseHover}
       onMouseLeave={this.handleMouseHover}>
-        <Tooltip
+        {/* <Tooltip
           title="4.1 out of 5 stars"
           aria-label="4.1 out of 5 stars"
           placement="bottom"
-        >
+        > */}
           <div className="goodhover" style={{ display: "inline-block" }}>
             <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
               &#9733;
@@ -62,7 +62,7 @@ export default class GoodStar extends Component {
               v{" "}
             </span>
           </div>
-        </Tooltip>
+        {/* </Tooltip> */}
         <div className="lsratQs" style={{ display: "inline-block" }}>
           <a style={{ fontSize: "13px" }} href="#">
             {" "}

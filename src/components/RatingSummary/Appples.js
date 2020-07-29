@@ -14,9 +14,9 @@ export default class Appples extends Component {
 
         <h3>Bad</h3>
         <BadStar />
-        <h3>Low</h3>
+         <h3>Low</h3>
         <LowStar />
-        <h4>below is offset on purpose</h4>
+       <h4>below is offset on purpose</h4>
         <div style={{ marginLeft: "140px" }}>
           <h3>Mid</h3>
 
