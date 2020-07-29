@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest --config ./jest.config.json",
+    "test": "jest --config ./jest.config.js",
     "dev-server": "webpack-dev-server"
   },
   "repository": {
@@ -34,6 +34,8 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-cli": "^26.1.0",
     "jest-enzyme": "^7.1.2",
     "material-table": "^1.66.0",
     "react": "^16.13.1",
@@ -62,7 +64,7 @@
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
       "^react(.*)$": "<rootDir>/vendor/react-master$1",
       "^config$": "<rootDir>/configs/app-config.js"

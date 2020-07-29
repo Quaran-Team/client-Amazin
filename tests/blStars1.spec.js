@@ -1,15 +1,12 @@
 import React from "react";
 import BadStar from "../src/components/RatingSummary/badStar";
-import renderer from "react-test-renderer";
+import ReactDom from 'react-dom';
 
-// snapshot test if anything in component is changed this snapshot will need to be updated or this test changed
+// basic crash test 1 star
 
-describe("This snapshot test should pass for 1 star", () => {
+describe("This component test should render for 1 star without crashing", () => {
   it("Should render as expected!", () => {
-    const tree = renderer.create(<BadStar />).toJSON();
-
-    console.log(tree);
-
-    expect(tree).toMatchSnapshot();
+    const div=document.createElement("div"); 
+    ReactDom.render(<BadStar />, div);
   });
 });
