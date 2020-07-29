@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1, 
+        "selectorId": 1, 
+        "feature": "hxwxl", 
+        "detail": "1x8x8"
+    }, 
+    {
+        "id": 2, 
+        "selectorId": 1, 
+        "feature": "tephlon", 
+        "detail": "yes"
+    }, 
+    {
+        "id": 3, 
+        "selectorId": 2, 
+        "feature": "hxwxl", 
+        "detail": "1x9x9"
+    }, 
+    {
+        "id": 4, 
+        "selectorId": 2, 
+        "feature": "tephlon", 
+        "detail": "yes"
+    }, 
+    {
+        "id": 5, 
+        "selectorId": 3, 
+        "feature": "hxwxl", 
+        "detail": "1x6.5x6.5"
+    }, 
+    {
+        "id": 6, 
+        "selectorId": 3, 
+        "feature": "tephlon", 
+        "detail": "yes"
+    },
+    {
+        "id": 7, 
+        "selectorId": 6, 
+        "feature": "design", 
+        "detail": "burnt, scratch marks"
+    }, 
+    {
+        "id": 8, 
+        "selectorId": 6, 
+        "feature": "outfit included", 
+        "detail": "no"
+    }, 
+    {
+        "id": 9, 
+        "selectorId": 6, 
+        "feature": "haunted",
+        "detail": "only the first 3 sold will be"
+    },
+    {
+        "id": 10, 
+        "selectorId": 7, 
+        "feature": "design", 
+        "detail": "vampire-esqe"
+    }, 
+    {
+        "id": 11, 
+        "selectorId": 7, 
+        "feature": "outfit included", 
+        "detail": "yes"
+    }, 
+    {
+        "id": 12, 
+        "selectorId": 7, 
+        "feature": "haunted",
+        "detail": "maybe"
+    },
+    {
+        "id": 13, 
+        "selectorId": 7, 
+        "feature": "design", 
+        "detail": "a real barbie"
+    }, 
+    {
+        "id": 11, 
+        "selectorId": 7, 
+        "feature": "outfit included", 
+        "detail": "yes"
+    }, 
+    {
+        "id": 12, 
+        "selectorId": 7, 
+        "feature": "haunted",
+        "detail": "absolutely"
+    }
+
+]

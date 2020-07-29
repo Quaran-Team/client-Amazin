@@ -29,7 +29,14 @@ class CImage extends Component {
     render(){
         return(
             <div>
-                <img src="" alt="picture will go here"></img>
+                <img src="" 
+                    // alt="test"
+                    style={{
+                        height: "153px", 
+                        width: "153px", 
+                        backgroundColor: "grey"
+                        }}>
+                </img>
             </div>
         )
     }

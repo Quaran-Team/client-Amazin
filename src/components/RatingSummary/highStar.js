@@ -1,15 +1,36 @@
 import React, { Component } from "react";
 // import "./stars.css"
 import Tooltip from "@material-ui/core/Tooltip";
+import HighChartMock from './highChartMock'
 // five (5) star mock
 
 export default class HighStar extends Component {
+  constructor(props) {
+    super(props);
+    this.handleMouseHover = this.handleMouseHover.bind(this);
+    this.state = {
+      isHovering: false,
+    };
+  }
+
+  handleMouseHover() {
+    this.setState(this.toggleHoverState);
+  }
+
+  toggleHoverState(state) {
+    return {
+      isHovering: !state.isHovering,
+    };
+  }
   render() {
     return (
-      <div className="highstar">
+      <div>
+      <div className="highstar"
+      onMouseEnter={this.handleMouseHover}
+      onMouseLeave={this.handleMouseHover}>
         <Tooltip
-          title="5 out of 5 stars"
-          aria-label="5 out of 5 stars"
+          title="4.9 out of 5 stars"
+          aria-label="4.9 out of 5 stars"
           placement="bottom"
         >
           <div className="highhover" style={{ display: "inline-block" }}>
@@ -58,6 +79,13 @@ export default class HighStar extends Component {
           </a>
         </div>
       </div>
+            {this.state.isHovering && (
+              <div>
+                {" "}
+                <HighChartMock />{" "}
+              </div>
+            )}
+            </div>
     );
   }
 }

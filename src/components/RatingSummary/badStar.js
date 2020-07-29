@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import "./stars.css"
 import Tooltip from "@material-ui/core/Tooltip";
-import BadChartMock from './badChartmock';
+import BadChartMock from "./badChartmock";
 
 // this is for a one (1) star summary rating mock ...
 // so here's a one star joke ...
@@ -32,66 +32,71 @@ export default class BadStar extends Component {
   render() {
     return (
       <div>
-      <div
-        className="badstar"
-        onMouseEnter={this.handleMouseHover}
-        onMouseLeave={this.handleMouseHover}
-      >
-        <Tooltip title="1 out of 5 stars" aria-label="1 out of 5 stars">
-          <div className="badhover" style={{ display: "inline-block" }}>
-            <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
-              &#9733;
-            </span>
+        <div
+          className="badstar"
+          onMouseEnter={this.handleMouseHover}
+          onMouseLeave={this.handleMouseHover}
+        >
+          <Tooltip title="1.2 out of 5 stars" aria-label="1.2 out of 5 stars">
+            <div className="badhover" style={{ display: "inline-block" }}>
+              <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
+                &#9733;
+              </span>
 
-            <span className="gray" style={{ color: "gray" }}>
-              &#9733;
-            </span>
+              <span className="gray" style={{ color: "gray" }}>
+                &#9733;
+              </span>
 
-            <span className="gray" style={{ color: "gray" }}>
-              &#9733;
-            </span>
+              <span className="gray" style={{ color: "gray" }}>
+                &#9733;
+              </span>
 
-            <span className="gray" style={{ color: "gray" }}>
-              &#9733;
-            </span>
+              <span className="gray" style={{ color: "gray" }}>
+                &#9733;
+              </span>
 
-            <span className="gray" style={{ color: "gray" }}>
-              &#9733;
-            </span>
+              <span className="gray" style={{ color: "gray" }}>
+                &#9733;
+              </span>
 
+              <span
+                className="tiny"
+                style={{
+                  position: "relative",
+                  top: "-8px",
+                  fontSize: "10px",
+                  padding: "0px 20px 0px 5px",
+                }}
+              >
+                {" "}
+                v{" "}
+              </span>
+            </div>
+          </Tooltip>
+          <div className="bsratQs" style={{ display: "inline-block" }}>
+            <a style={{ fontSize: "13px" }} href="#">
+              {" "}
+              66,847 ratings
+            </a>
             <span
-              className="tiny"
-              style={{
-                position: "relative",
-                top: "-8px",
-                fontSize: "10px",
-                padding: "0px 20px 0px 5px",
-              }}
+              className="line"
+              style={{ padding: "10px", fontSize: "13px" }}
             >
               {" "}
-              v{" "}
+              |{" "}
             </span>
-          </div>
-        
-        </Tooltip>
-        <div className="bsratQs" style={{ display: "inline-block" }}>
-          <a style={{ fontSize: "13px" }} href="#">
-            {" "}
-            66,847 ratings
-          </a>
-          <span className="line" style={{ padding: "10px", fontSize: "13px" }}>
-            {" "}
-            |{" "}
-          </span>
 
-          <a style={{ fontSize: "13px" }} href="#">
-            1000+ answered questions
-          </a>
+            <a style={{ fontSize: "13px" }} href="#">
+              1000+ answered questions
+            </a>
+          </div>
         </div>
-      </div>
-      {/* {this.state.isHovering && <div style={{position:"absolute" ,margin:"40px 5px", zIndex:"2", background:"yellow",width:"100px", height:"100px"}} >Hovering right meow! 🐱</div>} */}
-      {/* // temp mock up above  */}
-      {this.state.isHovering && <div> <BadChartMock/> </div>}
+        {this.state.isHovering && (
+          <div>
+            {" "}
+            <BadChartMock />{" "}
+          </div>
+        )}
       </div>
     );
   }

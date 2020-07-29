@@ -16,20 +16,30 @@ export default class Appples extends Component {
         <BadStar />
         <h3>Low</h3>
         <LowStar />
-        <h3>Mid</h3>
-        <MidStar />
+        <h4>below is offset on purpose</h4>
+        <div style={{ marginLeft: "140px" }}>
+          <h3>Mid</h3>
+
+          <MidStar />
+        </div>
+
         <h3>Good</h3>
         <GoodStar />
         <h3>High</h3>
         <HighStar />
-        <h3>bwl wuz here</h3>
-        <p>lorem
-          
-        </p>
+        <div
+          className="exspace"
+          style={{ backgroundColor: "pink", height: "300px" }}
+        >
+          {" "}
+          <p style={{margin:"10px", padding:"20px"}}>
+          this is here to help keep the page from jumping all glithcy when the
+          modals pop up near the bottom of the screen
+          </p>
+        </div>
+
+        <p>lorem at the end</p>
       </div>
-      
     );
   }
 }
-
-

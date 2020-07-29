@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx'
+import Directory from './components/Directory.js';
 
-ReactDOM.render(<App />, document.getElementById("app"))
+ReactDOM.render(<Directory />, document.getElementById("app"))
