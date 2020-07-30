@@ -6,8 +6,7 @@ import QAcomponent from "./QAcomponent";
 import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
-import PhotoGallery from "./PhotoGallery/PhotoGallery";
-import "../Css/App.css";
+import PhotoGallery from "./PhotoGallery/PhotoGallery.jsx";
 
 class App extends Component {
 	render() {
