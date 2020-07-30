@@ -14,7 +14,8 @@ class ReviewMentions extends Component {
                     <span><button className="button">filtered button</button></span>
                 </div>
                    {/* <span><button>top reviews</button></span> */}
-
+                    <br/>
+                    <br/>
                    <div className="dropdown">
                         <button className="dropbtn">Top reviews</button>
                         <div className="dropdown-content">
