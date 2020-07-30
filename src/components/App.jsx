@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import TopBar from "./TopBar/TopBar";
-import BlueSecondTopLine from "./SecondTopLine/BlueSecondTopline";
-import Footer from "./Footer/Footer";
-import Axios from "axios";
+import Product from "./productVariant/Product.jsx";
+import CustomerReviewsContainer from "./CustomerReviews/CustomerReviewsContainer";
+import CWBA from "./CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll";
+import QAcomponent from "./QAcomponent";
+import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
+import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
-import PhotoGallery from "./PhotoGallery/PhotoGallery";
-import "../Css/App.css";
+import PhotoGallery from "./PhotoGallery/PhotoGallery.jsx";
 
 class App extends Component {
 	state = {
@@ -27,23 +28,15 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="app">
-				<div>
-					<TopBar />
-				</div>
-				<BlueSecondTopLine />
-				<h1 style={{ textAlign: "center" }}>View our Products</h1>
-				<div className="item-div-container">
-					{this.state.items.map((item) => (
-						<a href={"/singleItem/" + item.itemId}>
-							<button id="frontpage-btn">
-								<h3>{item.itemName}</h3>
-								<p>{item.category}</p>
-							</button>
-						</a>
-					))}
-				</div>
-				<Footer />
+			<div>
+				<h1>My React App</h1>
+				<PhotoGallery />
+				<Product />
+				<CustomerReviewsContainer />
+				<QAcomponent />
+				<ComparisonGrid />
+				<CImagesAll />
+				<CWBA />
 				<Appples />
 			</div>
 		);
