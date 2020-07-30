@@ -80,18 +80,3 @@
 		left: -30px;
 	}
 }
-
-@media (min-width: 480px) {
-	.pg_expanded.fluid {
-		flex-direction: row;
-	}
-	.pg_expanded.fluid .photo-expanded.fluid__image-container {
-		flex: 0 0 30%;
-		margin: 20px 0 20px 20px;
-	}
-	.portal {
-		position: absolute;
-		top: 40px;
-		left: -30px;
-	}
-}
