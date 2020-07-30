@@ -1,0 +1,20 @@
+.photo-gallery-container {
+	display: grid;
+	grid-template-columns: 0.5fr 2fr 1.5fr;
+	gap: 1em;
+}
+
+.photo-gallery-container > * {
+	background: #eee;
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+.photo-gallery-container > * > img {
+	position: relative;
+	box-sizing: content-box;
+}
+
+.photo-gallery-container > *:nth-child(odd) {
+	background: #ddd;
+}
