@@ -1,16 +1,32 @@
 .photo-gallery-container {
+<<<<<<< HEAD
 	display: inline-grid;
 	/* grid-template-columns: 0.83fr 1.5fr 1fr 1fr; */
 	/* grid-template-columns: repeat(auto-fit, minmax(auto, 1fr)); */
 	gap: 0.5em;
 	position: sticky;
 	top: 20px;
+=======
+	display: grid;
+	grid-template-columns: 0.6fr 2fr 1.5fr;
+	gap: 1em;
+>>>>>>> 461c41c... scrolling fuctionallity for thumbnail container
 }
 
 .photo-gallery-container > * {
 	background: #eee;
+	padding: 0.5em;
+	box-sizing: border-box;
+	max-height: 386px;
+	overflow-y: scroll;
+}
+
+.photo-gallery-container .pg_expanded {
+	background: #eee;
 	padding: 1em;
 	box-sizing: border-box;
+	max-height: 410px;
+	overflow: visible;
 }
 
 .photo-gallery-container > * > img {
