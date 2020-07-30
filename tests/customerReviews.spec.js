@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CustomerReviews from '../src/components/CustomerReviews/CustomerReviews';
 
-import { render } from '@testing-library/react';
-
 import "@testing-library/jest-dom/extend-expect";
 import renderer from "react-test-renderer";
 
 
-it("it renders", () => {
+it("renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(<CustomerReviews/>, div);
 })
