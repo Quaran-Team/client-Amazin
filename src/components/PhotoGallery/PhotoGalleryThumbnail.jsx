@@ -3,10 +3,13 @@ import React, { Component } from "react";
 export class PhotoGalleryThumbnail extends Component {
 	render() {
 		return (
-			<div>
-				<img src="https://picsum.photos/id/0/90/60"></img>
-				<img src="https://picsum.photos/id/1/90/60"></img>
-			</div>
+			<React.Fragment className="photo-thumbnail">
+				<img src="https://picsum.photos/id/0/128/72" />
+				<img src="https://picsum.photos/id/1/128/72" />
+				<img src="https://picsum.photos/id/3/128/72" />
+				<img src="http://via.placeholder.com/128x72" />
+				<img src="http://via.placeholder.com/128x72" />
+			</React.Fragment>
 		);
 	}
 }
