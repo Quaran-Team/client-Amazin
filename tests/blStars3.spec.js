@@ -1,15 +1,12 @@
 import React from "react";
 import MidStar from "../src/components/RatingSummary/midStar";
-import renderer from "react-test-renderer";
+import ReactDom from 'react-dom';
 
-// snapshot test if anything in component is changed this snapshot will need to be updated or this test changed
+// basic crash test 3 star
 
-describe("This snapshot test should pass for 3 stars", () => {
+describe("This component test should render for 3 star without crashing", () => {
   it("Should render as expected!", () => {
-    const tree = renderer.create(<MidStar />).toJSON();
-
-    console.log(tree);
-
-    expect(tree).toMatchSnapshot();
+    const div=document.createElement("div"); 
+    ReactDom.render(<MidStar />, div);
   });
 });
