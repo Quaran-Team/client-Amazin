@@ -1,28 +1,17 @@
 import React, { Component } from "react";
-
+import "./chartMock.css";
 
 export default class HighChartMock extends Component {
   render() {
     return (
-      <div className="chart">
+      <div className="chart" id="highChart">
         <h4>
           {" "}
-          <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
-            &#9733;
-          </span>
-          <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
-            &#9733;
-          </span>
-          <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
-            &#9733;
-          </span>
-          <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
-            &#9733;
-          </span>
-          <span className="gold" style={{ color: "rgb(255, 188, 40)" }}>
-            &#9733;
-          </span>{" "}
-          4.9 out of 5
+          <span className="gold">&#9733;</span>
+          <span className="gold">&#9733;</span>
+          <span className="gold">&#9733;</span>
+          <span className="gold">&#9733;</span>
+          <span className="gold">&#9733;</span> 4.9 out of 5
         </h4>
         <h5> 9,548 customer ratings</h5>
         <h5>
