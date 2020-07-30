@@ -4,7 +4,7 @@ import "./chartMock.css";
 export default class BadChartMock extends Component {
   render() {
     return (
-      <div className="chart" id="badChart">
+      <div className="chart" id="badChart" data-testid="chartOneBad">
         <h4>
           <span className="gold">&#9733;</span>
           <span className="gray">&#9733;</span>
