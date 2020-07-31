@@ -18,12 +18,12 @@ class Header extends Component {
 					break;
 				case "Amazin's Choice":
 					return <div className="choice">Amazin's Choice</div>;
-				//break; //<--- not needed as return will break out of switch
-				default:
 					break;
+				default:
+					"";
 			}
 		} else {
-			return <div></div>;
+			<div></div>;
 		}
 	};
 
