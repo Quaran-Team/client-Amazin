@@ -11,17 +11,19 @@ class Header extends Component {
 
 	hasTag = (tag, tag_title) => {
 		if (tag === true) {
+			console.log(tag, tag_title);
 			switch (tag_title) {
 				case "#1 Best Seller":
+					return <div className="best">#1 Best Seller</div>;
 					break;
 				case "Amazin's Choice":
 					return <div className="choice">Amazin's Choice</div>;
-				//break; //<--- not needed as return will break out of switch
-				default:
 					break;
+				default:
+					"";
 			}
 		} else {
-			return <div></div>;
+			<div></div>;
 		}
 	};
 
