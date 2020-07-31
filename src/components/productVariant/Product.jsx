@@ -12,8 +12,6 @@ import AboutList from "./variant-Components/AboutList";
 
 class Product extends Component {
 	state = {
-		dropmenu: "drop",
-		menuitem: "top",
 		prodID: "",
 		seller: "",
 		user_rating: "",
@@ -39,7 +37,6 @@ class Product extends Component {
 		banner: "",
 		lowstock_message: "",
 		selection: 0,
-		height: 0,
 	};
 
 	componentDidMount() {
@@ -168,23 +165,14 @@ class Product extends Component {
 					about_item={this.state.about_item}
 				/>
 
-							<Sponsored
-								id={this.state.prodID}
-								category={this.state.category}
-								category_link={this.state.category_link}
-								similar_item = {this.state.similar_item}
-							/>
+				<Sponsered
+					id={this.state.prodID}
+					category={this.state.category}
+					category_link={this.state.category_link}
+				/>
 
-							<hr id="separator" />
-							<Ratings 
-								id = {this.props.params}
-							/>
-						</div>
-					</Grid>
-					<Grid item xs={5} className="addcart-grid">
-                    	<div id="addcart-component"></div>
-                	</Grid>
-				</Grid>
+				<hr id="separator" />
+				{/* <Ratings /> */}
 			</div>
 		);
 	}

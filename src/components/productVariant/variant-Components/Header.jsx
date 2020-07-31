@@ -18,12 +18,12 @@ class Header extends Component {
 					break;
 				case "Amazin's Choice":
 					return <div className="choice">Amazin's Choice</div>;
-				//break; //<--- not needed as return will break out of switch
-				default:
 					break;
+				default:
+					"";
 			}
 		} else {
-			return <div></div>;
+			<div></div>;
 		}
 	};
 
@@ -41,8 +41,11 @@ class Header extends Component {
 					</h1>
 				</div>
 				<div id="bylineInfo_feature_div" className="celwidget">
-					<div className="a-section a-spacing-none">by</div>{" "}
-					{this.props.seller}
+					<div className="a-section a-spacing-none">by</div>
+					<a id="bylineInfo" className="a-link-normal" href="*">
+						{" "}
+						{this.props.seller}
+					</a>
 				</div>
 				<div
 					id="averageCustomerReviews_feature_div"

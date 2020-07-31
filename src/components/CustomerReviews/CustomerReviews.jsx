@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReviewProduct from "./ReviewProduct";
 import CustomerImages from "./CustomerImages";
 import ReviewMentions from "./ReviewMentions";
-// import StarRating from "./StarRating";
+import StarRating from "./StarRating";
 import Grid from "@material-ui/core/Grid";
 import CustomerReviewsDataService from "../../service/CustomerReviewsDataService";
 
