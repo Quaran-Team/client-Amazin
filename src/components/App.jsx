@@ -7,7 +7,7 @@ import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import PhotoGallery from "./PhotoGallery/PhotoGallery.jsx";
-import "../Css/App.css";
+import "../Css/App.css"; //This is set to color every other member in App. Helps track placement.
 
 class App extends Component {
 	render() {
