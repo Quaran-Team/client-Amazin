@@ -16,37 +16,38 @@ class Header extends Component {
 
 	hasTag = (tag, tag_title) => {
 		if (tag === true) {
+			console.log(tag, tag_title);
 			switch (tag_title) {
 				case "#1 Best Seller":
-					return <div className="best"><div id="best-wordplacement">#1 Best Seller</div></div>;
+					return <div className="best">#1 Best Seller</div>;
 					break;
-				case "Amazins Choice":
-					return <div className="choice"><div id="choice-wordplacement">Amazin's <span id="word-choice">Choice</span></div></div>;
-				//break; //<--- not needed as return will break out of switch
+				case "Amazin's Choice":
+					return <div className="choice">Amazin's Choice</div>;
+					break;
 				default:
-					break;
+					"";
 			}
 		} else {
-			return <div></div>;
+			<div></div>;
 		}
 	};
 
 	determineRating = (rate) => {
-		if (rate <= 1){
-			return(<BadStar />)
-		} else if (rate <=2){
-			console.log(rate, "lowstar")
-			return(<LowStar />)
-		} else if (rate <=3){
-			console.log(rate, "midstar")
-			return(<MidStar />)
-		} else if (rate <= 4){
-			return(<GoodStar />)
-		} else if (rate <=5){
-			console.log(rate, "hightstar")
-			return(<HighStar />)
+		if (rate <= 1) {
+			return <BadStar />;
+		} else if (rate <= 2) {
+			console.log(rate, "lowstar");
+			return <LowStar />;
+		} else if (rate <= 3) {
+			console.log(rate, "midstar");
+			return <MidStar />;
+		} else if (rate <= 4) {
+			return <GoodStar />;
+		} else if (rate <= 5) {
+			console.log(rate, "hightstar");
+			return <HighStar />;
 		}
-	}
+	};
 
 	render() {
 		return (
@@ -62,9 +63,8 @@ class Header extends Component {
 					</h2>
 				</div>
 				<div id="bylineInfo_feature_div" className="celwidget">
-					<div className="a-section a-spacing-none">by</div>
-						{" "}
-						{this.props.seller}
+					<div className="a-section a-spacing-none">by</div>{" "}
+					{this.props.seller}
 				</div>
 				<div
 					id="averageCustomerReviews_feature_div"
