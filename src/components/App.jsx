@@ -7,14 +7,17 @@ import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import PhotoGallery from "./PhotoGallery/PhotoGallery.jsx";
+import "../Css/App.css";
 
 class App extends Component {
 	render() {
 		return (
-			<div>
+			<div className="app">
 				<h1>My React App</h1>
 				<PhotoGallery />
 				<Product />
+				<div id="PurchaseItemContainer_Placeholder"></div>
+				{/*place holder: replace when ready*/}
 				<CustomerReviewsContainer />
 				<QAcomponent />
 				<ComparisonGrid />
