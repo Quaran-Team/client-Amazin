@@ -6,10 +6,42 @@
     margin-bottom: 26px!important;
 } */
 
+.vp {
+  color: #c45500!important;
+  font-size: 12px!important;
+  line-height: 16px!important;
+  font-weight: 700!important;
+}
+
+.review-date {
+  color: #565959!important;
+  font-size: 14px!important;
+  line-height: 20px!important;
+}
+
+.review-title {
+  color: #0F1111!important;
+  font-size: 14px!important;
+  line-height: 20px!important;
+  font-weight: 700!important;
+}
+
+.star-icon {
+  background-position: -53px -368px;
+  width: 80px;
+  height: 18px;
+  position: relative;
+  vertical-align: text-top;
+  background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIIcon-sprite_1x-e943461…._V2_.png);
+  background-size: 400px 900px;
+  background-repeat: no-repeat;
+  /* display: inline-block; */
+}
+
 .button {
-    padding: 10px;
-    color: #111111;
-    background: #D7E8EA;
+  padding: 10px;
+  color: #111111;
+  background: #D7E8EA;
 }
 
 /* .profile-avatar-img {
