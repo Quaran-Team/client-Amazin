@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Availability extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 	}
 
 	//main pricing set-up for this section is called here
@@ -17,12 +17,25 @@ class Availability extends Component {
 		lowstock_message,
 		shipping_message
 	) => {
+		console.log(
+			"list",
+			list_price,
+			"low",
+			lowstock_message,
+			price,
+			ship_price,
+			shipping,
+			discount,
+			inStock,
+			message
+		);
+
 		//derived values needed for discount
 		const saving_price = parseFloat(list_price) - parseFloat(price);
 		const saving_price_rounded = saving_price.toFixed(2);
 		const saving_percent =
-			(parseFloat(saving_price) / parseFloat(list_price)) * 100;
-		const saving_percent_rounded = saving_percent.toFixed(0);
+			parseFloat(saving_price) / parseFloat(list_price);
+		const saving_percent_rounded = saving_percent.toFixed(1);
 
 		//tailored specifically for the formatting of a discount being added
 		//if there is a discount on the item listed
@@ -54,16 +67,19 @@ class Availability extends Component {
 											id="priceblock_ourprice"
 											className="a-size-medium a-color-price priceBlockBuyingPriceString"
 										>
-											${price.toFixed(2)}{" "}
+											{price}
 										</span>
 										{this.shippingLogic(
 											shipping,
-											ship_price, 
+											ship_price,
 											shipping_message
 										)}
 									</td>
 								</tr>
-								<tr id="regularprice-savings" className="availability-column3">
+								<tr
+									id="regularprice-savings"
+									className="availability-column3"
+								>
 									<td className="a-color-secondary a-size-base a-text-right a-nowrap a-col">
 										You Save:
 									</td>
@@ -82,14 +98,17 @@ class Availability extends Component {
 							</tbody>
 						</table>
 					</div>
-					<div className="a-section maple-banner__text" onClick={()=> this.outOfOrder()}>
+					<div
+						className="a-section maple-banner__text"
+						onClick={() => this.outOfOrder()}
+					>
 						{message}.
 					</div>
 				</div>
 
 				//this is if the stock supply is running low
 			);
-		} else if (inStock <= 10 && inStock > 0) {
+		} else if (inStock <= 10) {
 			return (
 				<div id="price" className="a-section a-spacing-small">
 					<div className="running-low-stock-banner">
@@ -111,7 +130,11 @@ class Availability extends Component {
 									>
 										${price.toFixed(2)}{" "}
 									</span>
-									{this.shippingLogic(shipping, ship_price, shipping_message)}
+									{this.shippingLogic(
+										shipping,
+										ship_price,
+										shipping_message
+									)}
 								</td>
 							</tr>
 						</tbody>
@@ -125,12 +148,10 @@ class Availability extends Component {
 
 				//this is if the stock supply is empty
 			);
-		} else if (parseInt(inStock) === 0) {
-			return (
-				<div className="out-of-stock-banner a-col">
-					<h3>Sorry, this item is out of Stock!</h3>
-				</div>
-			);
+		} else if (inStock === 0) {
+			<div className="out-of-stock-banner">
+				<h3>Sorry, this item is out of Stock!</h3>
+			</div>;
 
 			// this is the default scenario
 		} else {
@@ -152,7 +173,11 @@ class Availability extends Component {
 									>
 										${price.toFixed(2)}
 									</span>
-									{this.shippingLogic(shipping, ship_price, shipping_message)}
+									{this.shippingLogic(
+										shipping,
+										ship_price,
+										shipping_message
+									)}
 								</td>
 							</tr>
 						</tbody>
@@ -178,8 +203,8 @@ class Availability extends Component {
 					+ $
 					<span className="a-color-secondary a-size-base">
 						{ship_price.toFixed(2)}
-					</span>
-					{" "} shipping. {" "}{message}
+					</span>{" "}
+					shipping. {message}
 				</span>
 			);
 		} else {
@@ -188,8 +213,9 @@ class Availability extends Component {
 					id="ourprice_shippingmessage"
 					className="a-size-base a-color-base"
 				>
-					+{" "}<span className="a-color-secondary a-size-base">FREE</span>
-					shipping {" "}. {message}
+					+{" "}
+					<span className="a-color-secondary a-size-base">FREE</span>
+					shipping . {message}
 				</span>
 			);
 		}
@@ -197,8 +223,8 @@ class Availability extends Component {
 
 	//any logic that has not been handled can call this.
 	outOfOrder = () => {
-		alert("This feature is temporarily out of order.")
-	}
+		alert("This feature is temporarily out of order.");
+	};
 
 	render() {
 		return (
@@ -211,7 +237,7 @@ class Availability extends Component {
 					this.props.discount,
 					this.props.inStock,
 					this.props.message,
-					this.props.lowstock_message, 
+					this.props.lowstock_message,
 					this.props.shipping_message
 				)}
 			</div>
