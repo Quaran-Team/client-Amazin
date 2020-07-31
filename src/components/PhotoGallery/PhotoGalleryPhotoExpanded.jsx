@@ -4,7 +4,7 @@ export class PhotoGalleryPhotoExpanded extends Component {
 	render() {
 		return (
 			<React.Fragment className="photo-expanded">
-				<img src="https://picsum.photos/id/0/640/360"></img>
+				<img src="https://picsum.photos/id/0/640/320"></img>
 			</React.Fragment>
 		);
 	}
