@@ -12,8 +12,8 @@ import AboutList from "./variant-Components/AboutList";
 
 class Product extends Component {
 	state = {
-		dropmenu: 'drop',
-		menuitem: 'top',
+		dropmenu: "drop",
+		menuitem: "top",
 		prodID: "",
 		seller: "",
 		user_rating: "",
@@ -77,7 +77,7 @@ class Product extends Component {
 		//this pulls all the selections in
 		Axios({
 			method: "GET",
-			url: `http://localhost:8080/variant/selector/`,
+			url: `http://localhost:8080/variant/selector`,
 		}).then((res) => {
 			//filters out the selections based on the product
 			const trueSelections = res.data.filter(
@@ -85,7 +85,7 @@ class Product extends Component {
 			);
 			//filters out the selection to the default selection of the product
 			const defaultTrueSelection = trueSelections.filter(
-				(defaulting) => defaulting.isdefault === true
+				(defaulting) => defaulting.default === true
 			);
 			//catches the id of the selection
 			console.log(defaultTrueSelection[0]);
@@ -100,7 +100,7 @@ class Product extends Component {
 				type_selector: defaultTrueSelection[0].type_selector,
 				selector_img: defaultTrueSelection[0].selector_img,
 				selector_text: defaultTrueSelection[0].selector_text,
-				inStock: defaultTrueSelection[0].instock,
+				inStock: defaultTrueSelection[0].inStock,
 				message: defaultTrueSelection[0].message,
 				price: defaultTrueSelection[0].price,
 				lowstock_message: defaultTrueSelection[0].lowstock_message,
@@ -125,9 +125,7 @@ class Product extends Component {
 	//     })
 	// }
 
-
 	render() {
-
 		return (
 			<div className="productVariant">
 				<Header
@@ -170,30 +168,14 @@ class Product extends Component {
 					about_item={this.state.about_item}
 				/>
 
-							<Sponsored
-								id={this.state.prodID}
-								category={this.state.category}
-								category_link={this.state.category_link}
-								similar_item={this.state.similar_item}
-							/>
+				<Sponsered
+					id={this.state.prodID}
+					category={this.state.category}
+					category_link={this.state.category_link}
+				/>
 
-							<hr id="separator" />
-              
-							<h3>
-								<strong>Customer ratings by feature</strong>
-							</h3>
-							<Ratings
-								key={this.props.params}
-								id={this.props.params}
-							/>
-						</div>
-						<hr />
-
-					</Grid>
-					<Grid item xs={5} className="addcart-grid">
-						<div id="addcart-component"></div>
-					</Grid>
-				</Grid>
+				<hr id="separator" />
+				{/* <Ratings /> */}
 			</div>
 		);
 	}
