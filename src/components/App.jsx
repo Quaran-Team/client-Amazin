@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Product from "./productVariant/Product.jsx";
-import CustomerReviewsContainer from "./CustomerReviews/CustomerReviewsContainer";
+import CustomerReviewsContainer from "./CustomerReviews/CustomerReviews";
 import CWBA from "./CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll";
 import QAcomponent from "./QAcomponent";
 import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
@@ -32,9 +32,10 @@ class App extends Component {
 			<div className="app">
 				<h1>My React App</h1>
 				<PhotoGallery />
-				<Product />
-				<div id="PurchaseItemContainer_Placeholder"></div>
-				{/*place holder: replace when ready*/}
+				{/* <Product /> */}
+				<div id="PurchaseItemContainer_Placeholder">
+					{/*place holder: replace when ready*/}
+				</div>
 				<CustomerReviewsContainer />
 				<QAcomponent />
 				<ComparisonGrid />
