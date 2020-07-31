@@ -18,12 +18,29 @@ class Header extends Component {
 					break;
 				case "Amazin's Choice":
 					return <div className="choice">Amazin's Choice</div>;
-				//break; //<--- not needed as return will break out of switch
-				default:
 					break;
+				default:
+					"";
 			}
 		} else {
-			return <div></div>;
+			<div></div>;
+		}
+	};
+
+	determineRating = (rate) => {
+		if (rate <= 1) {
+			return <BadStar />;
+		} else if (rate <= 2) {
+			console.log(rate, "lowstar");
+			return <LowStar />;
+		} else if (rate <= 3) {
+			console.log(rate, "midstar");
+			return <MidStar />;
+		} else if (rate <= 4) {
+			return <GoodStar />;
+		} else if (rate <= 5) {
+			console.log(rate, "hightstar");
+			return <HighStar />;
 		}
 	};
 
@@ -41,11 +58,8 @@ class Header extends Component {
 					</h1>
 				</div>
 				<div id="bylineInfo_feature_div" className="celwidget">
-					<div className="a-section a-spacing-none">by</div>
-					<a id="bylineInfo" className="a-link-normal" href="*">
-						{" "}
-						{this.props.seller}
-					</a>
+					<div className="a-section a-spacing-none">by</div>{" "}
+					{this.props.seller}
 				</div>
 				<div
 					id="averageCustomerReviews_feature_div"

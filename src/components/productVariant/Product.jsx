@@ -168,14 +168,23 @@ class Product extends Component {
 					about_item={this.state.about_item}
 				/>
 
-				<Sponsered
-					id={this.state.prodID}
-					category={this.state.category}
-					category_link={this.state.category_link}
-				/>
+							<Sponsored
+								id={this.state.prodID}
+								category={this.state.category}
+								category_link={this.state.category_link}
+								similar_item = {this.state.similar_item}
+							/>
 
-				<hr id="separator" />
-				{/* <Ratings /> */}
+							<hr id="separator" />
+							<Ratings 
+								id = {this.props.params}
+							/>
+						</div>
+					</Grid>
+					<Grid item xs={5} className="addcart-grid">
+                    	<div id="addcart-component"></div>
+                	</Grid>
+				</Grid>
 			</div>
 		);
 	}

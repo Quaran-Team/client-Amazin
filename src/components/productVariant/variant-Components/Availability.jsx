@@ -70,12 +70,16 @@ class Availability extends Component {
 										</span>
 										{this.shippingLogic(
 											shipping,
-											ship_price
+											ship_price,
+											shipping_message
 										)}
 									</td>
 								</tr>
-								<tr id="regularprice-savings">
-									<td className="a-color-secondary a-size-base a-text-right a-nowrap">
+								<tr
+									id="regularprice-savings"
+									className="availability-column3"
+								>
+									<td className="a-color-secondary a-size-base a-text-right a-nowrap a-col">
 										You Save:
 									</td>
 									<td className="a-span12 a-color-price a-size-base priceBlockSavingsString">
@@ -93,11 +97,12 @@ class Availability extends Component {
 							</tbody>
 						</table>
 					</div>
-					<a className="maple-banner-link" href="*">
-						<div className="a-section maple-banner__text">
-							{message}
-						</div>
-					</a>
+					<div
+						className="a-section maple-banner__text"
+						onClick={() => this.outOfOrder()}
+					>
+						{message}.
+					</div>
 				</div>
 
 				//this is if the stock supply is running low
@@ -124,7 +129,11 @@ class Availability extends Component {
 									>
 										{price}
 									</span>
-									{this.shippingLogic(shipping, ship_price)}
+									{this.shippingLogic(
+										shipping,
+										ship_price,
+										shipping_message
+									)}
 								</td>
 							</tr>
 						</tbody>
@@ -139,10 +148,14 @@ class Availability extends Component {
 				//this is if the stock supply is empty
 			);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a71a512... fixed formating
 		} else if (inStock === 0) {
 			<div className="out-of-stock-banner">
 				<h3>Sorry, this item is out of Stock!</h3>
 			</div>;
+<<<<<<< HEAD
 =======
 		} else if (parseInt(inStock) === 0) {
 			return (
@@ -151,6 +164,8 @@ class Availability extends Component {
 				</div>
 			);
 >>>>>>> 45d8aeb... fix mixxing return statement
+=======
+>>>>>>> a71a512... fixed formating
 
 			// this is the default scenario
 		} else {
@@ -172,7 +187,15 @@ class Availability extends Component {
 									>
 										{price}
 									</span>
+<<<<<<< HEAD
 									{this.shippingLogic(shipping, ship_price)}
+=======
+									{this.shippingLogic(
+										shipping,
+										ship_price,
+										shipping_message
+									)}
+>>>>>>> a71a512... fixed formating
 								</td>
 							</tr>
 						</tbody>
@@ -197,9 +220,15 @@ class Availability extends Component {
 				>
 					+ $
 					<span className="a-color-secondary a-size-base">
+<<<<<<< HEAD
 						{ship_price}
 					</span>
 					shipping
+=======
+						{ship_price.toFixed(2)}
+					</span>{" "}
+					shipping. {message}
+>>>>>>> a71a512... fixed formating
 				</span>
 			);
 		} else {
@@ -208,13 +237,27 @@ class Availability extends Component {
 					id="ourprice_shippingmessage"
 					className="a-size-base a-color-base"
 				>
+<<<<<<< HEAD
 					+<span className="a-color-secondary a-size-base">FREE</span>
 					shipping
+=======
+					+{" "}
+					<span className="a-color-secondary a-size-base">FREE</span>
+					shipping . {message}
+>>>>>>> a71a512... fixed formating
 				</span>
 			);
 		}
 	};
 
+<<<<<<< HEAD
+=======
+	//any logic that has not been handled can call this.
+	outOfOrder = () => {
+		alert("This feature is temporarily out of order.");
+	};
+
+>>>>>>> a71a512... fixed formating
 	render() {
 		return (
 			<div>
@@ -226,7 +269,12 @@ class Availability extends Component {
 					this.props.discount,
 					this.props.inStock,
 					this.props.message,
+<<<<<<< HEAD
 					this.props.lowstock_message
+=======
+					this.props.lowstock_message,
+					this.props.shipping_message
+>>>>>>> a71a512... fixed formating
 				)}
 			</div>
 		);
