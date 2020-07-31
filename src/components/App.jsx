@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Product from './productVariant/Product.jsx'
-import CustomerReviewsContainer from './CustomerReviews/CustomerReviewsContainer';
+import CustomerReviews from './CustomerReviews/CustomerReviews';
 import CWBA from './CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll'
 import QAcomponent from './QAcomponent';
 import ComparisonGrid from './ComparisonGrid/ComparisonGrid.jsx';
@@ -13,7 +13,7 @@ class App extends Component {
             <div>
                 <h1>My React App</h1>
                 <Product />
-                <CustomerReviewsContainer />
+                <CustomerReviews />
                 <QAcomponent />
                 <ComparisonGrid/>
                 <CImagesAll />
