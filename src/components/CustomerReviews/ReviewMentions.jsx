@@ -30,11 +30,11 @@ class ReviewMentions extends Component {
                     <span className="profile-name">Customer Name</span></div>
                 </div>
                 <tr>
-                    <td><span>*Star rating icon* <a href="link to customer review summary page">Review title!</a></span>
+                    <td><span className="star-icon">*Star rating icon* <a href="link to customer review summary page" className="review-title">Review title!</a></span>
                     </td>    
                 </tr>
-                <div>Review Date</div>
-                <div>Verified Purchase</div>
+                <div className="review-date">Review Date</div>
+                <span className="vp" >Verified Purchase</span>
                 
                 <div><p>Submitted review form goes here</p></div>
 
