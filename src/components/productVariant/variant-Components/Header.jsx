@@ -11,7 +11,7 @@ function Header() {
                 </h1>
             </div>
             <div id="bylineInfo_feature_div" className="celwidget">
-                <div class="a-section a-spacing-none">
+                <div className="a-section a-spacing-none">
                     by
                 </div>
                 <a id="bylineInfo" className="a-link-normal" href="*">Seller Name</a>
