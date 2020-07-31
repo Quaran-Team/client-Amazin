@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import CustomerReviewsDataService from '../../service/CustomerReviewsDataService'
 
 
-class CustomerReviewsContainer extends Component {
+class CustomerReviews extends Component {
     
     constructor(props) {
         super(props)
@@ -52,5 +52,5 @@ class CustomerReviewsContainer extends Component {
     }
 }
  
-export default CustomerReviewsContainer;
+export default CustomerReviews;
 

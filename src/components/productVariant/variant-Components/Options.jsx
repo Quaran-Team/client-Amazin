@@ -1,6 +1,8 @@
 import React from 'react'; 
 
-function Options() {
+function Options(props) {
+    console.log("YOU ARE IN OPTIONS")
+    console.log(props)
     return(
         <div>
             <div id="twister-container" className="addTwisterMargin">
@@ -8,9 +10,7 @@ function Options() {
                     This is a form. All options are inserted here.
                 </form>
             </div>
-            <table>
-                Table items inserted
-            </table>
+                {/* {props.title} */}
         </div>
     )
 }

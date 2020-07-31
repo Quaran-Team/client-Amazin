@@ -6,6 +6,8 @@ import MidStar from "./midStar";
 import GoodStar from "./goodStar";
 import HighStar from "./highStar";
 
+import BadChartMock from "./badChartmock";
+
 export default class Appples extends Component {
   render() {
     return (
@@ -14,9 +16,9 @@ export default class Appples extends Component {
 
         <h3>Bad</h3>
         <BadStar />
-         <h3>Low</h3>
+        <h3>Low</h3>
         <LowStar />
-       <h4>below is offset on purpose</h4>
+        <h4>below is offset on purpose</h4>
         <div style={{ marginLeft: "140px" }}>
           <h3>Mid</h3>
 
@@ -32,13 +34,14 @@ export default class Appples extends Component {
           style={{ backgroundColor: "pink", height: "300px" }}
         >
           {" "}
-          <p style={{margin:"10px", padding:"20px"}}>
-          this is here to help keep the page from jumping all glithcy when the
-          modals pop up near the bottom of the screen
+          <p style={{ margin: "10px", padding: "20px" }}>
+            this is here to help keep the page from jumping all glithcy when the
+            modals pop up near the bottom of the screen
           </p>
         </div>
 
-        <p>lorem at the end</p>
+        <p>lorem at the end a chart below for the id click jump</p>
+        <BadChartMock />
       </div>
     );
   }
