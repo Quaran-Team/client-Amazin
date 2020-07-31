@@ -5,7 +5,7 @@ import Footer from "./Footer/Footer";
 import Axios from "axios";
 import Appples from "./RatingSummary/Appples";
 import PhotoGallery from "./PhotoGallery/PhotoGallery.jsx";
-import "../Css/App.css";
+import "../Css/App.css"; //This is set to color every other member in App. Helps track placement.
 
 class App extends Component {
 	state = {
