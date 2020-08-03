@@ -5,3 +5,37 @@
 .gray {
   color: gray;
 }
+
+.lowhover,
+.highhover,
+.badhover,
+.goodhover,
+.midhover {
+  display: inline-block;
+}
+
+.tiny {
+  position: relative;
+  top: -8px;
+  font-size: 10px;
+  padding: 0px 20px 0px 5px;
+}
+
+.lsratQs,
+.hsratQs,
+.gsratQs,
+.bsratQs,
+.msratQs {
+  display: inline-block;
+  font-size: 13px;
+}
+
+.line {
+  font-size: 12px;
+  padding: 10px;
+}
+
+a {
+  font-size: 13px;
+  text-decoration: none;
+}
