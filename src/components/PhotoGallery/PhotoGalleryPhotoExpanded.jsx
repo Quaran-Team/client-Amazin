@@ -7,48 +7,19 @@ export class PhotoGalleryPhotoExpanded extends Component {
 	// 	super(props);
 	// }
 	render() {
-		const width = 420;
-		const height = 360;
-		const widthLarge = width * 2.5;
-		const heightLarge = height * 2.5;
-
-		const smallerImg = `http://picsum.photos/id/${this.props.imgId.toString()}/${width.toString()}/${height.toString()}`;
-		const largerImg = `http://picsum.photos/id/${this.props.imgId.toString()}/${widthLarge.toString()}/${heightLarge.toString()}`;
+		const i = 0;
+		var width = 640;
+		var height = 320;
 		return (
-			<div
-				className="photo-expanded fluid__image-container"
-				style={{
-					marginTop: "auto",
-					marginRight: 0.5 + "em",
-					marginBottom: "auto",
-					marginLeft: 0.5 + "em",
-				}}
-			>
-				<ReactImageMagnify
-					{...{
-						smallImage: {
-							alt: "Laptop",
-							isFluidWidth: true,
-							src: smallerImg,
-							width: width,
-							height: height,
-							imageClassName: "smallImg",
-						},
-						largeImage: {
-							src: largerImg,
-							width: widthLarge,
-							height: heightLarge,
-						},
-						lensStyle: {
-							// background: "hsla(0, 0%, 100%, .3)",
-							border: "1px solid #ccc",
-						},
-						isHintEnabled: true,
-						shouldHideHintAfterFirstActivation: false,
-						shouldUsePositiveSpaceLens: true,
-					}}
-				/>
-			</div>
+			<React.Fragment className="photo-expanded">
+				<img
+					src={
+						"http://picsum.photos/id/" +
+						`${i.toString()}/` +
+						`${width.toString()}/${height.toString()}`
+					}
+				></img>
+			</React.Fragment>
 		);
 	}
 }
