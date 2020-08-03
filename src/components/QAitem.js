@@ -18,7 +18,7 @@ export default class QAitem extends Component {
     }
 
     refreshQAndA() {
-        QAndADataService.retrieveQAndA(1)
+        QAndADataService.retrieveAllQAndAs()
         .then(
             response => {
                 this.setState({ response: response.data })
