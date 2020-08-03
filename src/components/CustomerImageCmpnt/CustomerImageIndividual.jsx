@@ -18,7 +18,7 @@ class CImage extends Component {
     }
 
     refreshCourses() { //retrieve data currently set to one id. not dynamic
-        CustomerImageDataService.retrieveCustomerImage(1)
+        CustomerImageDataService.retrieveAllCustomerImages()
             .then(
                 response => {
                     this.setState({ response: response.data })
@@ -26,6 +26,13 @@ class CImage extends Component {
             )
     }
 
+
+
+
+
+
+
+    
     render(){
         return(
             <div>

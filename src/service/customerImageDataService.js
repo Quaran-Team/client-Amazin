@@ -9,6 +9,13 @@ class CustomerImageDataService {
         return axios.get(`${CUSTOMER_IMAGE_API_URL}/`);
     }
 
+
+
+
+
+
+
+    
     retrieveCustomerImage(id) {
         return axios.get(`${CUSTOMER_IMAGE_API_URL}/${id}`);
     }
