@@ -16,7 +16,7 @@ class CWBAIndividual extends Component {
     }
 
     refreshCourses() { //retrieve data currently set to one id. not dynamic
-        CustomerWhoBoughtAlsoDataService.retrieveCustomerWhoBoughtAlso(1)
+        CustomerWhoBoughtAlsoDataService.retrieveAllCustomerWhoBoughtAlsos()
             .then(
                 response => {
                     this.setState({ response: response.data })
