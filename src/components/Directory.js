@@ -3,11 +3,6 @@ import App from './App.jsx';
 import React, { Component } from 'react';
 import FrontPage from './FrontPage'
 import Product from "./productVariant/Product.jsx";
-// import CustomerReviewsContainer from './CustomerReviewsContainer';
-// import CWBA from './CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll'
-// import QAcomponent from './QAcomponent';
-// import ComparisonGrid from './ComparisonGrid';
-// import CImagesAll from './CustomerImageCmpnt/CustomerImagesAll';
 
 class Directory extends Component {
     render(){

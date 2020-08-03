@@ -1,14 +1,15 @@
 import React, {Component} from 'react'; 
 import Header from './variant-Components/Header';
 import Availability from './variant-Components/Availability.jsx';
-import Options from './variant-Components/Options.jsx'; 
+import Details from './variant-Components/Details.jsx'; 
+import DropdownMenu from './variant-Components/DropdownMenu.jsx'
 import Sponsered from './variant-Components/Sponsered.jsx';
 import './product.css'
 import Ratings from "./variant-Components/Ratings";
 import Axios from 'axios';
-// import { ListItemSecondaryAction } from '@material-ui/core';
 import AboutList from './variant-Components/AboutList';
-// import Items from './dataTest/productTable.json'
+import { Dropdown, DropdownButton } from 'react-bootstrap'
+
 
 class Product extends Component {
 
@@ -22,6 +23,9 @@ class Product extends Component {
         rating: "", 
         category : "",
         category_link : "", 
+        optionDropdown: [],
+        optionImage:[],
+        optionCustomBtn:[],
         title: "",
         about_item: "", 
         discount: "", 
@@ -37,6 +41,7 @@ class Product extends Component {
         shipping_message: "", 
         banner: "", 
         lowstock_message: "",
+        type: [],
         selection:0
     }
 
@@ -79,9 +84,14 @@ class Product extends Component {
            const trueSelections = res.data.filter( select => select.productID === this.state.prodID)
           //filters out the selection to the default selection of the product
            const defaultTrueSelection = trueSelections.filter( defaulting => defaulting.default === true)
+
+           //the default options have been separated out into this function which goes through how everything is
+           //displayed after selecting default options.
+           this.optionLogic(trueSelections)
+           
            //catches the id of the selection
-           console.log(defaultTrueSelection[0])
            this.setState({
+               options : trueSelections,
                selection : defaultTrueSelection[0].id,
                title : defaultTrueSelection[0].title, 
                about_item: defaultTrueSelection[0].about_item, 
@@ -96,10 +106,80 @@ class Product extends Component {
                message: defaultTrueSelection[0].message, 
                price: defaultTrueSelection[0].price, 
                lowstock_message: defaultTrueSelection[0].lowstock_message, 
-               shipping_message: defaultTrueSelection[0].shipping_message,
-               banner: defaultTrueSelection[0].banner
+               shipping_message: defaultTrueSelection[0].shipping_message
            })
        })
+   }
+
+
+   optionLogic = (options) => {
+       //function global variables initialized
+       let dropdownOption = []; 
+       let imageOption = []; 
+       let custombtnOption =[];
+
+       //this goes through the options and sorts them based on the type. 
+       //in the future this would be more useful if there were multiple options available ie. images and dropdown selections
+       options.map( option => {
+            switch(option.type_selector){
+                case 1: 
+                    dropdownOption.push(option)
+                    break;
+                case 2:
+                    imageOption.push(option)
+                    break;
+                case 3:
+                    custombtnOption.push(option)
+                    break;
+                default:
+                    "No options found"
+            }
+       })
+
+
+       if (dropdownOption.length > 0) {
+            this.setState({
+                optionDropdown : dropdownOption
+            })
+            console.log(this.state.optionDropdown)
+       }
+       if (imageOption.length > 0) {
+           this.setState({
+               optionImage : imageOption
+           })
+       }
+       if (custombtnOption.length > 0) {
+           this.setState({
+               optionCustomBtn : custombtnOption
+           })
+       }
+   }
+
+   dropdownOption = () => {
+       if (this.state.optionDropdown.length >0 ){
+    return(
+        <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Dropdown Button
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+            {this.state.optionDropdown.map( option => <DropdownMenu key={option.id} id={option.id} text={option.selector_text} />)}
+            </Dropdown.Menu>
+        </Dropdown>
+        )}
+   }
+
+   imageOption = (option2) => {
+        return <div> You are in option 2</div>
+   }
+
+   custombtnOption = (option3) => {
+    return <div> You are in option 3</div>
+   }
+
+
+   changeOption = () => {
+
    }
 
    //Once upon a time in a far, far away galaxy... I had all the calls in the same file. And then set state became finicky and would only pass half the info
@@ -121,7 +201,7 @@ class Product extends Component {
         return(
             <div className="productVariant">
                 <Header 
-                    key = {this.state.prodID}
+                    // key = {this.state.prodID}
                     prodID = { this.state.prodID }
                     seller = { this.state.seller }
                     user_ratings = { this.state.user_rating }
@@ -136,7 +216,7 @@ class Product extends Component {
                 />
                 <hr id="separator" />
                 <Availability 
-                    key = { this.state.selection}
+                    // key = { this.state.selection}
                     id = { this.state.selection }
                     price = { this.state.price }
                     discount = { this.state.discount } 
@@ -149,14 +229,40 @@ class Product extends Component {
                     lowstock_message = { this.state.lowstock_message }
                     inStock = { this.state.inStock }
                 />
-                    <Options 
+
+                <div className="options">
+                    {/* {this.state.optionDropdown.map( option =>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            Dropdown Button
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                           <DropdownMenu key={option.id} id={option.id} text={option.selector_text} />
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    )} */}
+                    <div>
+                        {this.dropdownOption()}
+                    </div>
+
+
+
+                    <div className="image">
+
+                    </div>
+                    <div className="custom">
+
+                    </div>
+                </div>
+      
+                    <Details 
                         // key= { this.state.selection }
                         id = { this.state.selection }
                     />
 
                 <hr id="separator" />
                 <AboutList 
-                    key = { this.state.id }
+                    // key = { this.state.id }
                     about_item = { this.state.about_item }
                 />
 

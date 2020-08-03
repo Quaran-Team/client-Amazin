@@ -1,7 +1,6 @@
 import React from 'react'; 
 
 function AboutList(props) {
-    console.log(props)
     //this is my work around so there doesn't need to be another table. I used * to separate everything. 
     //Feel free to use any strange character you want though, but you have to change the seeding in the database.
     let splittingItems = props.about_item.split("*"); 
@@ -10,11 +9,9 @@ function AboutList(props) {
 
     return(
         <div>
-            <p>
                 <ul>
-                    {splittingItems.map(point => <li>{point}</li>)}
+                    {splittingItems.map(point => <li key={point}>{point}</li>)}
                 </ul>
-            </p>
         </div>
     )
 }
