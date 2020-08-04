@@ -27,23 +27,6 @@ class Header extends Component {
 		}
 	};
 
-	determineRating = (rate) => {
-		if (rate <= 1) {
-			return <BadStar />;
-		} else if (rate <= 2) {
-			console.log(rate, "lowstar");
-			return <LowStar />;
-		} else if (rate <= 3) {
-			console.log(rate, "midstar");
-			return <MidStar />;
-		} else if (rate <= 4) {
-			return <GoodStar />;
-		} else if (rate <= 5) {
-			console.log(rate, "hightstar");
-			return <HighStar />;
-		}
-	};
-
 	render() {
 		return (
 			<div>
