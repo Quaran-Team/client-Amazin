@@ -7,13 +7,12 @@ export class PhotoGalleryThumbnail extends Component {
 	render() {
 		const width = 40;
 		const height = 30;
-		const imgCount = 9;
+		const imgCount = 10;
 		var ids = [];
 		for (let i = 0; i < imgCount; i++) {
 			ids.push(i);
 		}
 		var imgs = ids.map((id, i) => {
-			console.log(id);
 			return (
 				<img
 					onMouseEnter={() => this.props.updateHoverState(id)}
