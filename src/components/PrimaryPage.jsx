@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 import Product from './productVariant/Product.jsx'
-import CustomerReviews from './CustomerReviews/CustomerReviews';
+import CustomerReviewsContainer from './CustomerReviews/CustomerReviewsContainer';
 import CWBA from './CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll'
 import QAcomponent from './QAcomponent';
 import ComparisonGrid from './ComparisonGrid/ComparisonGrid.jsx';
 import CImagesAll from './CustomerImageCmpnt/CustomerImagesAll';
 import Appples from './RatingSummary/Appples';
 
-class App extends Component {
+class PrimaryPage extends Component {
     render(){
         return(
             <div>
-                <CustomerReviewsContainer />
-                <CustomerReviews />
-                <QAcomponent />
-                <ComparisonGrid/>
-                <CImagesAll />
-                <CWBA/>
-                <Appples/>
+                Hello react
+                <Product />
             </div>
         )
     }
 }
 
-export default App;
-
+export default PrimaryPage;
