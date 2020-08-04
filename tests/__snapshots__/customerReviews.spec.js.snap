@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div>
+  <h1>
+     Customer Reviews
+  </h1>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-4"
+    >
+      <div>
+        <div>
+          <h3>
+            Star Ratings
+          </h3>
+          <br />
+          <br />
+        </div>
+      </div>
+      <br />
+      <div>
+        <div>
+          <h3>
+            Review this product
+          </h3>
+          <h5>
+            Share your thoughts with other customers
+          </h5>
+          <a
+            href="link to review form"
+          >
+            <button>
+              Write a customer review
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-true"
+    >
+      <div>
+        <div>
+          <h3>
+            Customer Images
+          </h3>
+          <div>
+            <img
+              src="http://placehold.it/150x150"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div>
+        <div>
+          <div
+            className="review-mention"
+          >
+            <h3>
+              Read reviews that mention
+            </h3>
+            <span>
+              <button
+                className="button"
+              >
+                filtered button
+              </button>
+            </span>
+          </div>
+          <br />
+          <br />
+          <div
+            className="dropdown"
+          >
+            <button
+              className="dropbtn"
+            >
+              Top reviews
+            </button>
+            <div
+              className="dropdown-content"
+            >
+              <a
+                href="#"
+              >
+                Most recent
+              </a>
+            </div>
+          </div>
+          <br />
+          <br />
+          <div>
+            <div
+              className="profile-avatar"
+            >
+              <img
+                className="profile-avatar-img"
+                src="https://www.amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"
+              />
+              <span
+                className="profile-name"
+              >
+                Customer Name
+              </span>
+            </div>
+          </div>
+          <tr>
+            <td>
+              <span>
+                *Star rating icon* 
+                <a
+                  href="link to customer review summary page"
+                >
+                  Review title!
+                </a>
+              </span>
+            </td>
+          </tr>
+          <div>
+            Review Date
+          </div>
+          <div>
+            Verified Purchase
+          </div>
+          <div>
+            <p>
+              Submitted review form goes here
+            </p>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <button>
+                  Helpful
+                </button>
+              </td>
+              <td>
+                <a
+                  href="/"
+                >
+                  Comment
+                </a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

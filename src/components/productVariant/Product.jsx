@@ -172,7 +172,6 @@ class Product extends Component {
    }
 
    custombtnOption = () => {
-
         if (this.state.optionCustomBtn.length > 0){
             return(
                 this.state.optionCustomBtn.map( option => <div className="heading">{option.type_title}</div><div className="small-div-btn" onClick={()=>this.changeOption(option.id)}> <button>{option.selector_text} </button> </div>)
