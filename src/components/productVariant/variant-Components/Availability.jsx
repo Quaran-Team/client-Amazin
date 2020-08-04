@@ -138,10 +138,19 @@ class Availability extends Component {
 
 				//this is if the stock supply is empty
 			);
+<<<<<<< HEAD
 		} else if (inStock === 0) {
 			<div className="out-of-stock-banner">
 				<h3>Sorry, this item is out of Stock!</h3>
 			</div>;
+=======
+		} else if (parseInt(inStock) === 0) {
+			return (
+				<div className="out-of-stock-banner">
+					<h3>Sorry, this item is out of Stock!</h3>
+				</div>
+			);
+>>>>>>> 45d8aeb... fix mixxing return statement
 
 			// this is the default scenario
 		} else {
