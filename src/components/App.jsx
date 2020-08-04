@@ -32,7 +32,6 @@ class App extends Component {
 			<div className="app">
 				<h1>My React App</h1>
 				<PhotoGallery />
-				{/* <Product /> */}
 				<div id="PurchaseItemContainer_Placeholder">
 					{/*place holder: replace when ready*/}
 				</div>
