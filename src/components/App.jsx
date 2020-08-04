@@ -13,7 +13,6 @@ class App extends Component {
 	render() {
 		return (
 			<div className="app">
-				<h1>My React App</h1>
 				<PhotoGallery />
 				<div id="PurchaseItemContainer_Placeholder">
 					{/*place holder: replace when ready*/}
