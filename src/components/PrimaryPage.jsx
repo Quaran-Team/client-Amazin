@@ -8,11 +8,16 @@ import CImagesAll from './CustomerImageCmpnt/CustomerImagesAll';
 import Appples from './RatingSummary/Appples';
 
 class PrimaryPage extends Component {
+
+
     render(){
         return(
             <div>
                 Hello react
-                <Product />
+                <Product 
+                    key={this.props.match.params.id}
+                    params={this.props.match.params.id}
+                />
             </div>
         )
     }

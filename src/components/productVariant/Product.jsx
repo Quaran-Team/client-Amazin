@@ -11,6 +11,13 @@ import { Dropdown } from 'react-bootstrap'
 
 
 class Product extends Component {
+    constructor(props){
+        super(props)
+        
+        state = {
+            params = props.params
+        }
+    }
 
     state = {
         prodID: "", 
