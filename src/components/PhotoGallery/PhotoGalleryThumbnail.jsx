@@ -5,24 +5,27 @@ export class PhotoGalleryThumbnail extends Component {
 		super(props);
 	}
 	render() {
-		var width = 40;
-		var height = 30;
+		const width = 40;
+		const height = 30;
 		const imgCount = 9;
 		var ids = [];
 		for (let i = 0; i < imgCount; i++) {
 			ids.push(i);
 		}
-
-		var imgs = ids.map((id, i) => (
-			<img
-				key={i}
-				src={
-					"http://picsum.photos/id/" +
-					`${i.toString()}/` +
-					`${width.toString()}/${height.toString()}`
-				}
-			/>
-		));
+		var imgs = ids.map((id, i) => {
+			console.log(id);
+			return (
+				<img
+					onMouseEnter={() => this.props.updateHoverState(id)}
+					key={i}
+					src={
+						"http://picsum.photos/id/" +
+						`${id.toString()}/` +
+						`${width.toString()}/${height.toString()}`
+					}
+				/>
+			);
+		});
 		return <div className="photo-thumbnail">{imgs}</div>;
 	}
 }
