@@ -11,6 +11,10 @@ class App extends Component {
         return(
             <div>
                 <CustomerReviewsContainer />
+<<<<<<< HEAD
+=======
+                <CustomerReviews />
+>>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
                 <QAcomponent />
                 <ComparisonGrid/>
                 <CImagesAll />

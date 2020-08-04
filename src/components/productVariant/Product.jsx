@@ -144,6 +144,10 @@ class Product extends Component {
             this.setState({
                 optionDropdown : dropdownOption
             })
+<<<<<<< HEAD
+=======
+            console.log(this.state.optionDropdown)
+>>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
        }
        if (imageOption.length > 0) {
            this.setState({
@@ -195,6 +199,10 @@ class Product extends Component {
    }
 
    changeOption = (newID) => {
+<<<<<<< HEAD
+=======
+        // console.log("new ID", newID)
+>>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
         this.state.options.map( userpick => {
             if(userpick.id == newID){
                 this.setState({

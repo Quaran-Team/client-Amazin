@@ -8,10 +8,10 @@ class PrimaryPage extends Component {
     render(){
         return(
             <div>
-                <Product
+                {/* <Product
                     key={this.props.match.params.id}
                     params={this.props.match.params.id}
-                />
+                /> */}
             </div>
         )
     }

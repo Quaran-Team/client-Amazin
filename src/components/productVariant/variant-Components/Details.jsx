@@ -36,7 +36,10 @@ class Details extends Component {
         //send table with updated values to be rendered
         return(
             <table className="detail-table">
+<<<<<<< HEAD
                 <tbody>
+=======
+>>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
                 {filterDetails.map( detail => {
                     return (
                     <tr key={detail.id}>
@@ -51,7 +54,10 @@ class Details extends Component {
                     </tr>
                     )
                 })}
+<<<<<<< HEAD
                 </tbody>
+=======
+>>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
             </table>
         )
 
