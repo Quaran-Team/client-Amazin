@@ -7,9 +7,6 @@ class Availability extends Component {
 
     //main pricing set-up for this section is called here
     pricingLogic = (list_price, price, shipping, ship_price, discount, inStock, message, lowstock_message) => {
-        //console.log("list", list_price, "low", lowstock_message, price, ship_price, shipping, discount, inStock, message)
-
-
         //derived values needed for discount
         const saving_price = parseFloat(list_price) - parseFloat(price);
         const saving_price_rounded = saving_price.toFixed(2);

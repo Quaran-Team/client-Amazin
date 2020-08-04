@@ -11,6 +11,9 @@ import { Dropdown } from 'react-bootstrap'
 
 
 class Product extends Component {
+    constructor(props){
+        super(props)
+    }
 
     state = {
         prodID: "", 
@@ -46,15 +49,14 @@ class Product extends Component {
     }
 
     componentDidMount() {
-        const { match : {params}} = this.props;
-        this.loadItem();
+        this.loadItem(this.props.params);
     }
 
-    loadItem = () => {
+    loadItem = (params) => {
         //calls the product by id
         Axios({
             method: 'GET', 
-            url: `http://localhost:8080/variant/product/${this.props.match.params.id}`
+            url: `http://localhost:8080/variant/product/${params}`
         }).then (res => { 
             //all the properties of the product are saved in state - these do not change upon selection.
             this.setState({ 
@@ -142,7 +144,6 @@ class Product extends Component {
             this.setState({
                 optionDropdown : dropdownOption
             })
-            console.log(this.state.optionDropdown)
        }
        if (imageOption.length > 0) {
            this.setState({
@@ -194,7 +195,6 @@ class Product extends Component {
    }
 
    changeOption = (newID) => {
-        // console.log("new ID", newID)
         this.state.options.map( userpick => {
             if(userpick.id == newID){
                 this.setState({
@@ -217,21 +217,6 @@ class Product extends Component {
             }
         })
    }
-
-   //Once upon a time in a far, far away galaxy... I had all the calls in the same file. And then set state became finicky and would only pass half the info
-    // loadDetails = () => {
-    //     //calls the all of the details
-    //     Axios({
-    //         method: 'GET', 
-    //         url: `http://localhost:8080/variant/detail`
-    //     }).then (res => { 
-    //         //filters the details based on the selection
-    //         const details = res.data.filter( detail => detail.selectorID === this.state.selection )
-    //         this.setState({ 
-    //             details : details
-    //         })
-    //     })
-    // }
 
     render(){      
         return(
