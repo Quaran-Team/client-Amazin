@@ -9,22 +9,20 @@ import PhotoGallery from "./PhotoGallery/PhotoGallery";
 import "../Css/App.css";
 
 class App extends Component {
-	render() {
-		return (
-			<div className="app">
-				<PhotoGallery />
-				<div id="PurchaseItemContainer_Placeholder">
-					place holder: replace when ready
-				</div>
-				<CustomerReviewsContainer />
-				<QAcomponent />
-				<ComparisonGrid />
-				<CImagesAll />
-				<CWBA />
-				<Appples />
-			</div>
-		);
-	}
+    render(){
+        return(
+            <div>
+                <h1>My React App</h1>
+                {/* <Product /> */}
+                <CustomerReviews />
+                {/* <QAcomponent />
+                <ComparisonGrid/>
+                <CImagesAll />
+                <CWBA/>
+                <Appples/> */}
+            </div>
+        )
+    }
 }
 
 export default App;
