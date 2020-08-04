@@ -13,13 +13,13 @@ class App extends Component {
         return(
             <div>
                 <h1>My React App</h1>
-                {/* <Product /> */}
+                {/* <Product />  */}
                 <CustomerReviews />
-                {/* <QAcomponent />
+                <QAcomponent />
                 <ComparisonGrid/>
                 <CImagesAll />
                 <CWBA/>
-                <Appples/> */}
+                <Appples/> 
             </div>
         )
     }
