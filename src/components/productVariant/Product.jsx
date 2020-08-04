@@ -10,33 +10,9 @@ import AboutList from "./variant-Components/AboutList";
 import { Dropdown } from "react-bootstrap";
 
 class Product extends Component {
-	state = {
-		prodID: "",
-		seller: "",
-		user_rating: "",
-		tag: "",
-		tag_title: "",
-		similar_item: "",
-		rating: "",
-		category: "",
-		category_link: "",
-		title: "",
-		about_item: "",
-		discount: "",
-		price: "",
-		list_price: "",
-		shipping: "",
-		ship_price: "",
-		type_selector: "",
-		selector_img: "",
-		selector_text: "",
-		message: "",
-		inStock: 0,
-		shipping_message: "",
-		banner: "",
-		lowstock_message: "",
-		selection: 0,
-	};
+	constructor(props) {
+		super(props);
+	}
 
 	state = {
 		prodID: "",
@@ -71,11 +47,15 @@ class Product extends Component {
 		selection: 0,
 	};
 
-	loadItem = () => {
+	componentDidMount() {
+		this.loadItem(this.props.params);
+	}
+
+	loadItem = (params) => {
 		//calls the product by id
 		Axios({
 			method: "GET",
-			url: `http://localhost:8080/variant/product/${this.props.match.params.id}`,
+			url: `http://localhost:8080/variant/product/${params}`,
 		}).then((res) => {
 			//all the properties of the product are saved in state - these do not change upon selection.
 			this.setState({
@@ -90,45 +70,6 @@ class Product extends Component {
 				user_rating: res.data.user_rating,
 			});
 			this.loadSelector();
-		});
-	};
-
-	//this is all to figure out what the selection of the user is.
-	//the work here reverts everything to default which is a boolean in the data.
-	loadSelector = () => {
-		//this pulls all the selections in
-		Axios({
-			method: "GET",
-			url: `http://localhost:8080/variant/selector`,
-		}).then((res) => {
-			//filters out the selections based on the product
-			const trueSelections = res.data.filter(
-				(select) => select.productID === this.state.prodID
-			);
-			//filters out the selection to the default selection of the product
-			const defaultTrueSelection = trueSelections.filter(
-				(defaulting) => defaulting.default === true
-			);
-			//catches the id of the selection
-			console.log(defaultTrueSelection[0]);
-			this.setState({
-				selection: defaultTrueSelection[0].id,
-				title: defaultTrueSelection[0].title,
-				about_item: defaultTrueSelection[0].about_item,
-				discount: defaultTrueSelection[0].discount,
-				list_price: defaultTrueSelection[0].list_price,
-				shipping: defaultTrueSelection[0].shipping,
-				ship_price: defaultTrueSelection[0].ship_price,
-				type_selector: defaultTrueSelection[0].type_selector,
-				selector_img: defaultTrueSelection[0].selector_img,
-				selector_text: defaultTrueSelection[0].selector_text,
-				inStock: defaultTrueSelection[0].inStock,
-				message: defaultTrueSelection[0].message,
-				price: defaultTrueSelection[0].price,
-				lowstock_message: defaultTrueSelection[0].lowstock_message,
-				shipping_message: defaultTrueSelection[0].shipping_message,
-				banner: defaultTrueSelection[0].banner,
-			});
 		});
 	};
 
@@ -204,7 +145,6 @@ class Product extends Component {
 			this.setState({
 				optionDropdown: dropdownOption,
 			});
-			console.log(this.state.optionDropdown);
 		}
 		if (imageOption.length > 0) {
 			this.setState({
@@ -281,7 +221,6 @@ class Product extends Component {
 	};
 
 	changeOption = (newID) => {
-		// console.log("new ID", newID)
 		this.state.options.map((userpick) => {
 			if (userpick.id == newID) {
 				this.setState({
@@ -304,21 +243,6 @@ class Product extends Component {
 			}
 		});
 	};
-
-	//Once upon a time in a far, far away galaxy... I had all the calls in the same file. And then set state became finicky and would only pass half the info
-	// loadDetails = () => {
-	//     //calls the all of the details
-	//     Axios({
-	//         method: 'GET',
-	//         url: `http://localhost:8080/variant/detail`
-	//     }).then (res => {
-	//         //filters the details based on the selection
-	//         const details = res.data.filter( detail => detail.selectorID === this.state.selection )
-	//         this.setState({
-	//             details : details
-	//         })
-	//     })
-	// }
 
 	render() {
 		return (
@@ -372,6 +296,12 @@ class Product extends Component {
 				<AboutList
 					// key = { this.state.id }
 					about_item={this.state.about_item}
+				/>
+
+				<Sponsered
+					id={this.state.prodID}
+					category={this.state.category}
+					category_link={this.state.category_link}
 				/>
 
 				<hr id="separator" />
