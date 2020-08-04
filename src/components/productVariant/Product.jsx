@@ -2,13 +2,12 @@ import React, {Component} from 'react';
 import Header from './variant-Components/Header';
 import Availability from './variant-Components/Availability.jsx';
 import Details from './variant-Components/Details.jsx'; 
-import DropdownMenu from './variant-Components/DropdownMenu.jsx'
 import Sponsered from './variant-Components/Sponsered.jsx';
 import './product.css'
 import Ratings from "./variant-Components/Ratings";
 import Axios from 'axios';
 import AboutList from './variant-Components/AboutList';
-import { Dropdown, DropdownButton } from 'react-bootstrap'
+import { Dropdown } from 'react-bootstrap'
 
 
 class Product extends Component {
@@ -41,6 +40,7 @@ class Product extends Component {
         shipping_message: "", 
         banner: "", 
         lowstock_message: "",
+        type_title: "",
         type: [],
         selection:0
     }
@@ -106,7 +106,8 @@ class Product extends Component {
                message: defaultTrueSelection[0].message, 
                price: defaultTrueSelection[0].price, 
                lowstock_message: defaultTrueSelection[0].lowstock_message, 
-               shipping_message: defaultTrueSelection[0].shipping_message
+               shipping_message: defaultTrueSelection[0].shipping_message, 
+               type_title: defaultTrueSelection[0].type_title
            })
        })
    }
@@ -156,30 +157,61 @@ class Product extends Component {
    }
 
    dropdownOption = () => {
-       if (this.state.optionDropdown.length >0 ){
+
+       if (this.state.optionDropdown.length > 0 ){
     return(
         <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Dropdown Button
+                {this.state.optionDropdown[0].type_title}
             </Dropdown.Toggle>
             <Dropdown.Menu>
-            {this.state.optionDropdown.map( option => <DropdownMenu key={option.id} id={option.id} text={option.selector_text} />)}
+    {this.state.optionDropdown.map( option => <Dropdown.Item key={option.id} id={option.id} onClick={()=>this.changeOption(option.id)} ><div>{option.selector_text}</div></Dropdown.Item>)}
             </Dropdown.Menu>
         </Dropdown>
         )}
    }
 
-   imageOption = (option2) => {
-        return <div> You are in option 2</div>
+   custombtnOption = () => {
+
+        if (this.state.optionCustomBtn.length > 0){
+            return(
+                this.state.optionCustomBtn.map( option => <div className="small-div-btn" onClick={()=>this.changeOption(option.id)}> <button>{option.selector_text} </button> </div>)
+            )
+        }
    }
 
-   custombtnOption = (option3) => {
-    return <div> You are in option 3</div>
+   imageOption = () => {
+    if (this.state.optionImage.length > 0){
+        return(
+            this.state.optionImage.map( option => <div className="small-div-btn"> <img src={option.selector_img} alt={option.selector_text} onClick={()=>this.changeOption(option.id)}/> </div>)
+        )
+    }
    }
 
 
-   changeOption = () => {
-
+   changeOption = (newID) => {
+        // console.log("new ID", newID)
+        this.state.options.map( userpick => {
+            if(userpick.id == newID){
+                this.setState({
+                    title : userpick.title, 
+                    about_item: userpick.about_item, 
+                    discount: userpick.discount, 
+                    list_price: userpick.list_price, 
+                    shipping: userpick.shipping, 
+                    ship_price: userpick.ship_price, 
+                    type_selector: userpick.type_selector, 
+                    selector_img: userpick.selector_img, 
+                    selector_text: userpick.selector_text,
+                    inStock: userpick.inStock, 
+                    message: userpick.message, 
+                    price: userpick.price, 
+                    lowstock_message: userpick.lowstock_message, 
+                    shipping_message: userpick.shipping_message, 
+                    type_title: userpick.type_title
+                })
+            }
+        })
    }
 
    //Once upon a time in a far, far away galaxy... I had all the calls in the same file. And then set state became finicky and would only pass half the info
@@ -231,27 +263,14 @@ class Product extends Component {
                 />
 
                 <div className="options">
-                    {/* {this.state.optionDropdown.map( option =>
-                    <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            Dropdown Button
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                           <DropdownMenu key={option.id} id={option.id} text={option.selector_text} />
-                        </Dropdown.Menu>
-                    </Dropdown>
-                    )} */}
                     <div>
                         {this.dropdownOption()}
                     </div>
-
-
-
                     <div className="image">
-
+                        {this.imageOption()}
                     </div>
                     <div className="custom">
-
+                        {this.custombtnOption()}
                     </div>
                 </div>
       

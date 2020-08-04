@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 import App from './App.jsx';
 import React, { Component } from 'react';
-import FrontPage from './FrontPage'
+import PrimaryPage from './PrimaryPage';
 import Product from "./productVariant/Product.jsx";
 
 class Directory extends Component {
@@ -10,8 +10,7 @@ class Directory extends Component {
         <Router>
             <Switch>
                 <Route exact path="/" component={App} />
-                <Route path="/list" component={FrontPage} />
-                <Route path="/singleItem/:id" component={App} />
+                <Route path="/singleItem/:id" component={PrimaryPage} />
                 <Route path="/variant/:id" component={Product} />
             </Switch>
         </Router>
