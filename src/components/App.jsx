@@ -11,13 +11,8 @@ class App extends Component {
     render(){
         return(
             <div>
-<<<<<<< HEAD
                 <CustomerReviewsContainer />
-=======
-                <h1>My React App</h1>
-                <Product />
                 <CustomerReviews />
->>>>>>> 0d2c2b9f41c9a8da4145bafb7c1b957cd66ac2c1
                 <QAcomponent />
                 <ComparisonGrid/>
                 <CImagesAll />
