@@ -144,10 +144,6 @@ class Product extends Component {
             this.setState({
                 optionDropdown : dropdownOption
             })
-<<<<<<< HEAD
-=======
-            console.log(this.state.optionDropdown)
->>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
        }
        if (imageOption.length > 0) {
            this.setState({
@@ -199,10 +195,6 @@ class Product extends Component {
    }
 
    changeOption = (newID) => {
-<<<<<<< HEAD
-=======
-        // console.log("new ID", newID)
->>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
         this.state.options.map( userpick => {
             if(userpick.id == newID){
                 this.setState({
@@ -225,21 +217,6 @@ class Product extends Component {
             }
         })
    }
-
-   //Once upon a time in a far, far away galaxy... I had all the calls in the same file. And then set state became finicky and would only pass half the info
-    // loadDetails = () => {
-    //     //calls the all of the details
-    //     Axios({
-    //         method: 'GET', 
-    //         url: `http://localhost:8080/variant/detail`
-    //     }).then (res => { 
-    //         //filters the details based on the selection
-    //         const details = res.data.filter( detail => detail.selectorID === this.state.selection )
-    //         this.setState({ 
-    //             details : details
-    //         })
-    //     })
-    // }
 
     render(){      
         return(

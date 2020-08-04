@@ -13,10 +13,6 @@ class Header extends Component {
         if (tag === true) {
             switch(tag_title) {
                 case "#1 Best Seller":
-<<<<<<< HEAD
-=======
-                    return <div className="best" >#1 Best Seller</div>
->>>>>>> 39a83f45d06142a05c4d1b8bc3ffa67a9d5da434
                     break;
                 case "Amazin's Choice": 
                     return <div className="choice">Amazin's Choice</div>
