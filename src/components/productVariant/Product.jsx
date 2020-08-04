@@ -175,7 +175,7 @@ class Product extends Component {
 
         if (this.state.optionCustomBtn.length > 0){
             return(
-                this.state.optionCustomBtn.map( option => <div className="small-div-btn" onClick={()=>this.changeOption(option.id)}> <button>{option.selector_text} </button> </div>)
+                this.state.optionCustomBtn.map( option => <div className="heading">{option.type_title}</div><div className="small-div-btn" onClick={()=>this.changeOption(option.id)}> <button>{option.selector_text} </button> </div>)
             )
         }
    }
@@ -183,11 +183,10 @@ class Product extends Component {
    imageOption = () => {
     if (this.state.optionImage.length > 0){
         return(
-            this.state.optionImage.map( option => <div className="small-div-btn"> <img src={option.selector_img} alt={option.selector_text} onClick={()=>this.changeOption(option.id)}/> </div>)
+            this.state.optionImage.map( option => <div className="small-div-btn"><div className="heading">{option.type_title}</div> <img src={option.selector_img} alt={option.selector_text} onClick={()=>this.changeOption(option.id)}/> </div>)
         )
     }
    }
-
 
    changeOption = (newID) => {
         // console.log("new ID", newID)
