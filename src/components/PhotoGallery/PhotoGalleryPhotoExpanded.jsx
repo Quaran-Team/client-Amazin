@@ -7,15 +7,14 @@ export class PhotoGalleryPhotoExpanded extends Component {
 	// 	super(props);
 	// }
 	render() {
-		const i = 0;
-		var width = 640;
-		var height = 320;
+		const width = 640;
+		const height = 320;
 		return (
 			<React.Fragment className="photo-expanded">
 				<img
 					src={
 						"http://picsum.photos/id/" +
-						`${i.toString()}/` +
+						`${this.props.imgId.toString()}/` +
 						`${width.toString()}/${height.toString()}`
 					}
 				></img>
