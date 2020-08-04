@@ -35,6 +35,8 @@ class CustomerReviews extends Component {
                     <Grid item sm={4}>
                         <div><StarRating /></div>
                           <br />
+                          <br />
+                          <br />
                         <div><ReviewProduct /></div>
                     </Grid>
                   

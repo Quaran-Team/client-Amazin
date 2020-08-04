@@ -9,9 +9,9 @@ class customerReviewsDataService {
         return axios.get(`${CUSTOMER_REVIEWS_API_URL}/`);
     }
 
-    retrieveCustomerReviews(id) {
-        return axios.get(`${CUSTOMER_REVIEWS_API_URL}/${id}`);
-    }
+    // retrieveCustomerReviews(id) {
+    //     return axios.get(`${CUSTOMER_REVIEWS_API_URL}/${id}`);
+    // }
 
 }
 

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import BadChartMock from '../RatingSummary/badChartmock';
+import "./CustomerReviews.css" 
+
 
 class StarRating extends Component {
 
@@ -7,7 +10,7 @@ class StarRating extends Component {
         return ( 
             <div>
                 <h3>Star Ratings</h3>
-                <br />
+                <div><BadChartMock /></div>
                 <br />
             </div>
          );
