@@ -137,7 +137,7 @@ class Availability extends Component {
 			);
 		} else if (parseInt(inStock) === 0) {
 			return (
-				<div className="out-of-stock-banner a-col">
+				<div className="out-of-stock-banner">
 					<h3>Sorry, this item is out of Stock!</h3>
 				</div>
 			);
