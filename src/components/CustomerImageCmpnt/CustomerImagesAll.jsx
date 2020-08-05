@@ -25,7 +25,7 @@ class CImagesAll extends Component {
                 }
             )}
     render(){
-        const listImageArray = this.state.imageArray.map((item)=>
+        const listImageArray = this.state.imageArray.slice(0, 4).map((item)=>
                 <CImage
                     key={item}
                     url={item}
