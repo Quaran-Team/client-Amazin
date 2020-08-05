@@ -3,26 +3,7 @@ import CustomerWhoBoughtAlsoDataService from '../../service/CustomerWhoBoughtAls
 import  './CWBA.css';
 class CWBAIndividual extends Component {
 
-    constructor(props) {
-        super(props)
-            this.state = {
-            response: null,
-        }
-        this.refreshCourses = this.refreshCourses.bind(this)
-    }
-    
-    componentDidMount() {
-        this.refreshCourses();
-    }
 
-    refreshCourses() { //retrieve data currently set to one id. not dynamic
-        CustomerWhoBoughtAlsoDataService.retrieveAllCustomerWhoBoughtAlsos()
-            .then(
-                response => {
-                    this.setState({ response: response.data })
-                }
-            )
-    }
 
     render(){
         return(

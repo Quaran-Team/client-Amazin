@@ -62,3 +62,14 @@ h3{
 .PageOf{
     font-size: 13px;
 }
+.imageArrayList{
+    display: flex;
+    flex-direction: row;
+}
+.CImage{
+    margin: 0px 0px 0px 10px;
+    height: 153px; 
+    width: 153px; 
+    object-fit: cover;
+    background-color: grey;
+}
