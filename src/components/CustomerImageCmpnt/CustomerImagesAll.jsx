@@ -19,14 +19,13 @@ class CImagesAll extends Component {
         CustomerImageDataService.retrieveAllCustomerImages()
             .then(
                 response => {
-                    this.setState({ 
-                        itemId: response.data[0].id,
-                        imageArray: response.data[0].imageLinks.split(',')
+                    this.setState({ itemId: response.data[0].id,
+                                    imageArray: response.data[0].imageLinks.split(',')
                     })
                 }
             )}
     render(){
-        const listImageArray = this.state.imageArray.slice(0,4).map((item)=>
+        const listImageArray = this.state.imageArray.map((item)=>
                 <CImage
                     key={item}
                     url={item}
