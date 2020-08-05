@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CustomerWhoBoughtAlsoDataService from '../../service/CustomerWhoBoughtAlsoDataService'
 import  './CWBA.css';
 class CWBAIndividual extends Component {
 
@@ -14,7 +13,6 @@ class CWBAIndividual extends Component {
                         width: "153px", 
                         backgroundColor: "grey"
                         }}> 
-                        {/* {this.props.associatedItem} */}
                 </img>
                 <div>
                     <a href="Link to other product">

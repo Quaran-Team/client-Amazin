@@ -12,11 +12,9 @@ class CImagesAll extends Component {
         }
         this.refreshCourses = this.refreshCourses.bind(this)
     }
-    
     componentDidMount() {
         this.refreshCourses();
     }
-
     refreshCourses() { //retrieve data currently set to one id. not dynamic
         CustomerImageDataService.retrieveAllCustomerImages()
             .then(
@@ -26,11 +24,7 @@ class CImagesAll extends Component {
                     })
                 }
             )}
-    
-    
-
     render(){
-
         const listImageArray = this.state.imageArray.map((item)=>
                 <CImage
                     key={item}
@@ -38,8 +32,6 @@ class CImagesAll extends Component {
                     associatedItem={this.state.itemId}
                 />
         );
-
-
         return(
             <div>
                 <h3>
