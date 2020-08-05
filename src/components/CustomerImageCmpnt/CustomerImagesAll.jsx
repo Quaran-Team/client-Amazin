@@ -21,9 +21,9 @@ class CImagesAll extends Component {
         CustomerImageDataService.retrieveAllCustomerImages()
             .then(
                 response => {
-                    this.setState({ itemId: response.data[0].id })
-                    this.setState({imageArray: response.data[0].imageLinks.split(',')})
-                    console.log("oi")
+                    this.setState({ itemId: response.data[0].id,
+                                    imageArray: response.data[0].imageLinks.split(',')
+                    })
                 }
             )}
     

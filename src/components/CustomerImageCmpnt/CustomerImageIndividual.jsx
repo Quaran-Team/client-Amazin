@@ -8,9 +8,7 @@ class CImage extends Component {
                 <img src={this.props.url} 
                     alt="customer provided image"
                     className="CImage"
-                    style={{
-
-                        }}>
+                >
                 </img>
 
         )
