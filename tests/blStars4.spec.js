@@ -1,15 +1,31 @@
-import React from "react";
 import GoodStar from "../src/components/RatingSummary/goodStar";
-import renderer from "react-test-renderer";
+import React from "react";
+import ReactDom from "react-dom";
+import { cleanup } from "@testing-library/react";
+import { shallow, configure } from "enzyme";
+import Adapter from 'enzyme-adapter-react-16';
+configure({adapter: new Adapter()});
 
-// snapshot test if anything in component is changed this snapshot will need to be updated or this test changed
 
-describe("This snapshot test should pass for 4 stars", () => {
+// this here is gold
+afterEach(cleanup);
+// it kills anything after each test so need to unmount
+
+// basic crash test 4 star
+
+describe("This component test should render for 4 star without crashing", () => {
   it("Should render as expected!", () => {
-    const tree = renderer.create(<GoodStar />).toJSON();
+    const div=document.createElement("div"); 
+    ReactDom.render(<GoodStar />, div);
+  });
+});
 
-    console.log(tree);
+// specific checking for an a tag about ratings
 
-    expect(tree).toMatchSnapshot();
+describe("it should have a/an ratings a tag", () => {
+  it('contains the string "26,547 ratings" in an a tag element', () => {
+    const wrapper = shallow(<GoodStar />);
+    const magicWords = <a href="#goodChart"> 26,547 ratings</a>;
+    expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });

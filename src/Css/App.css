@@ -1,0 +1,9 @@
+.app > * {
+	background: #eee;
+	/* padding: 1em; */
+	box-sizing: border-box;
+}
+
+.app > *:nth-child(odd) {
+	background: #ddd;
+}

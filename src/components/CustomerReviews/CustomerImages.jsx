@@ -2,17 +2,6 @@ import React, { Component } from 'react';
 
 class CustomerImages extends Component {
     
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         loaded: false
-    //     }
-    // }
-
-    // handleImageLoaded() {
-    //     this.setState({ loaded: true })
-    // }
-
     render() { 
         return ( 
             <div>
