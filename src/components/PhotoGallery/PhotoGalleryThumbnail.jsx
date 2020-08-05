@@ -17,11 +17,7 @@ export class PhotoGalleryThumbnail extends Component {
 				<img
 					onMouseEnter={() => this.props.updateHoverState(id)}
 					key={i}
-					src={
-						"http://picsum.photos/id/" +
-						`${id.toString()}/` +
-						`${width.toString()}/${height.toString()}`
-					}
+					src={`http://picsum.photos/id/${id.toString()}/${width.toString()}/${height.toString()}`}
 				/>
 			);
 		});
