@@ -5,6 +5,7 @@ import Footer from "./Footer/Footer";
 import Axios from "axios";
 import Appples from "./RatingSummary/Appples";
 import PhotoGallery from "./PhotoGallery/PhotoGallery";
+import "../Css/App.css";
 
 class App extends Component {
 	state = {
