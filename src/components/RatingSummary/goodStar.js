@@ -46,10 +46,10 @@ export default class GoodStar extends Component {
           </div>
           {/* </Tooltip> */}
           <div className="gsratQs">
-            <a href="#goodChart"> 26,547 ratings</a>
+            <a  className="starLink"  href="#goodChart"> 26,547 ratings</a>
             <span className="line"> | </span>
 
-            <a href="#">800 answered questions</a>
+            <a className="starLink"   href="#">800 answered questions</a>
           </div>
         </div>
         {this.state.isHovering && (
