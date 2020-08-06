@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { default as PG_PhotoExpanded } from "./PhotoGalleryPhotoExpanded";
 import { default as PG_Thumbnails } from "./PhotoGalleryThumbnail";
-import "../../Css/PhotoGallery.css";
+import "./PhotoGallery.css";
 
 export default class PhotoGallery extends Component {
 	constructor(props) {
