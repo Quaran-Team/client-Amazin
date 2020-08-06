@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 } 
 .CWBAPagination button {
     height: 40px;
@@ -17,6 +18,12 @@
     border-width: 1px;
 }
 .CWBASet{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0px 40px 0px 40px;
+}
+.individualCWBA{
     margin: 0px 0px 0px 20px;
 }
 .CWBAHeading{
@@ -61,4 +68,27 @@ h3{
 }
 .PageOf{
     font-size: 13px;
+}
+.imageArrayList{
+    display: flex;
+    flex-direction: row;
+}
+.CImage{
+    margin: 0px 0px 0px 10px;
+    height: 153px; 
+    width: 153px; 
+    object-fit: cover;
+    background-color: grey;
+}
+.leftButton{
+    padding-left: 3px;
+    left: 0;
+}
+.rightButton{
+    padding-right: 3px;
+    right: 0;
+}
+button{
+    height: 36px;
+    width: 39px;
 }
