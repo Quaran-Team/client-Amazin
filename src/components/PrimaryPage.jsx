@@ -10,13 +10,12 @@ import PhotoGallery from "./PhotoGallery/PhotoGallery";
 import Grid from "@material-ui/core/Grid";
 import './primarypage.css'
 
-
 class PrimaryPage extends Component {
 
 
     render(){
         return(
-            <div>
+            <div className="app">
                 <Grid>
                     <Grid item xs={6} className="mainpage-grid photogallery-grid" id="photogallery-grid">
                         <PhotoGallery />
