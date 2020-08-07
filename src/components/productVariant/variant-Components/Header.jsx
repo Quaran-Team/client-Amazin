@@ -5,7 +5,7 @@ class Header extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: props.id,
+			id: props.prodID,
 		};
 	}
 
@@ -13,6 +13,7 @@ class Header extends Component {
 		if (tag === true) {
 			switch (tag_title) {
 				case "#1 Best Seller":
+					return <div className="best">#1 Best Seller</div>;
 					break;
 				case "Amazin's Choice":
 					return <div className="choice">Amazin's Choice</div>;
@@ -56,13 +57,13 @@ class Header extends Component {
 								className="reviewCountTextLinkedHistogram noUnderline"
 							>
 								<span className="a-declarative">
-									{this.props.rating}
+									{this.props.rating} &#x25BE; 
 								</span>
 								<span
 									id="arcCustomerReviewText"
 									className="a-size-base"
 								>
-									{this.props.user_rating}
+									{this.props.user_ratings} ratings | 200 answered questions
 								</span>
 							</span>
 						</span>
@@ -73,7 +74,7 @@ class Header extends Component {
 						{this.hasTag(this.props.tag, this.props.tag_title)}
 						<span className="cat-name">
 							<span className="cat-link">
-								in {this.props.category}{" "}
+								in "{this.props.category}"
 							</span>
 						</span>
 					</a>

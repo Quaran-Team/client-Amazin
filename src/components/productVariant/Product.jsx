@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import Header from "./variant-Components/Header";
 import Availability from "./variant-Components/Availability.jsx";
 import Details from "./variant-Components/Details.jsx";
-import Sponsered from "./variant-Components/Sponsered.jsx";
+import Sponsored from "./variant-Components/Sponsored.jsx";
 import "./product.css";
 import Ratings from "./variant-Components/Ratings";
 import Axios from "axios";
 import AboutList from "./variant-Components/AboutList";
 import { Dropdown } from "react-bootstrap";
+import Grid from "@material-ui/core/Grid";
 
 class Product extends Component {
 	constructor(props) {
@@ -79,7 +80,7 @@ class Product extends Component {
 		//this pulls all the selections in
 		Axios({
 			method: "GET",
-			url: `http://localhost:8080/variant/selector`,
+			url: `http://localhost:8080/variant/selector/`,
 		}).then((res) => {
 			//filters out the selections based on the product
 			const trueSelections = res.data.filter(
@@ -87,13 +88,11 @@ class Product extends Component {
 			);
 			//filters out the selection to the default selection of the product
 			const defaultTrueSelection = trueSelections.filter(
-				(defaulting) => defaulting.default === true
+				(defaulting) => defaulting.isdefault === true
 			);
-
 			//the default options have been separated out into this function which goes through how everything is
 			//displayed after selecting default options.
 			this.optionLogic(trueSelections);
-
 			//catches the id of the selection
 			this.setState({
 				options: trueSelections,
@@ -107,7 +106,7 @@ class Product extends Component {
 				type_selector: defaultTrueSelection[0].type_selector,
 				selector_img: defaultTrueSelection[0].selector_img,
 				selector_text: defaultTrueSelection[0].selector_text,
-				inStock: defaultTrueSelection[0].inStock,
+				inStock: defaultTrueSelection[0].instock,
 				message: defaultTrueSelection[0].message,
 				price: defaultTrueSelection[0].price,
 				lowstock_message: defaultTrueSelection[0].lowstock_message,
@@ -118,6 +117,7 @@ class Product extends Component {
 	};
 
 	optionLogic = (options) => {
+
 		//function global variables initialized
 		let dropdownOption = [];
 		let imageOption = [];
@@ -134,10 +134,11 @@ class Product extends Component {
 					imageOption.push(option);
 					break;
 				case 3:
+					// console.log(option)
 					custombtnOption.push(option);
 					break;
 				default:
-					"No options found";
+					console.log("No options found");
 			}
 		});
 
@@ -152,6 +153,8 @@ class Product extends Component {
 			});
 		}
 		if (custombtnOption.length > 0) {
+			console.log("Opt")
+			console.log(custombtnOption)
 			this.setState({
 				optionCustomBtn: custombtnOption,
 			});
@@ -166,7 +169,7 @@ class Product extends Component {
 						{this.state.optionDropdown[0].type_title}
 					</Dropdown.Toggle>
 					<Dropdown.Menu>
-						{this.state.optionDropdown.map((option) => (
+						{this.state.optionDropdown.map(option => (
 							<Dropdown.Item
 								key={option.id}
 								id={option.id}
@@ -185,7 +188,7 @@ class Product extends Component {
 		if (this.state.optionCustomBtn.length > 0) {
 			return (
 				<div>
-					<div className="heading">{option.type_title}</div>
+					<div className="heading">{this.state.optionCustomBtn[0].type_title}:</div>
 					{this.state.optionCustomBtn.map((option) => (
 						<div
 							className="small-div-btn"
@@ -204,11 +207,12 @@ class Product extends Component {
 		if (this.state.optionImage.length > 0) {
 			return (
 				<div>
-					<div className="heading">{option.type_title}</div>
+					<div className="heading">{this.state.optionImage[0].type_title}:</div>
 					{this.state.optionImage.map((option) => (
 						<div className="small-div-btn">
-							<div className="heading">{option.type_title}</div>{" "}
+							<div className="heading">{option.selector_text}</div>{" "}
 							<img
+								id="image-option-variant"
 								src={option.selector_img}
 								alt={option.selector_text}
 								onClick={() => this.changeOption(option.id)}
@@ -224,6 +228,7 @@ class Product extends Component {
 		this.state.options.map((userpick) => {
 			if (userpick.id == newID) {
 				this.setState({
+					selection: userpick.id, 
 					title: userpick.title,
 					about_item: userpick.about_item,
 					discount: userpick.discount,
@@ -246,6 +251,8 @@ class Product extends Component {
 
 	render() {
 		return (
+			<div>
+				<Grid item xs={7} className="productVariant-grid">
 			<div className="productVariant">
 				<Header
 					// key = {this.state.prodID}
@@ -281,7 +288,9 @@ class Product extends Component {
 					<div className="container dropmenu">
 						{this.dropdownOption()}
 					</div>
-					<div className="container image">{this.imageOption()}</div>
+					<div className="container image">
+						{this.imageOption()}
+					</div>
 					<div className="container custom">
 						{this.custombtnOption()}
 					</div>
@@ -289,7 +298,8 @@ class Product extends Component {
 
 				<Details
 					// key= { this.state.selection }
-					id={this.state.selection}
+					id={ this.state.selection }
+
 				/>
 
 				<hr id="separator" />
@@ -298,14 +308,20 @@ class Product extends Component {
 					about_item={this.state.about_item}
 				/>
 
-				<Sponsered
+				<Sponsored
 					id={this.state.prodID}
 					category={this.state.category}
 					category_link={this.state.category_link}
+					similar_item = {this.state.similar_item}
 				/>
 
 				<hr id="separator" />
 				{/* <Ratings /> */}
+			</div>
+			</Grid>
+			<Grid item xs={5} className="addcart-grid">
+                    <div id="addcart-component"></div>
+                </Grid>
 			</div>
 		);
 	}
