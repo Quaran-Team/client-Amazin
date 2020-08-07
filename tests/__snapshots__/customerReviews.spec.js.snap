@@ -32,7 +32,9 @@ exports[`matches snapshot 1`] = `
           <a
             href="link to review form"
           >
-            <button>
+            <button
+              onClick={[Function]}
+            >
               Write a customer review
             </button>
           </a>
@@ -110,9 +112,12 @@ exports[`matches snapshot 1`] = `
           </div>
           <tr>
             <td>
-              <span>
+              <span
+                className="star-icon"
+              >
                 *Star rating icon* 
                 <a
+                  className="review-title"
                   href="link to customer review summary page"
                 >
                   Review title!
@@ -120,12 +125,16 @@ exports[`matches snapshot 1`] = `
               </span>
             </td>
           </tr>
-          <div>
+          <div
+            className="review-date"
+          >
             Review Date
           </div>
-          <div>
+          <span
+            className="vp"
+          >
             Verified Purchase
-          </div>
+          </span>
           <div>
             <p>
               Submitted review form goes here

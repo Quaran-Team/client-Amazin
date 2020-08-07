@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CustomerReviews.css'
 
 class ReviewProduct extends Component {
     constructor(){
@@ -20,7 +21,7 @@ class ReviewProduct extends Component {
             <div>
                 <h3>Review this product</h3>
                 <h5>Share your thoughts with other customers</h5>
-                <a href="link to review form"><button onClick={this.handleReview}>Write a customer review</button></a>
+                <a href="link to review form"><button id="review-button" onClick={this.handleReview}>Write a customer review</button></a>
             </div>
          );
     }
