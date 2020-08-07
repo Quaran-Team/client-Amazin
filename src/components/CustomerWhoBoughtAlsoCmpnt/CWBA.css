@@ -20,8 +20,9 @@
 .CWBASet{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 0px 0px 0px;
 }
 .individualCWBA{
     margin: 0px 0px 0px 20px;
