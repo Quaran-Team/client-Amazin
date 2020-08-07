@@ -14,7 +14,7 @@ class App extends Component {
 			<div className="app">
 				<PhotoGallery />
 				<div id="PurchaseItemContainer_Placeholder">
-					{/*place holder: replace when ready*/}
+					place holder: replace when ready
 				</div>
 				<CustomerReviewsContainer />
 				<QAcomponent />

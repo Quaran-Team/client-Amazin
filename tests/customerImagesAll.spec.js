@@ -1,13 +1,13 @@
-// import {CImage} from '../src/components/CustomerImageCmpnt/CustomerImageIndividual'
+import {CImage} from '../src/components/CustomerImageCmpnt/CustomerImageIndividual'
 
 
-// describe('My Test q', () => {
-//     it('My Test a', () => {
-//       expect(true).toEqual(true);
-//     });
-//   });
+describe('My Test q', () => {
+    it('My Test a', () => {
+      expect(true).toEqual(true);
+    });
+  });
 
 
-// test('Cimage',()=>{
-//   expect(styled.width).toBe(153)
-// })
+test('Cimage',()=>{
+  expect(styled.width).toBe(153)
+})
