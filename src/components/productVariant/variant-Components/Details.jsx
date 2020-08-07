@@ -8,7 +8,7 @@ class Details extends Component {
     }
 
     state = {
-        detail_state: []
+        detail_state: [],
     }
 
     //mount detail loader
@@ -21,7 +21,7 @@ class Details extends Component {
         //calls the all of the details
         Axios({
             method: 'GET', 
-            url: `http://localhost:8080/variant/detail`
+            url: `http://localhost:8080/variant/detail/`
         }).then (res => { 
             this.setState({ 
                 detail_state : res.data
@@ -30,12 +30,13 @@ class Details extends Component {
     }
 
 
-    tableDetailLogic= (id) => {
+    tableDetailLogic= () => {
         //filter through details for the correct "selection ID," not product ID
-        const filterDetails = this.state.detail_state.filter( detail => detail.selectorID === id)
+        const filterDetails = this.state.detail_state.filter( detail => detail.selectorid == this.props.id)
         //send table with updated values to be rendered
         return(
             <table className="detail-table">
+                <tbody>
                 {filterDetails.map( detail => {
                     return (
                     <tr key={detail.id}>
@@ -50,6 +51,7 @@ class Details extends Component {
                     </tr>
                     )
                 })}
+                </tbody>
             </table>
         )
 
@@ -58,7 +60,7 @@ class Details extends Component {
 render() {
     return(
         <div>
-            {this.tableDetailLogic(this.props.id)}
+            {this.tableDetailLogic()}
         </div>
     )}
 }

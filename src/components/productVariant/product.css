@@ -1,3 +1,22 @@
+/* Product Variant Main Page */
+.productVariant-grid{
+    float:left;
+    padding:20px;
+}
+
+.addcart-grid{
+    float: left;
+    padding:20px;
+}
+
+.addcart-component{
+    width:100%;
+    height: 500px; 
+    border-radius: 10%; 
+    border: 2px solid gray;
+}
+
+/* Header Component */
 #ad-feedback-sprite-hero-quick-promo{
     display: inline-block; 
     vertical-align: top; 
@@ -8,4 +27,45 @@
 
 .best {
     background-color: hotpink;
+    width:100px;
+    float: left;
+    text-align: center;
+    padding:2px;
+}
+.a-declarative {
+    margin-right: 5px;
+}
+
+
+/* Option Section (in the function for rendering images in options) -NOT A COMPONENT */
+.small-div-btn {
+    float: left;
+    font-size: 10px;
+    padding:2px;
+    margin: 3px;
+    border-radius: 5%;
+    border: 2px solid gray;
+}
+#image-option-variant {
+    max-width: 70px;
+}
+
+
+/* Sponsored Component */
+#hero-quick-promo{
+    width:100%;
+    overflow: hidden;
+    padding:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 2%;
+}
+#promo-image{
+    max-width: 70%;
+}
+#sponsered-logo{
+    font-size: 10px;
+    color: gray;
 }
