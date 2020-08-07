@@ -23,7 +23,7 @@ export default class PhotoGallery extends Component {
 						updateHoverState={this.updateHoverState}
 					></PG_Thumbnails>
 				</div>
-				<div className="pg_expanded">
+				<div className="pg_expanded fluid">
 					<PG_PhotoExpanded imgId={this.state.id}></PG_PhotoExpanded>
 				</div>
 			</div>
