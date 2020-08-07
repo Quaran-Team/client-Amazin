@@ -46,18 +46,19 @@ export default class HighStar extends Component {
           </div>
           {/* </Tooltip> */}
           <div className="hsratQs">
-            <a href="#highChart"> 9,458 ratings</a>
+            <a className="starLink"  href="#highChart"> 9,458 ratings</a>
             <span className="line"> | </span>
 
-            <a href="#"> 167 answered questions</a>
+            <a  className="starLink"  href="#"> 167 answered questions</a>
           </div>
-        </div>
+        
         {this.state.isHovering && (
           <div>
             {" "}
             <HighChartMock />{" "}
           </div>
         )}
+        </div>
       </div>
     );
   }
