@@ -11,13 +11,13 @@ class App extends Component {
     render(){
         return(
             <div>
-                <CustomerReviewsContainer />
-                <CustomerReviews />
+                {/* <CustomerReviewsContainer /> */}
+                {/* <CustomerReviews /> */}
                 <QAcomponent />
-                <ComparisonGrid/>
-                <CImagesAll />
-                <CWBA/>
-                <Appples/>
+                {/* <ComparisonGrid/> */}
+                {/* <CImagesAll /> */}
+                {/* <CWBA/> */}
+                {/* <Appples/> */}
             </div>
         )
     }

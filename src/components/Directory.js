@@ -11,7 +11,7 @@ class Directory extends Component {
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/singleItem/:id" component={PrimaryPage} />
-                <Route path="/variant/:id" component={Product} />
+                {/* <Route path="/variant/:id" component={Product} /> */}
             </Switch>
         </Router>
         )

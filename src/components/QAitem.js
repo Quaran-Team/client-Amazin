@@ -7,12 +7,15 @@ export default class QAitem extends Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            response:null,
-        }
-        this.refreshQAndA = this.refreshQAndA.bind(this)
+        
+    }
+    
+    state = {
+        response:[]
     }
 
+    refreshQAndA = this.refreshQAndA.bind(this)
+    
     componentDidMount() {
         this.refreshQAndA();
     }
@@ -22,6 +25,7 @@ export default class QAitem extends Component {
         .then(
             response => {
                 this.setState({ response: response.data })
+                console.log(response.data)
             }
         )
     }
@@ -29,8 +33,13 @@ export default class QAitem extends Component {
     render() {
         return (
             <div className="QAitem">
-                <h2>Question: </h2>
-                <h2><Answers/></h2>
+                {this.state.response.map((q) => 
+                <div>
+                    <h2>Question: </h2>
+                    <p>{q.question}</p>
+                    <h2><Answers key={q.id} /></h2>
+                </div>
+                )}
             </div>
         )
     }
