@@ -12,16 +12,16 @@ class App extends Component {
 	render() {
 		return (
 			<div className="app">
-				{/* <PhotoGallery /> */}
+				<PhotoGallery />
 				<div id="PurchaseItemContainer_Placeholder">
-					{/*place holder: replace when ready*/}
+					place holder: replace when ready
 				</div>
-				{/* <CustomerReviewsContainer />
+				<CustomerReviewsContainer />
 				<QAcomponent />
-				<ComparisonGrid /> */}
+				<ComparisonGrid />
 				<CImagesAll />
 				<CWBA />
-				{/* <Appples />  */}
+				<Appples /> 
 			</div>
 		);
 	}
