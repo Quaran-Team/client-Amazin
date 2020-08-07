@@ -16,25 +16,12 @@ class Availability extends Component {
 		message,
 		lowstock_message
 	) => {
-		console.log(
-			"list",
-			list_price,
-			"low",
-			lowstock_message,
-			price,
-			ship_price,
-			shipping,
-			discount,
-			inStock,
-			message
-		);
-
 		//derived values needed for discount
 		const saving_price = parseFloat(list_price) - parseFloat(price);
 		const saving_price_rounded = saving_price.toFixed(2);
 		const saving_percent =
-			parseFloat(saving_price) / parseFloat(list_price);
-		const saving_percent_rounded = saving_percent.toFixed(1);
+			(parseFloat(saving_price) / parseFloat(list_price)) * 100;
+		const saving_percent_rounded = saving_percent.toFixed(0);
 
 		//tailored specifically for the formatting of a discount being added
 		//if there is a discount on the item listed
@@ -66,7 +53,7 @@ class Availability extends Component {
 											id="priceblock_ourprice"
 											className="a-size-medium a-color-price priceBlockBuyingPriceString"
 										>
-											{price}
+											${price}
 										</span>
 										{this.shippingLogic(
 											shipping,
@@ -102,7 +89,7 @@ class Availability extends Component {
 
 				//this is if the stock supply is running low
 			);
-		} else if (inStock <= 10) {
+		} else if (inStock <= 10 && inStock > 0) {
 			return (
 				<div id="price" className="a-section a-spacing-small">
 					<div className="running-low-stock-banner">
