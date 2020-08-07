@@ -21,7 +21,7 @@ class App extends Component {
 				<ComparisonGrid />
 				<CImagesAll />
 				<CWBA />
-				<Appples />
+				<Appples /> 
 			</div>
 		);
 	}

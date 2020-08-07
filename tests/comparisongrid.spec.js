@@ -19,10 +19,3 @@ it("renders component correctly", () => {
     expect(getByTestId('comparisonGrid')).toHaveTextContent("Category");
 })
 
-it("matches snapshot", () => {
-    const tree = renderer.create(<ComparisonGrid/>).toJSON();
-    expect(tree).toMatchSnapshot();
-})
-
-//don't forget to update the snapshot so that tests pass
-
