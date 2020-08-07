@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Availability extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 	}
 
 	//main pricing set-up for this section is called here
