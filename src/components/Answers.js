@@ -11,9 +11,9 @@ export default class Answers extends Component {
     }
 
     state = {
-        response:[],
+        answers:[],
         allAnswers:[],
-        sortedAnswers:[]
+        sortedAnswers:[],
     }
 
     refreshAnswers = this.refreshAnswers.bind(this)
@@ -25,12 +25,17 @@ export default class Answers extends Component {
     refreshAnswers() {
         QAndADataService.retrieveAllAnswers()
         .then(
-            response => {
-                this.setState({ response: response.data })
-                console.log(response.data)
-                this.state.allAnswers = this.state.response.map((a) => a.questionid)
-                // console.log("Hello!")
-                // console.log(this.state.allAnswers)
+            answers => {
+                this.setState({ answers: answers.data })
+                console.log("1")
+                console.log(answers.data)
+                console.log("2")
+                console.log(this.state.allAnswers)
+                console.log("3")
+                console.log(this.state.answers)
+                this.state.sortedAnswers = this.state.allAnswers.map((a) => a.questionid)
+                console.log("Hello!")
+                console.log(this.state.allAnswers)
             }
         )
     }
@@ -38,11 +43,11 @@ export default class Answers extends Component {
     render() {
         return (
             <div className="Answers">
-                {this.state.response.map((a) =>
-                <div>
-                    <h4>Answer: </h4>
-                    <p>{a.answer}</p>
-                </div>
+                {this.state.answers.map((a) =>
+                    <div>
+                        <h4>Answer: </h4>
+                        <p>{a.answer}</p>
+                    </div>
                 )}  
             </div>
         )
