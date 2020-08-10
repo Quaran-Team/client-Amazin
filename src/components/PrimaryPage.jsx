@@ -14,6 +14,7 @@ class PrimaryPage extends Component {
     render(){
         return(
             <div className="app">
+
                 <Grid>
                 <Grid>
                 <Product

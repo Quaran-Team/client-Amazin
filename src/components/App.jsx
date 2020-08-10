@@ -12,6 +12,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="app">
+				                <div className="topbar">
+                <h1>Amazin App logo and top bar - search bar</h1>
+                </div>
 				<PhotoGallery />
 				<div id="PurchaseItemContainer_Placeholder">
 					place holder: replace when ready
