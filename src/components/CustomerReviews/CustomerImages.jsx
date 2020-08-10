@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import CImagesAll from '../CustomerImageCmpnt/CustomerImagesAll';
 
 class CustomerImages extends Component {
     
     render() { 
         return ( 
             <div>
-                <h3>Customer Images</h3>
-                <div><img src="http://placehold.it/150x150" /></div>
-
+                <CImagesAll />
             </div>
          );
     }
