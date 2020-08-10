@@ -7,6 +7,7 @@ import GoodStar from "./goodStar";
 import HighStar from "./highStar";
 
 import BadChartMock from "./badChartmock";
+import DynamicStar from "./dynamicStar";
 
 export default class Appples extends Component {
   render() {
@@ -39,9 +40,14 @@ export default class Appples extends Component {
             modals pop up near the bottom of the screen
           </p>
         </div>
+   
 
         <p>lorem at the end a chart below for the id click jump</p>
-        <BadChartMock />
+        
+        <div><h5>above is from hardcoded data static to client</h5>
+        <h5>below is dynamic</h5>
+        <DynamicStar/>
+        </div>
       </div>
     );
   }
