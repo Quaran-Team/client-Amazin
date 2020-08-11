@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import Axios from "axios";
+import BadStar from "../../RatingSummary/badStar";
+import LowStar from "../../RatingSummary/lowStar";
+import MidStar from "../../RatingSummary/midStar";
+import GoodStar from "../../RatingSummary/goodStar";
+import HighStar from "../../RatingSummary/highStar";
 
 class Header extends Component {
 	constructor(props) {
@@ -15,8 +20,8 @@ class Header extends Component {
 				case "#1 Best Seller":
 					return <div className="best"><div id="best-wordplacement">#1 Best Seller</div></div>;
 					break;
-				case "Amazin's Choice":
-					return <div className="choice">Amazin's Choice</div>;
+				case "Amazins Choice":
+					return <div className="choice"><div id="choice-wordplacement">Amazin's <span id="word-choice">Choice</span></div></div>;
 				//break; //<--- not needed as return will break out of switch
 				default:
 					break;
@@ -25,6 +30,23 @@ class Header extends Component {
 			return <div></div>;
 		}
 	};
+
+	determineRating = (rate) => {
+		if (rate <= 1){
+			return(<BadStar />)
+		} else if (rate <=2){
+			console.log(rate, "lowstar")
+			return(<LowStar />)
+		} else if (rate <=3){
+			console.log(rate, "midstar")
+			return(<MidStar />)
+		} else if (rate <= 4){
+			return(<GoodStar />)
+		} else if (rate <=5){
+			console.log(rate, "hightstar")
+			return(<HighStar />)
+		}
+	}
 
 	render() {
 		return (
@@ -55,13 +77,7 @@ class Header extends Component {
 								className="reviewCountTextLinkedHistogram noUnderline"
 							>
 								<span className="a-declarative">
-									{this.props.rating} &#x25BE; 
-								</span>
-								<span
-									id="arcCustomerReviewText"
-									className="a-size-base"
-								>
-									{this.props.user_ratings} ratings | 200 answered questions
+									{this.determineRating(this.props.rating)}
 								</span>
 							</span>
 						</span>
