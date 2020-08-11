@@ -7,7 +7,10 @@ class QAcomponent extends Component {
             <div className="QAcomponent">
                 <h1 id="title">Customer questions & answers</h1>
                 <ol>
-                    <QAitem/>
+                    <QAitem
+                    key={this.props.match.params.id}
+                    params={this.props.match.params.id}
+                    />
                 </ol>
             </div>
         )

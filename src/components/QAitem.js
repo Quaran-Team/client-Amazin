@@ -7,13 +7,14 @@ export default class QAitem extends Component {
 
     constructor(props) {
         super(props)
-        
+        console.log(props, "PROPS!")
     }
     
     state = {
         response:[],
         allAnswers:[],
         sortedAnswers:[],
+        itemId: null,
     }
 
     refreshQAndA = this.refreshQAndA.bind(this)
@@ -30,7 +31,7 @@ export default class QAitem extends Component {
         .then(
             response => {
                 this.setState({ response: response.data })
-                console.log(response.data)
+                // console.log(response.data)
             }
         )
     }
@@ -40,20 +41,25 @@ export default class QAitem extends Component {
         .then(
             allAnswers => {
                 this.setState({ allAnswers: allAnswers.data })
-                console.log(allAnswers.data)
+                // console.log(allAnswers.data)
             }
         )
     }
 
-    sortAnswers() {
-        console.log(this.state.allAnswers.length)
-        for(let i = 0; i < this.state.allAnswers.length; i++) {
-                if(this.state.allAnswers[i].questionid == this.state.response.id) {
-                    this.state.sortedAnswers.push(this.state.allAnswers[i])
-                } else {
-                    console.log("Nope")
-            }
-        }
+    sortAnswers = (id) => {
+        const filterArray = this.state.allAnswers.filter(answer => answer.questionid == id)
+        console.log(filterArray)
+        console.log("HERE")
+        return (
+            <div>
+                {filterArray.map(a =>
+                    <div>
+                    <h4>Answer: </h4>
+                    <p>{a.answer}</p>
+                    </div>
+                )}   
+            </div>
+        )
     }
 
     render() {
@@ -65,13 +71,7 @@ export default class QAitem extends Component {
                     <p>{q.question}</p>
                     {/* <h2><Answers key={q.id} /></h2> */}
                     <div className="Answers">
-                        {/* {this.sortAnswers()} */}
-                        {this.state.allAnswers.map((a) =>
-                            <div>
-                                <h4>Answer: </h4>
-                                <p>{a.answer}</p>
-                            </div>
-                        )}  
+                        {this.sortAnswers(q.id)}  
                     </div>
                 </div>
                 )}
