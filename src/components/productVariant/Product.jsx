@@ -9,6 +9,7 @@ import Axios from "axios";
 import AboutList from "./variant-Components/AboutList";
 import { Dropdown } from "react-bootstrap";
 import Grid from "@material-ui/core/Grid";
+import PhotoGallery from '../PhotoGallery/PhotoGallery';
 
 class Product extends Component {
 	constructor(props) {
@@ -93,6 +94,7 @@ class Product extends Component {
 			//the default options have been separated out into this function which goes through how everything is
 			//displayed after selecting default options.
 			this.optionLogic(trueSelections);
+			console.log(defaultTrueSelection)
 			//catches the id of the selection
 			this.setState({
 				options: trueSelections,
@@ -153,8 +155,6 @@ class Product extends Component {
 			});
 		}
 		if (custombtnOption.length > 0) {
-			console.log("Opt")
-			console.log(custombtnOption)
 			this.setState({
 				optionCustomBtn: custombtnOption,
 			});
@@ -164,7 +164,7 @@ class Product extends Component {
 	dropdownOption = () => {
 		if (this.state.optionDropdown.length > 0) {
 			return (
-				<Dropdown>
+				<Dropdown id="dropdown-container">
 					<Dropdown.Toggle variant="success" id="dropdown-basic">
 						{this.state.optionDropdown[0].type_title}
 					</Dropdown.Toggle>
@@ -188,14 +188,14 @@ class Product extends Component {
 		if (this.state.optionCustomBtn.length > 0) {
 			return (
 				<div>
-					<div className="heading">{this.state.optionCustomBtn[0].type_title}:</div>
+					<div className="heading" id="custbtn-container">{this.state.optionCustomBtn[0].type_title}:</div>
 					{this.state.optionCustomBtn.map((option) => (
 						<div
 							className="small-div-btn"
 							onClick={() => this.changeOption(option.id)}
 						>
 							{" "}
-							<button>{option.selector_text} </button>{" "}
+							<button id="custbtn-btn">{option.selector_text} </button>{" "}
 						</div>
 					))}
 				</div>
@@ -207,7 +207,7 @@ class Product extends Component {
 		if (this.state.optionImage.length > 0) {
 			return (
 				<div>
-					<div className="heading">{this.state.optionImage[0].type_title}:</div>
+					<div className="heading image-container">{this.state.optionImage[0].type_title}:</div>
 					{this.state.optionImage.map((option) => (
 						<div className="small-div-btn">
 							<div className="heading">{option.selector_text}</div>{" "}
@@ -252,76 +252,80 @@ class Product extends Component {
 	render() {
 		return (
 			<div>
-				<Grid item xs={7} className="productVariant-grid">
-			<div className="productVariant">
-				<Header
-					// key = {this.state.prodID}
-					prodID={this.state.prodID}
-					seller={this.state.seller}
-					user_ratings={this.state.user_rating}
-					tag={this.state.tag}
-					tag_title={this.state.tag_title}
-					rating={this.state.rating}
-					similar_item={this.state.similar_item}
-					category={this.state.category}
-					category_link={this.state.category_link}
-					selection={this.state.selection}
-					title={this.state.title}
-				/>
-				<hr id="separator" />
-				<Availability
-					// key = { this.state.selection}
-					id={this.state.selection}
-					price={this.state.price}
-					discount={this.state.discount}
-					list_price={this.state.list_price}
-					shipping={this.state.shipping}
-					ship_price={this.state.ship_price}
-					message={this.state.message}
-					banner={this.state.banner}
-					shipping_message={this.state.shipping_message}
-					lowstock_message={this.state.lowstock_message}
-					inStock={this.state.inStock}
-				/>
-
-				<div className="options">
-					<div className="container dropmenu">
-						{this.dropdownOption()}
-					</div>
-					<div className="container image">
-						{this.imageOption()}
-					</div>
-					<div className="container custom">
-						{this.custombtnOption()}
-					</div>
-				</div>
-
-				<Details
-					// key= { this.state.selection }
-					id={ this.state.selection }
-
-				/>
-
-				<hr id="separator" />
-				<AboutList
-					// key = { this.state.id }
-					about_item={this.state.about_item}
-				/>
-
-				<Sponsored
-					id={this.state.prodID}
-					category={this.state.category}
-					category_link={this.state.category_link}
-					similar_item = {this.state.similar_item}
-				/>
-
-				<hr id="separator" />
-				{/* <Ratings /> */}
-			</div>
-			</Grid>
-			<Grid item xs={5} className="addcart-grid">
-                    <div id="addcart-component"></div>
+				<Grid item xs={6} className="mainpage-grid photogallery-grid" id="photogallery-grid">
+                    <PhotoGallery 
+						selection = {this.state.selection}
+					/>
                 </Grid>
+				<Grid item xs={6} className="mainpage-grid productvariant-grid" id="productvariant-grid">
+					<Grid item xs={7} className="productVariant-grid">
+						<div className="productVariant">
+							<Header
+								prodID={this.state.prodID}
+								seller={this.state.seller}
+								user_ratings={this.state.user_rating}
+								tag={this.state.tag}
+								tag_title={this.state.tag_title}
+								rating={this.state.rating}
+								similar_item={this.state.similar_item}
+								category={this.state.category}
+								category_link={this.state.category_link}
+								selection={this.state.selection}
+								title={this.state.title}
+							/>
+						<hr id="separator" />
+							<Availability
+								id={this.state.selection}
+								price={this.state.price}
+								discount={this.state.discount}
+								list_price={this.state.list_price}
+								shipping={this.state.shipping}
+								ship_price={this.state.ship_price}
+								message={this.state.message}
+								banner={this.state.banner}
+								shipping_message={this.state.shipping_message}
+								lowstock_message={this.state.lowstock_message}
+								inStock={this.state.inStock}
+							/>
+							<div className="options">
+								<div className="container dropmenu">
+									{this.dropdownOption()}
+								</div>
+								<div className="container image">
+									{this.imageOption()}
+								</div>
+								<div className="container custom">
+									{this.custombtnOption()}
+								</div>
+							</div>
+
+							<Details
+								id={ this.state.selection }
+							/>
+
+							<hr id="separator" />
+							<AboutList
+								// key = { this.state.id }
+								about_item={this.state.about_item}
+							/>
+
+							<Sponsored
+								id={this.state.prodID}
+								category={this.state.category}
+								category_link={this.state.category_link}
+								similar_item = {this.state.similar_item}
+							/>
+
+							<hr id="separator" />
+							<Ratings 
+								id = {this.props.params}
+							/>
+						</div>
+					</Grid>
+					<Grid item xs={5} className="addcart-grid">
+                    	<div id="addcart-component"></div>
+                	</Grid>
+				</Grid>
 			</div>
 		);
 	}

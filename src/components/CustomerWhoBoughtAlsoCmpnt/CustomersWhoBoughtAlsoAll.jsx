@@ -32,13 +32,13 @@ class CWBA extends Component {
         window.removeEventListener('resize', this._handleWindowResize);
     }
 
-	_handleWindowResize () {
-		// if (this._isMounted) {
-			this.setState({
-				containerWidth: ReactDOM.findDOMNode(this._containerTarget).offsetWidth
-			});
-		// }
-	}
+    _handleWindowResize () {
+        // if (this._isMounted) {
+            this.setState({
+                containerWidth: ReactDOM.findDOMNode(this._containerTarget).offsetWidth
+            });
+        // }
+    }
 
     _truncateItems (items) {
         var containerWidth = this.state.containerWidth;
@@ -47,7 +47,7 @@ class CWBA extends Component {
         return truncatedItems;
       }
 
-      _pageOf(items){
+    _pageOf(items){
         var containerWidth = this.state.containerWidth;
         var maxItemsToShow = Math.floor(containerWidth / 173);
         var numberOfRemainingItems = Math.ceil(items.length / (maxItemsToShow ));
@@ -62,11 +62,11 @@ class CWBA extends Component {
       
 
     refreshCourses() { //retrieve data currently set to one id. not dynamic
-        CustomerWhoBoughtAlsoDataService.retrieveAllCustomerWhoBoughtAlsos()
+        CustomerWhoBoughtAlsoDataService.retrieveCustomerWhoBoughtAlso(1)
             .then(
                 response => {
-                    this.setState({ itemId: response.data[0].id,
-                                    otherIdArray: response.data[0].otherIds.split(",")
+                    this.setState({ itemId: response.data.id,
+                                    otherIdArray: response.data.otherIds.split(",")
                     })
                 }
             )}
