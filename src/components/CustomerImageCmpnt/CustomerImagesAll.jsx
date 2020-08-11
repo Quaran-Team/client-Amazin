@@ -15,12 +15,13 @@ class CImagesAll extends Component {
     componentDidMount() {
         this.refreshCourses();
     }
-    refreshCourses() { //retrieve data currently set to one id. not dynamic
-        CustomerImageDataService.retrieveAllCustomerImages()
+    
+    refreshCourses() { 
+        CustomerImageDataService.retrieveCustomerImage(1)
             .then(
                 response => {
-                    this.setState({ itemId: response.data[0].id,
-                                    imageArray: response.data[0].imageLinks.split(',')
+                    this.setState({ itemId: response.data.id,
+                                    imageArray: response.data.imageLinks.split(',')
                     })
                 }
             )}
