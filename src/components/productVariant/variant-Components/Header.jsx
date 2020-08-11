@@ -13,7 +13,7 @@ class Header extends Component {
 		if (tag === true) {
 			switch (tag_title) {
 				case "#1 Best Seller":
-					return <div className="best">#1 Best Seller</div>;
+					return <div className="best"><div id="best-wordplacement">#1 Best Seller</div></div>;
 					break;
 				case "Amazin's Choice":
 					return <div className="choice">Amazin's Choice</div>;
@@ -30,21 +30,19 @@ class Header extends Component {
 		return (
 			<div>
 				<div id="titleSection" className="a-section a-spacing-none">
-					<h1 id="title" className="a-size-large a-spacing-none">
+					<h2 id="title" className="a-size-large a-spacing-none">
 						<span
 							id="productTitle"
 							className="a-size-large product-title-word-break"
 						>
 							{this.props.title}
 						</span>
-					</h1>
+					</h2>
 				</div>
 				<div id="bylineInfo_feature_div" className="celwidget">
 					<div className="a-section a-spacing-none">by</div>
-					<a id="bylineInfo" className="a-link-normal" href="*">
 						{" "}
 						{this.props.seller}
-					</a>
 				</div>
 				<div
 					id="averageCustomerReviews_feature_div"

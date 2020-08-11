@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import GoodChartMock from '../RatingSummary/goodChartmock';
+import "./CustomerReviews.css" 
+
 
 class StarRating extends Component {
 
@@ -6,9 +9,8 @@ class StarRating extends Component {
     render() { 
         return ( 
             <div>
-                <h3>Star Ratings</h3>
-                <br />
-                <br />
+                <GoodChartMock/>
+                
             </div>
          );
     }
