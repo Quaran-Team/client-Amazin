@@ -94,6 +94,7 @@ class Product extends Component {
 			//the default options have been separated out into this function which goes through how everything is
 			//displayed after selecting default options.
 			this.optionLogic(trueSelections);
+			console.log(defaultTrueSelection)
 			//catches the id of the selection
 			this.setState({
 				options: trueSelections,
@@ -163,7 +164,7 @@ class Product extends Component {
 	dropdownOption = () => {
 		if (this.state.optionDropdown.length > 0) {
 			return (
-				<Dropdown>
+				<Dropdown id="dropdown-container">
 					<Dropdown.Toggle variant="success" id="dropdown-basic">
 						{this.state.optionDropdown[0].type_title}
 					</Dropdown.Toggle>
@@ -187,14 +188,14 @@ class Product extends Component {
 		if (this.state.optionCustomBtn.length > 0) {
 			return (
 				<div>
-					<div className="heading">{this.state.optionCustomBtn[0].type_title}:</div>
+					<div className="heading" id="custbtn-container">{this.state.optionCustomBtn[0].type_title}:</div>
 					{this.state.optionCustomBtn.map((option) => (
 						<div
 							className="small-div-btn"
 							onClick={() => this.changeOption(option.id)}
 						>
 							{" "}
-							<button>{option.selector_text} </button>{" "}
+							<button id="custbtn-btn">{option.selector_text} </button>{" "}
 						</div>
 					))}
 				</div>
@@ -206,7 +207,7 @@ class Product extends Component {
 		if (this.state.optionImage.length > 0) {
 			return (
 				<div>
-					<div className="heading">{this.state.optionImage[0].type_title}:</div>
+					<div className="heading image-container">{this.state.optionImage[0].type_title}:</div>
 					{this.state.optionImage.map((option) => (
 						<div className="small-div-btn">
 							<div className="heading">{option.selector_text}</div>{" "}
@@ -253,7 +254,7 @@ class Product extends Component {
 			<div>
 				<Grid item xs={6} className="mainpage-grid photogallery-grid" id="photogallery-grid">
                     <PhotoGallery 
-						selection = { this.state.selection }
+						selection = {this.state.selection}
 					/>
                 </Grid>
 				<Grid item xs={6} className="mainpage-grid productvariant-grid" id="productvariant-grid">
@@ -286,7 +287,6 @@ class Product extends Component {
 								lowstock_message={this.state.lowstock_message}
 								inStock={this.state.inStock}
 							/>
-
 							<div className="options">
 								<div className="container dropmenu">
 									{this.dropdownOption()}
@@ -317,7 +317,9 @@ class Product extends Component {
 							/>
 
 							<hr id="separator" />
-							{/* <Ratings /> */}
+							<Ratings 
+								id = {this.props.params}
+							/>
 						</div>
 					</Grid>
 					<Grid item xs={5} className="addcart-grid">
