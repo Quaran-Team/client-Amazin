@@ -3,8 +3,9 @@
   display: inline-flex;
   color: aliceblue;
   width: 100%;
-  align-content: space-between;
   align-items: center;
+  align-content: center;
+  
 }
 
 .paddinnn{
@@ -31,9 +32,15 @@
 .returns,
 .prime{
     color:aliceblue;
-    margin:0 30px 0;
+    display: inline-flex;
 }
 
+.flag,
+.menu{
+    padding:5px;
+    margin:15px;
+    border: 1px solid black;
+}
 
 
 .notafingah,
@@ -44,6 +51,8 @@
     padding:5px;
 }
 
+.menu:hover,
+.flag:hover,
 .notafingah:hover{
     cursor:pointer;
     border: 1px solid white;
@@ -51,13 +60,38 @@
     
 }
 
+.pickyflag,
+.pickyflag:hover{
+    text-decoration: none;
+}
 
 .barattop{
     height:33px;
     align-items: center;
-    width:400px;
+    width:40vw;
 }
 
 #magnifyglass{
     background-color: orange;
+}
+
+
+
+.topbarflag{
+    height: 20px;
+}
+
+.topflagspacer{
+    padding:5px;
+    color:aliceblue;
+}
+
+
+.hamburger{
+    height:30px;
+}
+
+
+.buggyPic{
+    height:30px;
 }

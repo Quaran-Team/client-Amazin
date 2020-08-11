@@ -8,11 +8,13 @@ import Prime from "./Prime";
 import Cart from "./Cart";
 
 import './topbar.css';
+import Menu from "./Menu";
 
 export default class TopBar extends Component {
   render() {
     return (
       <div className="topbar">
+        <Menu/>
         <Logo/>
         <SearchBar/>
         <Flag/>
