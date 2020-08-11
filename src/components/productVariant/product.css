@@ -17,6 +17,15 @@
 }
 
 /* Header Component */
+
+.a-spacing-none {
+    color: black;
+}
+
+#bylineInfo_feature_div {
+    color:rgb(0,102,200);
+}
+
 #ad-feedback-sprite-hero-quick-promo{
     display: inline-block; 
     vertical-align: top; 
@@ -26,7 +35,7 @@
     background: url("https://images-na.ssl-images-amazon.com/images/G/01/ad-feedback/info_icon_1Xsprite._CB431021510_.png") 0px 0px no-repeat scroll transparent }
 
 .best {
-    width: 100px;
+    width: 80px;
     height: 0;
     margin: 3px auto;
     border-top: 10px solid rgb(228,121,17);
@@ -37,31 +46,95 @@
     border-top-left-radius: 5px;
     float: left;
 }
+
+.choice {
+    float: left;
+    width: 95px;
+    color: white;
+    padding: 3px;
+    border-top: 20px solid black;
+    border-right: 20px solid transparent;
+    text-align: center;
+}
+#word-choice {
+    color: rgb(228,121,17);
+}
+
 #best-wordplacement {
     margin-top: -8px;
     color: white;
 }
-
-.a-declarative {
-    margin-right: 5px;
+#choice-wordplacement {
+    margin-top: -22px;
 }
 
 
+/* Availability Component */
+
+.availability{
+    font-size: 14px;
+}
+.maple-banner__text{
+    margin-top: 3px;
+    color:rgb(0,102,200);
+    cursor: pointer;
+}
+
+.a-lineitem {
+    display: flex;
+}
+
+.a-col{
+    width: 100px;
+    padding:3px;
+    justify-content: start;
+    align-items: flex-start;
+}
+
 /* Option Section (in the function for rendering images in options) -NOT A COMPONENT */
+
+.options {
+    width: 300px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
 .small-div-btn {
     float: left;
     font-size: 10px;
     padding:2px;
     margin: 3px;
     border-radius: 5%;
-    border: 2px solid gray;
+    border: 1px solid gray;
 }
 #image-option-variant {
     max-width: 70px;
+    cursor: pointer;
+}
+#custbtn-btn {
+    width: 70px;
+    border: none;
 }
 
+/* Detail Component */
+
+.detail-table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* About-List Component */
+
+.about-list-container {
+    font-size: 14px;
+    line-height: 20px;
+}
+.list-about-items {
+    margin-top: 7px;
+}
 
 /* Sponsored Component */
+
 #hero-quick-promo{
     width:100%;
     overflow: hidden;
@@ -78,4 +151,48 @@
 #sponsered-logo{
     font-size: 10px;
     color: gray;
+}
+
+/* Ratings */
+
+.star-rating-table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #fff;
+    font-weight: bolder;
+  }
+    
+  .star-rating-table th, 
+  .star-rating-table td {
+    padding: 10px 30px;
+  }
+    
+  .star-rating-table th {
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  .stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+  color: #b3940b;
+}
+
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
 }
