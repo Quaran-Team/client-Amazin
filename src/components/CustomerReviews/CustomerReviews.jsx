@@ -6,15 +6,17 @@ import StarRating from "./StarRating";
 import Grid from "@material-ui/core/Grid";
 import CustomerReviewsDataService from "../../service/CustomerReviewsDataService";
 import GoodChartMock from '../RatingSummary/goodChartmock';
+import Ratings from "../productVariant/variant-Components/Ratings";
 
 class CustomerReviews extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			response: null,
-		};
 		this.refreshCustomerReviews = this.refreshCustomerReviews.bind(this);
-	}
+    }
+    
+    state={
+        review: []
+    }
 
 	componentDidMount() {
 		this.refreshCustomerReviews();
@@ -24,8 +26,18 @@ class CustomerReviews extends Component {
         CustomerReviewsDataService.retrieveAllCustomerReviews()
         .then(
             response => {
-                this.setState({ response: response.data })
+                this.setState({ review: response.data })
+
             }
+        )
+    }
+
+    mapping = () => {
+        console.log(this.state.review)
+        return(
+            <div>
+            {this.state.review.map( resp => <div><ReviewMentions id={resp.id} rate={resp.rating} body={resp.reviewBody} title={resp.reviewTitle} tag={resp.reviewTag} name={resp.reviewer}/></div>)}
+            </div>
         )
     }
     
@@ -33,9 +45,13 @@ class CustomerReviews extends Component {
         return ( 
             <div>
                 <h1> Customer Reviews</h1>
+                
                 <Grid container justify="flex-start" alignItems="flex-start" id="left-grid">
                     <Grid item sm={4}>
                         <div><GoodChartMock/></div>
+                        
+                        <div id="review-feature"> <hr/> <h3><strong>By feature</strong></h3><Ratings id={this.props.params} /></div>
+                        <a>See more</a><hr/>
                           
                         <div className="review-product"><ReviewProduct /></div>
                     </Grid>
@@ -43,9 +59,11 @@ class CustomerReviews extends Component {
                     <Grid item sm id="right-grid">
                         <div><CustomerImages /></div> 
                         <br />
-                        <div><ReviewMentions /></div>
+                        {this.mapping()}
+                       {/* {this.state.review.map( <div><ReviewMentions id={resp.id} rate={resp.rating} body={resp.reviewBody} title={resp.reviewTitle} tag={resp.reviewTag} name={resp.reviewer}/></div>)} */}
                     </Grid>
                 </Grid>
+            
             </div>
          );
     }
