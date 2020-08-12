@@ -8,7 +8,7 @@ class CWBAIndividual extends Component {
         return(
             <div className="individualCWBA">
                 <img src="" 
-                    // alt="test"
+
                     style={{
                         height: "153px", 
                         width: "153px", 
