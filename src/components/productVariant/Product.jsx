@@ -9,7 +9,7 @@ import Axios from "axios";
 import AboutList from "./variant-Components/AboutList";
 import { Dropdown } from "react-bootstrap";
 import Grid from "@material-ui/core/Grid";
-import PhotoGallery from "../PhotoGallery/PhotoGallery";
+//import PhotoGallery from "../PhotoGallery/PhotoGallery";
 
 class Product extends Component {
 	constructor(props) {
@@ -259,20 +259,7 @@ class Product extends Component {
 	render() {
 		return (
 			<div>
-				<Grid
-					item
-					xs={6}
-					className="mainpage-grid photogallery-grid"
-					id="photogallery-grid"
-				>
-					<PhotoGallery selection={this.state.selection} />
-				</Grid>
-				<Grid
-					item
-					xs={6}
-					className="mainpage-grid productvariant-grid"
-					id="productvariant-grid"
-				>
+				<Grid item xs={12}>
 					<Grid item xs={7} className="productVariant-grid">
 						<div className="productVariant">
 							<Header
