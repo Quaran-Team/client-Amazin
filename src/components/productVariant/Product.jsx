@@ -14,9 +14,13 @@ import PhotoGallery from '../PhotoGallery/PhotoGallery';
 class Product extends Component {
 	constructor(props) {
 		super(props);
+		this.myRef = React.createRef()
+		console.log(this.myRef)
 	}
 
 	state = {
+		dropmenu: 'drop',
+		menuitem: 'top',
 		prodID: "",
 		seller: "",
 		user_rating: "",
@@ -51,8 +55,6 @@ class Product extends Component {
 	};
 
 	componentDidMount() {
-		const height = document.getElementById('productvariant-grid').getBoundingClientRect().top;
-		this.setState({ height: height});
 		this.loadItem(this.props.params);
 	}
 
@@ -97,7 +99,6 @@ class Product extends Component {
 			//the default options have been separated out into this function which goes through how everything is
 			//displayed after selecting default options.
 			this.optionLogic(trueSelections);
-			console.log(defaultTrueSelection)
 			//catches the id of the selection
 			this.setState({
 				options: trueSelections,
@@ -139,7 +140,6 @@ class Product extends Component {
 					imageOption.push(option);
 					break;
 				case 3:
-					// console.log(option)
 					custombtnOption.push(option);
 					break;
 				default:
@@ -253,13 +253,15 @@ class Product extends Component {
 	};
 
 
-
 	render() {
+
 		return (
-			<div>
+			<div className="top-page">
+
 				<Grid item xs={6} className="mainpage-grid photogallery-grid" id="photogallery-grid">
 					<div className="photo-comp-grid">
-                    	<PhotoGallery className="photo-component"
+						<PhotoGallery className="photo-component"
+							prodID = {this.props.params}
 							selection = {this.state.selection}
 						/>
 					</div>
@@ -280,6 +282,7 @@ class Product extends Component {
 								selection={this.state.selection}
 								title={this.state.title}
 							/>
+							<br/>
 						<hr id="separator" />
 							<Availability
 								id={this.state.selection}
@@ -305,14 +308,13 @@ class Product extends Component {
 									{this.custombtnOption()}
 								</div>
 							</div>
-
+							<br/>
 							<Details
 								id={ this.state.selection }
 							/>
-
+							<br/>
 							<hr id="separator" />
 							<AboutList
-								// key = { this.state.id }
 								about_item={this.state.about_item}
 							/>
 
@@ -326,6 +328,7 @@ class Product extends Component {
 							<hr id="separator" />
 							<h3><strong>Customer ratings by feature</strong></h3>
 							<Ratings 
+								key = {this.props.params}
 								id = {this.props.params}
 							/>
 						</div>

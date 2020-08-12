@@ -8,6 +8,7 @@ import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import Grid from "@material-ui/core/Grid";
 import './primarypage.css'
+import Manufacturer from './Manufacturer/Manufacturer'
 
 class PrimaryPage extends Component {
 
@@ -15,13 +16,17 @@ class PrimaryPage extends Component {
         return(
             <div className="app">
                 <Grid>
-                <Grid>
-                <Product
-                    key={this.props.match.params.id}
-                    params={this.props.match.params.id}
-                />  
-                <br/>
-                </Grid>
+                        <Grid>
+                            <Product
+                            key={this.props.match.params.id}
+                            params={this.props.match.params.id}
+                            />  
+                        </Grid>
+                        <br/>
+                        <br/>
+                        <Grid>
+                            {/* <Manufacturer /> */}
+                        </Grid>
                 <Grid>
 				    <ComparisonGrid 
                     key={this.props.match.params.id}
