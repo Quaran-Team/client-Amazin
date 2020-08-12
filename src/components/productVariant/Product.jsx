@@ -47,9 +47,12 @@ class Product extends Component {
 		type_title: "",
 		type: [],
 		selection: 0,
+		height: 0
 	};
 
 	componentDidMount() {
+		const height = document.getElementById('productvariant-grid').getBoundingClientRect().top;
+		this.setState({ height: height});
 		this.loadItem(this.props.params);
 	}
 
@@ -94,7 +97,6 @@ class Product extends Component {
 			//the default options have been separated out into this function which goes through how everything is
 			//displayed after selecting default options.
 			this.optionLogic(trueSelections);
-			console.log(defaultTrueSelection)
 			//catches the id of the selection
 			this.setState({
 				options: trueSelections,
@@ -249,13 +251,17 @@ class Product extends Component {
 		});
 	};
 
+
+
 	render() {
 		return (
 			<div>
 				<Grid item xs={6} className="mainpage-grid photogallery-grid" id="photogallery-grid">
-                    <PhotoGallery 
-						selection = {this.state.selection}
-					/>
+					<div className="photo-comp-grid">
+                    	<PhotoGallery className="photo-component"
+							selection = {this.state.selection}
+						/>
+					</div>
                 </Grid>
 				<Grid item xs={6} className="mainpage-grid productvariant-grid" id="productvariant-grid">
 					<Grid item xs={7} className="productVariant-grid">
@@ -317,10 +323,13 @@ class Product extends Component {
 							/>
 
 							<hr id="separator" />
+							<h3><strong>Customer ratings by feature</strong></h3>
 							<Ratings 
 								id = {this.props.params}
 							/>
+							<a>See all reviews</a>
 						</div>
+						<hr/>
 					</Grid>
 					<Grid item xs={5} className="addcart-grid">
                     	<div id="addcart-component"></div>
