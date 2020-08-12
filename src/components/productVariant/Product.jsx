@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import Header from "./variant-Components/Header";
 import Availability from "./variant-Components/Availability.jsx";
-import Options from "./variant-Components/Options.jsx";
-import Sponsered from "./variant-Components/Sponsered.jsx";
+import Details from "./variant-Components/Details.jsx";
+import Sponsored from "./variant-Components/Sponsored.jsx";
 import "./product.css";
 import Ratings from "./variant-Components/Ratings";
 import Axios from "axios";
-// import { ListItemSecondaryAction } from '@material-ui/core';
 import AboutList from "./variant-Components/AboutList";
-// import Items from './dataTest/productTable.json'
+import { Dropdown } from "react-bootstrap";
+import Grid from "@material-ui/core/Grid";
+import PhotoGallery from "../PhotoGallery/PhotoGallery";
 
 class Product extends Component {
+	constructor(props) {
+		super(props);
+	}
+
 	state = {
 		prodID: "",
 		seller: "",
@@ -21,6 +26,9 @@ class Product extends Component {
 		rating: "",
 		category: "",
 		category_link: "",
+		optionDropdown: [],
+		optionImage: [],
+		optionCustomBtn: [],
 		title: "",
 		about_item: "",
 		discount: "",
@@ -36,21 +44,20 @@ class Product extends Component {
 		shipping_message: "",
 		banner: "",
 		lowstock_message: "",
+		type_title: "",
+		type: [],
 		selection: 0,
 	};
 
 	componentDidMount() {
-		const {
-			match: { params },
-		} = this.props;
-		this.loadItem();
+		this.loadItem(this.props.params);
 	}
 
-	loadItem = () => {
+	loadItem = (params) => {
 		//calls the product by id
 		Axios({
 			method: "GET",
-			url: `http://localhost:8080/variant/product/${this.props.match.params.id}`,
+			url: `http://localhost:8080/variant/product/${params}`,
 		}).then((res) => {
 			//all the properties of the product are saved in state - these do not change upon selection.
 			this.setState({
@@ -74,7 +81,7 @@ class Product extends Component {
 		//this pulls all the selections in
 		Axios({
 			method: "GET",
-			url: `http://localhost:8080/variant/selector`,
+			url: `http://localhost:8080/variant/selector/`,
 		}).then((res) => {
 			//filters out the selections based on the product
 			const trueSelections = res.data.filter(
@@ -82,11 +89,15 @@ class Product extends Component {
 			);
 			//filters out the selection to the default selection of the product
 			const defaultTrueSelection = trueSelections.filter(
-				(defaulting) => defaulting.default === true
+				(defaulting) => defaulting.isdefault === true
 			);
+			//the default options have been separated out into this function which goes through how everything is
+			//displayed after selecting default options.
+			this.optionLogic(trueSelections);
+			console.log(defaultTrueSelection);
 			//catches the id of the selection
-			console.log(defaultTrueSelection[0]);
 			this.setState({
+				options: trueSelections,
 				selection: defaultTrueSelection[0].id,
 				title: defaultTrueSelection[0].title,
 				about_item: defaultTrueSelection[0].about_item,
@@ -97,82 +108,235 @@ class Product extends Component {
 				type_selector: defaultTrueSelection[0].type_selector,
 				selector_img: defaultTrueSelection[0].selector_img,
 				selector_text: defaultTrueSelection[0].selector_text,
-				inStock: defaultTrueSelection[0].inStock,
+				inStock: defaultTrueSelection[0].instock,
 				message: defaultTrueSelection[0].message,
 				price: defaultTrueSelection[0].price,
 				lowstock_message: defaultTrueSelection[0].lowstock_message,
 				shipping_message: defaultTrueSelection[0].shipping_message,
-				banner: defaultTrueSelection[0].banner,
+				type_title: defaultTrueSelection[0].type_title,
 			});
 		});
 	};
 
-	//Once upon a time in a far, far away galaxy... I had all the calls in the same file. And then set state became finicky and would only pass half the info
-	// loadDetails = () => {
-	//     //calls the all of the details
-	//     Axios({
-	//         method: 'GET',
-	//         url: `http://localhost:8080/variant/detail`
-	//     }).then (res => {
-	//         //filters the details based on the selection
-	//         const details = res.data.filter( detail => detail.selectorID === this.state.selection )
-	//         this.setState({
-	//             details : details
-	//         })
-	//     })
-	// }
+	optionLogic = (options) => {
+		//function global variables initialized
+		let dropdownOption = [];
+		let imageOption = [];
+		let custombtnOption = [];
+
+		//this goes through the options and sorts them based on the type.
+		//in the future this would be more useful if there were multiple options available ie. images and dropdown selections
+		options.map((option) => {
+			switch (option.type_selector) {
+				case 1:
+					dropdownOption.push(option);
+					break;
+				case 2:
+					imageOption.push(option);
+					break;
+				case 3:
+					// console.log(option)
+					custombtnOption.push(option);
+					break;
+				default:
+					console.log("No options found");
+			}
+		});
+
+		if (dropdownOption.length > 0) {
+			this.setState({
+				optionDropdown: dropdownOption,
+			});
+		}
+		if (imageOption.length > 0) {
+			this.setState({
+				optionImage: imageOption,
+			});
+		}
+		if (custombtnOption.length > 0) {
+			this.setState({
+				optionCustomBtn: custombtnOption,
+			});
+		}
+	};
+
+	dropdownOption = () => {
+		if (this.state.optionDropdown.length > 0) {
+			return (
+				<Dropdown id="dropdown-container">
+					<Dropdown.Toggle variant="success" id="dropdown-basic">
+						{this.state.optionDropdown[0].type_title}
+					</Dropdown.Toggle>
+					<Dropdown.Menu>
+						{this.state.optionDropdown.map((option) => (
+							<Dropdown.Item
+								key={option.id}
+								id={option.id}
+								onClick={() => this.changeOption(option.id)}
+							>
+								<div>{option.selector_text}</div>
+							</Dropdown.Item>
+						))}
+					</Dropdown.Menu>
+				</Dropdown>
+			);
+		}
+	};
+
+	custombtnOption = () => {
+		if (this.state.optionCustomBtn.length > 0) {
+			return (
+				<div>
+					<div className="heading" id="custbtn-container">
+						{this.state.optionCustomBtn[0].type_title}:
+					</div>
+					{this.state.optionCustomBtn.map((option) => (
+						<div
+							className="small-div-btn"
+							onClick={() => this.changeOption(option.id)}
+						>
+							{" "}
+							<button id="custbtn-btn">
+								{option.selector_text}{" "}
+							</button>{" "}
+						</div>
+					))}
+				</div>
+			);
+		}
+	};
+
+	imageOption = () => {
+		if (this.state.optionImage.length > 0) {
+			return (
+				<div>
+					<div className="heading image-container">
+						{this.state.optionImage[0].type_title}:
+					</div>
+					{this.state.optionImage.map((option) => (
+						<div className="small-div-btn">
+							<div className="heading">
+								{option.selector_text}
+							</div>{" "}
+							<img
+								id="image-option-variant"
+								src={option.selector_img}
+								alt={option.selector_text}
+								onClick={() => this.changeOption(option.id)}
+							/>{" "}
+						</div>
+					))}
+				</div>
+			);
+		}
+	};
+
+	changeOption = (newID) => {
+		this.state.options.map((userpick) => {
+			if (userpick.id == newID) {
+				this.setState({
+					selection: userpick.id,
+					title: userpick.title,
+					about_item: userpick.about_item,
+					discount: userpick.discount,
+					list_price: userpick.list_price,
+					shipping: userpick.shipping,
+					ship_price: userpick.ship_price,
+					type_selector: userpick.type_selector,
+					selector_img: userpick.selector_img,
+					selector_text: userpick.selector_text,
+					inStock: userpick.inStock,
+					message: userpick.message,
+					price: userpick.price,
+					lowstock_message: userpick.lowstock_message,
+					shipping_message: userpick.shipping_message,
+					type_title: userpick.type_title,
+				});
+			}
+		});
+	};
 
 	render() {
 		return (
-			<div className="productVariant">
-				<Header
-					key={this.state.prodID}
-					prodID={this.state.prodID}
-					seller={this.state.seller}
-					user_ratings={this.state.user_rating}
-					tag={this.state.tag}
-					tag_title={this.state.tag_title}
-					rating={this.state.rating}
-					similar_item={this.state.similar_item}
-					category={this.state.category}
-					category_link={this.state.category_link}
-					selection={this.state.selection}
-					title={this.state.title}
-				/>
-				<hr id="separator" />
-				<Availability
-					key={this.state.selection}
-					id={this.state.selection}
-					price={this.state.price}
-					discount={this.state.discount}
-					list_price={this.state.list_price}
-					shipping={this.state.shipping}
-					ship_price={this.state.ship_price}
-					message={this.state.message}
-					banner={this.state.banner}
-					shipping_message={this.state.shipping_message}
-					lowstock_message={this.state.lowstock_message}
-					inStock={this.state.inStock}
-				/>
-				<Options
-					// key= { this.state.selection }
-					id={this.state.selection}
-				/>
+			<div>
+				<Grid
+					item
+					xs={6}
+					className="mainpage-grid photogallery-grid"
+					id="photogallery-grid"
+				>
+					<PhotoGallery selection={this.state.selection} />
+				</Grid>
+				<Grid
+					item
+					xs={6}
+					className="mainpage-grid productvariant-grid"
+					id="productvariant-grid"
+				>
+					<Grid item xs={7} className="productVariant-grid">
+						<div className="productVariant">
+							<Header
+								prodID={this.state.prodID}
+								seller={this.state.seller}
+								user_ratings={this.state.user_rating}
+								tag={this.state.tag}
+								tag_title={this.state.tag_title}
+								rating={this.state.rating}
+								similar_item={this.state.similar_item}
+								category={this.state.category}
+								category_link={this.state.category_link}
+								selection={this.state.selection}
+								title={this.state.title}
+							/>
+							<hr id="separator" />
+							<Availability
+								id={this.state.selection}
+								price={this.state.price}
+								discount={this.state.discount}
+								list_price={this.state.list_price}
+								shipping={this.state.shipping}
+								ship_price={this.state.ship_price}
+								message={this.state.message}
+								banner={this.state.banner}
+								shipping_message={this.state.shipping_message}
+								lowstock_message={this.state.lowstock_message}
+								inStock={this.state.inStock}
+							/>
+							<div className="options">
+								<div className="container dropmenu">
+									{this.dropdownOption()}
+								</div>
+								<div className="container image">
+									{this.imageOption()}
+								</div>
+								<div className="container custom">
+									{this.custombtnOption()}
+								</div>
+							</div>
 
-				<hr id="separator" />
-				<AboutList
-					key={this.state.id}
-					about_item={this.state.about_item}
-				/>
+							<Details id={this.state.selection} />
 
-				<Sponsered
-					id={this.state.prodID}
-					category={this.state.category}
-					category_link={this.state.category_link}
-				/>
+							<hr id="separator" />
+							<AboutList
+								// key = { this.state.id }
+								about_item={this.state.about_item}
+							/>
 
-				<hr id="separator" />
-				{/* <Ratings /> */}
+							<Sponsored
+								id={this.state.prodID}
+								category={this.state.category}
+								category_link={this.state.category_link}
+								similar_item={this.state.similar_item}
+							/>
+
+							<hr id="separator" />
+							<Ratings id={this.props.params} />
+						</div>
+					</Grid>
+					<Grid item xs={5} className="addcart-grid">
+						<div id="addcart-component"></div>
+					</Grid>
+				</Grid>
 			</div>
 		);
 	}
