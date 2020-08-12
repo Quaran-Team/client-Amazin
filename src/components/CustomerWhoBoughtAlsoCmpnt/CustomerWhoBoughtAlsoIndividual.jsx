@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import  './CWBA.css';
+import GoodStar from "../RatingSummary/goodStar";
 class CWBAIndividual extends Component {
 
 
@@ -7,7 +8,6 @@ class CWBAIndividual extends Component {
         return(
             <div className="individualCWBA">
                 <img src="" 
-                    // alt="test"
                     style={{
                         height: "153px", 
                         width: "153px", 
@@ -20,7 +20,7 @@ class CWBAIndividual extends Component {
                     </a>
                 </div>
                 <div className="starSection">
-                    Stars***** 18,742
+                    <GoodStar />
                 </div>
                 <div className="priceAnd">
                     $Price and Prime Check
