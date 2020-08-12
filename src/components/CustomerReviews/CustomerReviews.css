@@ -1,113 +1,111 @@
 .review-product {
-  margin-top: 50px;
-  
+	margin-top: 50px;
 }
 
 #review-feature {
-  margin-top: 350px;
+	margin-top: 350px;
 }
 
 .vp {
-  color: #c45500!important;
-  font-size: 12px!important;
-  line-height: 16px!important;
-  font-weight: 700!important;
+	color: #c45500 !important;
+	font-size: 12px !important;
+	line-height: 16px !important;
+	font-weight: 700 !important;
 }
 
 .review-date {
-  color: #565959!important;
-  font-size: 14px!important;
-  line-height: 20px!important;
+	color: #565959 !important;
+	font-size: 14px !important;
+	line-height: 20px !important;
 }
 
 .review-title {
-  color: #0F1111!important;
-  font-size: 14px!important;
-  line-height: 20px!important;
-  font-weight: 700!important;
-  text-decoration: underline;
-  margin-left: 20px;
+	color: #0f1111 !important;
+	font-size: 14px !important;
+	line-height: 20px !important;
+	font-weight: 700 !important;
+	text-decoration: underline;
+	margin-left: 20px;
 }
 
 .star-icon {
-  background-position: -53px -368px;
-  width: 80px;
-  height: 18px;
-  position: relative;
-  vertical-align: text-top;
-  background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIIcon-sprite_1x-e943461…._V2_.png);
-  background-size: 400px 900px;
-  background-repeat: no-repeat;
-  /* display: inline-block; */
+	background-position: -53px -368px;
+	width: 80px;
+	height: 18px;
+	position: relative;
+	vertical-align: text-top;
+	background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIIcon-sprite_1x-e943461…._V2_.png);
+	background-size: 400px 900px;
+	background-repeat: no-repeat;
+	/* display: inline-block; */
 }
 
 .star-icon-title {
-  border-spacing: 20px;
+	border-spacing: 20px;
 }
 
 #button {
-  color: #111111;
-  background: #D7E8EA;
-  width: 80px;
-  height:30px;
-  border: 0;
-  box-sizing: border-box;
-  border-bottom: solid 1px #969696;
-  /* padding: 0px 14px; */
-  line-height: 29px;
-  margin: 0px 10px 14px 0px;
-  margin-top: 30px;
+	color: #111111;
+	background: #d7e8ea;
+	width: 80px;
+	height: 30px;
+	border: 0;
+	box-sizing: border-box;
+	border-bottom: solid 1px #969696;
+	/* padding: 0px 14px; */
+	line-height: 29px;
+	margin: 0px 10px 14px 0px;
+	margin-top: 30px;
 }
 
 #review-button {
-  padding: 5px;
-  background-color: transparent;
-  color: #111111;
-  /* width: 200px;
+	padding: 5px;
+	background-color: transparent;
+	color: #111111;
+	/* width: 200px;
   height:30px; */
-  width: 100%;
-  height: 100%;
-  border: 1px solid gray;
-  font-size: 13px;
-  line-height: 20px;
-  margin: 0;
-  outline: 0;
-  text-align: center;
-  white-space: nowrap;
+	width: 100%;
+	height: 100%;
+	border: 1px solid gray;
+	font-size: 13px;
+	line-height: 20px;
+	margin: 0;
+	outline: 0;
+	text-align: center;
+	white-space: nowrap;
 }
 
 #count-btn {
-  color: #767676!important;
-  font-size: 13px!important;
-  line-height: 19px!important;
+	color: #767676 !important;
+	font-size: 13px !important;
+	line-height: 19px !important;
 }
 
 #helpful-button {
-  padding: 10px;
-  color: #111111;
-  background: #E7E9EC;
-  width: 77px;
-  /* height:50px; */
-  display: block;
-  box-sizing: border-box;
-  font-size: 13px;
-  text-align: center;
-  border: 1px solid gray;
-  /* line-height: 29px; */
+	padding: 10px;
+	color: #111111;
+	background: #e7e9ec;
+	width: 77px;
+	/* height:50px; */
+	display: block;
+	box-sizing: border-box;
+	font-size: 13px;
+	text-align: center;
+	border: 1px solid gray;
+	/* line-height: 29px; */
 }
 
 #right-grid {
-  padding: 100px;
-  position: relative;
-  bottom: 100px;
+	padding: 100px;
+	position: relative;
+	bottom: 100px;
 }
 
 #left-grid {
-  padding: 50px;
-  position: relative;
-  bottom: 50px;
+	padding: 50px;
+	position: relative;
+	bottom: 50px;
 }
-
 
 /* .profile-avatar-img {
     border-radius: 34px;
@@ -120,100 +118,97 @@
 } */
 
 .profile-name {
-    position: relative;
-    color: #111;
-    unicode-bidi: isolate;
-    line-height: 19px;
-    font-size: 15px;
-    margin-left: 5px;
+	position: relative;
+	color: #111;
+	unicode-bidi: isolate;
+	line-height: 19px;
+	font-size: 15px;
+	margin-left: 5px;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+	position: relative;
+	display: inline-block;
+}
 
-  #dropbtn {
-    background-color: transparent;
-    border: 1px solid gray;
-    font: 14px "Amazon Ember", Arial, sans-serif;
-    margin: 0px 0px 10px;
-    padding: 0px 7px 0px 7px;
-    color: #0F1111;
-    cursor: pointer;
-    height: 30px;
-    width: 115px;
-  }
+#dropbtn {
+	background-color: transparent;
+	border: 1px solid gray;
+	font: 14px "Amazon Ember", Arial, sans-serif;
+	margin: 0px 0px 10px;
+	padding: 0px 7px 0px 7px;
+	color: #0f1111;
+	cursor: pointer;
+	height: 30px;
+	width: 115px;
+}
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: transparent;
-    min-width: 115px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: transparent;
+	min-width: 115px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
 
-  .dropdown-content a {
-    color: black;
-    padding: 0px 20px 0px 7px;
-    border: 1px solid gray;
-    font: 14px "Amazon Ember", Arial, sans-serif;
-    text-decoration: none;
-    display: block;
-  }
+.dropdown-content a {
+	color: black;
+	padding: 0px 20px 0px 7px;
+	border: 1px solid gray;
+	font: 14px "Amazon Ember", Arial, sans-serif;
+	text-decoration: none;
+	display: block;
+}
 
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #d6ddd7;
-  }
+.dropdown:hover .dropdown-content {
+	display: block;
+}
 
-  
+.dropdown:hover .dropbtn {
+	background-color: #d6ddd7;
+}
+
 #drop {
-  border: 1px solid gray;
-  overflow: hidden;
-  height: 36px;
-  position: absolute;
-  width: 200px;
-  display: flex;
+	border: 1px solid gray;
+	overflow: hidden;
+	height: 36px;
+	position: absolute;
+	width: 200px;
+	display: flex;
 }
 
 #down {
-  border: 1px solid gray;
-  overflow: hidden;
-  height: 72px;
-  position: absolute;
-  width: 200px;
-  display: flex;
+	border: 1px solid gray;
+	overflow: hidden;
+	height: 72px;
+	position: absolute;
+	width: 200px;
+	display: flex;
 }
 
-/* #drop:hover {
+#drop:hover {
+}
 
-} */
-
-/* #down:hover {
-
-} */
+#down:hover {
+}
 
 #top {
-  width: 200px;
+	width: 200px;
 }
 #most {
-  width:200px;
+	width: 200px;
 }
 
 .arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  float: right;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	float: right;
 }
 
 .down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }

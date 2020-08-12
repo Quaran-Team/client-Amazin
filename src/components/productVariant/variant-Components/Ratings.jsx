@@ -39,7 +39,6 @@ class Ratings extends Component{
 render(){
     return(
         <div>
-            
             <table className="star-rating-table">
                 <tbody>
                {this.state.features.map( feature =>
