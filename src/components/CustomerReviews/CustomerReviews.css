@@ -7,8 +7,12 @@
 } */
 
 .review-product {
-  margin-top: 450px;
+  margin-top: 50px;
   
+}
+
+#review-feature {
+  margin-top: 450px;
 }
 
 .vp {
@@ -117,6 +121,7 @@
     unicode-bidi: isolate;
     line-height: 19px;
     font-size: 15px;
+    margin-left: 5px;
 }
 
 .dropdown {

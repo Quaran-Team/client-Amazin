@@ -8,9 +8,9 @@ function AboutList(props) {
     splittingItems.pop();
 
     return(
-        <div>
+        <div className="about-list-container">
                 <ul>
-                    {splittingItems.map(point => <li key={point}>{point}</li>)}
+                    {splittingItems.map(point => <li className="list-about-items" key={point}>{point}</li>)}
                 </ul>
         </div>
     )

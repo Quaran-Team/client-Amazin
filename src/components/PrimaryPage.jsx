@@ -41,7 +41,8 @@ class PrimaryPage extends Component {
                     />
                 </Grid>
                 <Grid>
-				    <CImagesAll  />
+				    <CImagesAll 
+                    />
                 </Grid>
                 <Grid>
 				    <CWBA />

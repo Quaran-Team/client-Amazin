@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-import "./CustomerReviews.css" 
+import "./CustomerReviews.css";
+import BadStar from "../RatingSummary/badStar";
+import LowStar from "../RatingSummary/lowStar";
+import MidStar from "../RatingSummary/midStar";
+import GoodStar from "../RatingSummary/goodStar";
+import HighStar from "../RatingSummary/highStar";
 
 
 class ReviewMentions extends Component {
+    constructor(props) {
+        super(props)
+    }
+   
     state = {
         count: 0
     };
@@ -12,6 +21,24 @@ class ReviewMentions extends Component {
             count: count + 1
         }));
     };
+
+    starLogic = (rate) =>{
+        if (rate <= 1){
+			return(<BadStar />)
+		} else if (rate <=2){
+			console.log(rate, "lowstar")
+			return(<LowStar />)
+		} else if (rate <=3){
+			console.log(rate, "midstar")
+			return(<MidStar />)
+		} else if (rate <= 4){
+			return(<GoodStar />)
+		} else if (rate <=5){
+			console.log(rate, "hightstar")
+			return(<HighStar />)
+	    }
+    }
+
 
     render() { 
 
@@ -38,10 +65,10 @@ class ReviewMentions extends Component {
                         <img className="profile-avatar-img" 
                         src="https://www.amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png">
                         </img>
-                    <span className="profile-name">  Customer Name</span></div>
+                    <span className="profile-name">Customer Name</span></div>
                 </div>
                 <tr>
-                    <td><span className="star-icon">*Star rating icon* <a href="link to customer review summary page" className="review-title">Review title!</a></span>
+                    <td><span className="star-icon"> {this.starLogic(this.props.rate)} <a href="link to customer review summary page" className="review-title">Review title!</a></span>
                     </td>    
                 </tr>
                 <div className="review-date">Review Date</div>
