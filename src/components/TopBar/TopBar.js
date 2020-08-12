@@ -10,19 +10,20 @@ import WorkinMenu from "./WorkinMenu";
 import "./topbar.css";
 
 export default class TopBar extends Component {
-  render() {
-    return (
-      <div className="topbar" id="tiptopofpage">
-        <WorkinMenu />
-        <Logo />
-        <SearchBar />
-        <Flag />
-        <SignIn />
-        <Returns />
-        <Prime />
-        <Cart />
-        <div className="paddinnn"></div>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="topbar">
+				<WorkinMenu />
+				{/* <Menu/> */}
+				<Logo />
+				<SearchBar />
+				<Flag />
+				<SignIn />
+				<Returns />
+				<Prime />
+				<Cart />
+				<div className="paddinnn"></div>
+			</div>
+		);
+	}
 }
