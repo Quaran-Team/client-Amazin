@@ -7,13 +7,17 @@ import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import PhotoGallery from "./PhotoGallery/PhotoGallery";
-import "../Css/App.css";
+import TopBar from "./TopBar/TopBar";
+// import "../Css/App.css";
 
 class App extends Component {
 	render() {
 		return (
 			<div className="app">
-				<h1>My React App</h1>
+				<div>
+					<TopBar />
+				</div>
+
 				<PhotoGallery />
 				<div id="PurchaseItemContainer_Placeholder">
 					{/*place holder: replace when ready*/}

@@ -13,64 +13,53 @@ import Footer from "./Footer/Footer";
 import "./primarypage.css";
 
 class PrimaryPage extends Component {
-  render() {
-    return (
-      <div className="app">
-        <Grid>
-          <TopBar />
-          <BlueSecondTopLine />
-          <Grid>
-            <div className="productgrid-container">
-              <div className="photogallery-grid-container">
-                <PhotoGallery />
-              </div>
-              <div className="productvariant-grid-container">
-                <Product
-                  key={this.props.match.params.id}
-                  params={this.props.match.params.id}
-                />
-                <br />
-              </div>
-            </div>
-          </Grid>
-          <Grid>
-            <ComparisonGrid
-              key={this.props.match.params.id}
-              params={this.props.match.params.id}
-            />
-          </Grid>
-          <Grid className="mainpage-grid qa-grid">
-            <QAcomponent
-              key={this.props.match.params.id}
-              params={this.props.match.params.id}
-            />
-          </Grid>
-          <Grid
-            style={{ width: "100vw" }}
-            className="mainpage-grid customerReview-grid"
-          >
-            <CustomerReviewsContainer
-              key={this.props.match.params.id}
-              params={this.props.match.params.id}
-            />
-          </Grid>
-          {/* <Grid>
-            <CImagesAll 
-              key={this.props.match.params.id}
-              params={this.props.match.params.id}
-            />
-          </Grid> */}
-          <Grid>
-            <CWBA 
-              key={this.props.match.params.id}
-              params={this.props.match.params.id}
-            />
-          </Grid>
-        </Grid>
-        <Footer />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="app">
+				<Grid>
+					<TopBar />
+					<Grid>
+						<Product
+							key={this.props.match.params.id}
+							params={this.props.match.params.id}
+						/>
+						<br />
+					</Grid>
+					<Grid>
+						<ComparisonGrid
+							key={this.props.match.params.id}
+							params={this.props.match.params.id}
+						/>
+					</Grid>
+					<Grid className="mainpage-grid qa-grid">
+						<QAcomponent
+							key={this.props.match.params.id}
+							params={this.props.match.params.id}
+						/>
+					</Grid>
+					<Grid
+						style={{ width: "100vw" }}
+						className="mainpage-grid customerReview-grid"
+					>
+						<CustomerReviewsContainer
+							key={this.props.match.params.id}
+							params={this.props.match.params.id}
+						/>
+					</Grid>
+					<Grid>
+						<CImagesAll />
+					</Grid>
+					<Grid>
+						<CWBA />
+					</Grid>
+					<Appples
+						key={this.props.match.params.id}
+						params={this.props.match.params.id}
+					/>
+				</Grid>
+			</div>
+		);
+	}
 }
 
 export default PrimaryPage;
