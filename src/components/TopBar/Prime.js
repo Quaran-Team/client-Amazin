@@ -5,7 +5,7 @@ export default class Prime extends Component {
     return (
       <div className="prime">
         <h4>
-          <a className="notafingah">Try Prime</a>
+          <a className="notafingah">Try Grime</a>
         
         </h4>
       </div>

@@ -1,0 +1,125 @@
+
+/*
+ * Just a quick hamburger
+ */
+ .sideNav {
+    color: #eff3ef;
+    position: absolute;
+    top: 12px;
+    left: -53px;
+    background-color: black;
+    padding: 5px 10px 5px 5px;
+    border-radius: 10px;
+  }
+  
+  #menuToggle {
+    display: block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    padding: 0 20px 0 0;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    /* border:2px solid gray; */
+  }
+  
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -17px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+  }
+  
+  #menuToggle span {
+    display: block;
+    width: 43px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #fdfcfc;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+  
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+  
+  /* 
+   * Transform all the slices of hamburger
+   * into a crossmark.
+   */
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #030303;
+    width: 33px;
+  }
+  
+  /*
+   * But let's hide the middle one.
+   */
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+    width: 33px;
+  }
+  
+  /*
+   * Ohyeah and the last one should go the other direction
+   */
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+    width: 33px;
+  }
+  
+  /*
+   * Make this absolute positioned
+   * at the top left of the screen
+   */
+  #menu {
+    position: absolute;
+    width: 300px;
+    margin: -100px 50px 0 -30px;
+    padding: 10px 20px 50px 20px;
+    font-family: "Open Sans", sans-serif;
+    background: #fcfafc;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+  
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  
+  #menu li {
+    padding: 7px 1px;
+    font-size: 17px;
+    font-family: "Noto Serif", serif;
+  }
+  
+  /*
+   * And let's slide it in from the left
+   */
+  #menuToggle input:checked ~ ul {
+    transform: none;
+    margin: -100px 50px 0 -5px;
+    border: 1px solid black;
+  }
+  
+  
+  
