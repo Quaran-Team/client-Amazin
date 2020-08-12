@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Product from './productVariant/Product.jsx';
+import React, { Component } from "react";
+import Product from "./productVariant/Product.jsx";
 import CustomerReviewsContainer from "./CustomerReviews/CustomerReviews";
 import CWBA from "./CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll";
 import QAcomponent from "./QAcomponent";
@@ -7,26 +7,29 @@ import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import Grid from "@material-ui/core/Grid";
+<<<<<<< HEAD
 import './primarypage.css'
 import Manufacturer from './Manufacturer/Manufacturer'
+=======
+import TopBar from "./TopBar/TopBar";
+import "./primarypage.css";
+>>>>>>> 458e38bd4b420b3f7070fbe28979c759de72a88c
 
 class PrimaryPage extends Component {
 
     render(){
         return(
             <div className="app">
+                
                 <Grid>
-                        <Grid>
-                            <Product
-                            key={this.props.match.params.id}
-                            params={this.props.match.params.id}
-                            />  
-                        </Grid>
-                        <br/>
-                        <br/>
-                        <Grid>
-                            {/* <Manufacturer /> */}
-                        </Grid>
+                <TopBar/>
+                <Grid>
+                <Product
+                    key={this.props.match.params.id}
+                    params={this.props.match.params.id}
+                />  
+                <br/>
+                </Grid>
                 <Grid>
 				    <ComparisonGrid 
                     key={this.props.match.params.id}
@@ -52,7 +55,9 @@ class PrimaryPage extends Component {
                 <Grid>
 				    <CWBA />
                 </Grid>
-				    <Appples /> 
+				    <Appples 
+             key={this.props.match.params.id}
+             params={this.props.match.params.id}/> 
                 </Grid>
             </div>
         )
