@@ -7,13 +7,8 @@ import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import Grid from "@material-ui/core/Grid";
-<<<<<<< HEAD
-import './primarypage.css'
-import Manufacturer from './Manufacturer/Manufacturer'
-=======
 import TopBar from "./TopBar/TopBar";
 import "./primarypage.css";
->>>>>>> 458e38bd4b420b3f7070fbe28979c759de72a88c
 
 class PrimaryPage extends Component {
 
