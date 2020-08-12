@@ -6,11 +6,9 @@ import SignIn from "./SignIn";
 import Returns from "./Returns";
 import Prime from "./Prime";
 import Cart from "./Cart";
-import WorkinMenu from "./WorkinMenu";
-// import Menu from "./Menu";
 
 import './topbar.css';
-
+import Menu from "./Menu";
 
 export default class TopBar extends Component {
   render() {
