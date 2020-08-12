@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./chartMock.css";
 
+/// get the info from dynamic star axios call
+
 export default class DynamicStarChart extends Component {
   render() {
     return (

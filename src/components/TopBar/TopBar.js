@@ -14,7 +14,8 @@ export default class TopBar extends Component {
   render() {
     return (
       <div className="topbar">
-        <Menu/>
+        <WorkinMenu/>
+        {/* <Menu/> */}
         <Logo/>
         <SearchBar/>
         <Flag/>
