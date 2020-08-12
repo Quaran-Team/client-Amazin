@@ -258,17 +258,11 @@ class Product extends Component {
 		return (
 			<div>
 				<Grid item xs={6} className="mainpage-grid photogallery-grid" id="photogallery-grid">
-<<<<<<< HEAD
 					<div className="photo-comp-grid">
                     	<PhotoGallery className="photo-component"
 							selection = {this.state.selection}
 						/>
 					</div>
-=======
-                    <PhotoGallery 
-						selection = {this.state.selection}
-					/>
->>>>>>> 427222f0c22cac15cb254153172403e52df81459
                 </Grid>
 				<Grid item xs={6} className="mainpage-grid productvariant-grid" id="productvariant-grid">
 					<Grid item xs={7} className="productVariant-grid">
@@ -332,11 +326,6 @@ class Product extends Component {
 							<hr id="separator" />
 <<<<<<< HEAD
 							<h3><strong>Customer ratings by feature</strong></h3>
-							<Ratings 
-								id = {this.props.params}
-							/>
-							<a>See all reviews</a>
-=======
 							<Ratings 
 								id = {this.props.params}
 							/>
