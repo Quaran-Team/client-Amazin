@@ -33,6 +33,7 @@
   font-size: 14px!important;
   line-height: 20px!important;
   font-weight: 700!important;
+  text-decoration: underline;
 }
 
 .star-icon {
@@ -47,12 +48,21 @@
   /* display: inline-block; */
 }
 
+.star-icon-title {
+  border-spacing: 20px;
+}
+
 #button {
-  padding: 10px;
   color: #111111;
   background: #D7E8EA;
-  width: 100px;
-  height:50px;
+  width: 80px;
+  height:30px;
+  border: 0;
+  box-sizing: border-box;
+  border-bottom: solid 1px #969696;
+  padding: 0px 14px;
+  line-height: 29px;
+  margin: 0px 10px 14px 0px;
 }
 
 #review-button {

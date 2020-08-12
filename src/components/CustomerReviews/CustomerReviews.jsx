@@ -44,7 +44,7 @@ class CustomerReviews extends Component {
     render() { 
         return ( 
             <div>
-                <h1> Customer Reviews</h1>
+                <h2> Customer Reviews</h2>
                 
                 <Grid container justify="flex-start" alignItems="flex-start" id="left-grid">
                     <Grid item sm={4}>

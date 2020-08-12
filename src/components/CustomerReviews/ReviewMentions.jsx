@@ -46,9 +46,10 @@ class ReviewMentions extends Component {
             <div>
                 <div className="review-mention">
                     <h3>Read reviews that mention</h3>
-                    <span><button id="button">filtered button</button></span>
+                    <span>
+                        <button id="button">reviewTag</button> <button id="button">reviewTag</button> <button id="button">reviewTag</button>
+                    </span>
                 </div>
-                    <br/>
                     <br/>
                    <div className="dropdown">
                         <button id="dropbtn">Top reviews</button>
@@ -65,12 +66,15 @@ class ReviewMentions extends Component {
                         <img className="profile-avatar-img" 
                         src="https://www.amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png">
                         </img>
-                    <span className="profile-name">Customer Name</span></div>
+                    <span className="profile-name">Reviewer's name</span></div>
                 </div>
-                <tr>
-                    <td><span className="star-icon"> {this.starLogic(this.props.rate)} <a href="link to customer review summary page" className="review-title">Review title!</a></span>
-                    </td>    
-                </tr>
+                <table classname="star-icon-title">
+                    <tr>
+                        <td><span className="star-icon"> {this.starLogic(this.props.rate)}</span></td>
+                        <td><a href="link to customer review summary page" 
+                            className="review-title">Review title!</a></td>
+                    </tr>
+                </table>
                 <div className="review-date">Review Date</div>
                 <span className="vp" >Verified Purchase</span>
                 
@@ -80,9 +84,9 @@ class ReviewMentions extends Component {
                     Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. 
                     Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. 
                     Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. 
-                    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>mpor sit amet, ante. Donec eu libero sit amet quam egestas semper. 
-                    Aenean ult</div>
-                <br />
+                    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus mpor sit amet, ante. Donec eu libero sit amet quam egestas semper. 
+                    Aenean ult</p>
+                </div>
 
                 <div>
                     <span>
