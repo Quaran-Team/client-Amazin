@@ -7,6 +7,7 @@ import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import Grid from "@material-ui/core/Grid";
+import TopBar from "./TopBar/TopBar";
 import "./primarypage.css";
 
 class PrimaryPage extends Component {
@@ -14,7 +15,9 @@ class PrimaryPage extends Component {
     render(){
         return(
             <div className="app">
+                
                 <Grid>
+                <TopBar/>
                 <Grid>
                 <Product
                     key={this.props.match.params.id}

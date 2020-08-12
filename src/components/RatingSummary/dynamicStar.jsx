@@ -20,14 +20,14 @@ export default class DynamicStar extends Component {
   componentDidMount() {
     this.loadItem(this.props.params);
   }
-
+/// load it
   loadItem = (params) => {
     //calls the product by id
     Axios({
       method: "GET",
       url: `http://localhost:8080/api/v1/totalstars/${params}`,
     }).then((res) => {
-      console.log(res);
+      console.log(res.data);
       //all the properties of the product are saved in state - these do not change upon selection.
       this.setState({
         ratingId: res.data.ratingid,
@@ -38,40 +38,7 @@ export default class DynamicStar extends Component {
         totalTwoStarRating: res.data.totalTwoStarRating,
         totalOneStarRating: res.data.totalOneStarRating,
       });
-      this.loadSelector();
-    });
-  };
-
-  //this is all to figure out what the selection of the user is.
-  //the work here reverts everything to default which is a boolean in the data.
-  loadSelector = () => {
-    //this pulls all the selections in
-    Axios({
-      method: "GET",
-      url: `http://localhost:8080/api/v1/totalstars`,
-    }).then((res) => {
-      //filters out the selections based on the product
-      const trueSelections = res.data.filter(
-        (select) => select.ratingId === this.state.ratingId
-      );
-      //filters out the selection to the default selection of the product
-      const defaultTrueSelection = trueSelections.filter(
-        (defaulting) => defaulting.isdefault === true
-      );
-      //the default options have been separated out into this function which goes through how everything is
-      //displayed after selecting default options.
-      this.optionLogic(trueSelections);
-      //catches the id of the selection
-      this.setState({
-        options: trueSelections,
-        ratingId: defaultTrueSelection[0].ratingId,
-        overallRating: defaultTrueSelection[0].overallRating,
-        totalFiveStarRating: defaultTrueSelection[0].totalFiveStarRating,
-        totalFourStarRating: defaultTrueSelection[0].totalFourStarRating,
-        totalThreeStarRating: defaultTrueSelection[0].totalThreeStarRating,
-        totalTwoStarRating: defaultTrueSelection[0].totalTwoStarRating,
-        totalOneStarRating: defaultTrueSelection[0].totalOneStarRating,
-      });
+      
     });
   };
 
@@ -118,12 +85,12 @@ export default class DynamicStar extends Component {
           <div className="dyratQs">
             <a className="starLink" href="#dynamicChart">
               {" "}
-              nn,nnn ratings
+              10,222 ratings
             </a>
             <span className="line"> | </span>
 
             <a className="starLink" href="#">
-              jjjj answered questions
+              6419 answered questions
             </a>
           </div>
         </div>
