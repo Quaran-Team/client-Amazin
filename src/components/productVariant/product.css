@@ -52,7 +52,11 @@
     background: url("https://images-na.ssl-images-amazon.com/images/G/01/ad-feedback/info_icon_1Xsprite._CB431021510_.png") 0px 0px no-repeat scroll transparent }
 
 .best {
+<<<<<<< HEAD
     width: 85px;
+=======
+    width: 80px;
+>>>>>>> 427222f0c22cac15cb254153172403e52df81459
     height: 0;
     margin: 3px auto;
     border-top: 10px solid rgb(228,121,17);
@@ -66,7 +70,11 @@
 
 .choice {
     float: left;
+<<<<<<< HEAD
     width: 100px;
+=======
+    width: 95px;
+>>>>>>> 427222f0c22cac15cb254153172403e52df81459
     color: white;
     padding: 3px;
     border-top: 20px solid black;
@@ -86,6 +94,7 @@
 }
 
 /* Availability Component */
+<<<<<<< HEAD
 
 .availability{
     font-size: 14px;
@@ -100,6 +109,22 @@
     display: flex;
 }
 
+=======
+
+.availability{
+    font-size: 14px;
+}
+.maple-banner__text{
+    margin-top: 3px;
+    color:rgb(0,102,200);
+    cursor: pointer;
+}
+
+.a-lineitem {
+    display: flex;
+}
+
+>>>>>>> 427222f0c22cac15cb254153172403e52df81459
 .a-col{
     width: 100px;
     padding:3px;
@@ -126,6 +151,7 @@
 #image-option-variant {
     max-width: 70px;
     cursor: pointer;
+<<<<<<< HEAD
 }
 #custbtn-btn {
     width: 70px;
@@ -137,8 +163,24 @@
 .detail-table {
     margin-top: 20px;
     width: 100%;
+=======
+>>>>>>> 427222f0c22cac15cb254153172403e52df81459
+}
+#custbtn-btn {
+    width: 70px;
+    border: none;
 }
 
+/* Detail Component */
+
+<<<<<<< HEAD
+=======
+.detail-table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+>>>>>>> 427222f0c22cac15cb254153172403e52df81459
 /* About-List Component */
 
 .about-list-container {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SingleAnswer from './SingleAnswer'
 import QAndADataService from '../service/QAndADataService'
 
 
