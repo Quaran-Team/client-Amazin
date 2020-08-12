@@ -4,7 +4,6 @@ import Axios from 'axios';
 class Ratings extends Component{
   constructor(props){
       super(props)
-      console.log(props.id)
   }
     state= {
         features: []
@@ -25,7 +24,6 @@ class Ratings extends Component{
             this.setState({ 
                 features : featureArray
             })
-            console.log(featureArray)
         })
     }
 
@@ -33,7 +31,7 @@ class Ratings extends Component{
         let percent = Math.round((rating/5)*100);
         let percentage=percent+"%";
         return (
-        <div class="stars-inner" style={{width: percentage}}></div>
+        <div className="stars-inner" style={{width: percentage}}></div>
         )
     }
 
@@ -41,14 +39,17 @@ class Ratings extends Component{
 render(){
     return(
         <div>
+<<<<<<< HEAD
             
+=======
+>>>>>>> aa48c519ae92f9fd521b799934448733029e3472
             <table className="star-rating-table">
                 <tbody>
                {this.state.features.map( feature =>
-                        <tr class="hotel_a">
+                        <tr className="hotel_a">
                         <td>{feature.title}</td>
                         <td>
-                        <div class="stars-outer">
+                        <div className="stars-outer">
                             {this.innerStar(feature.rating)}
                         </div>
                         </td>

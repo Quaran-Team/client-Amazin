@@ -1,6 +1,36 @@
 /* Product Variant Main Page */
+
+#photogallery-grid{
+    display: flex;
+    overflow: hidden;
+    height:1250px;
+    width:100%;
+}
+.photo-comp-grid1{
+    width:100%;
+    height:400px;
+    overflow: hidden;
+    margin-top: 8%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.photo-comp-grid2{
+    position: absolute;
+    width:100%;
+    height:400px;
+    overflow: hidden;
+    margin-top: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-component{
+    width:50vw;
+    height:50vh;
+}
 .productVariant-grid{
-    float:left;
     padding:20px;
 }
 
@@ -35,13 +65,13 @@
     background: url("https://images-na.ssl-images-amazon.com/images/G/01/ad-feedback/info_icon_1Xsprite._CB431021510_.png") 0px 0px no-repeat scroll transparent }
 
 .best {
-    width: 80px;
+    width: 85px;
     height: 0;
     margin: 3px auto;
-    border-top: 10px solid rgb(228,121,17);
-    border-bottom: 10px solid rgb(228,121,17);
-    border-left: 10px solid rgb(228,121,17);
-    border-right:10px solid transparent;
+    border-top: 11px solid rgb(228,121,17);
+    border-bottom: 11px solid rgb(228,121,17);
+    border-left: 11px solid rgb(228,121,17);
+    border-right:11px solid transparent;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     float: left;
@@ -49,7 +79,9 @@
 
 .choice {
     float: left;
-    width: 95px;
+    
+    width: 100px;
+
     color: white;
     padding: 3px;
     border-top: 20px solid black;
@@ -69,6 +101,22 @@
 }
 
 /* Availability Component */
+
+
+.availability{
+    font-size: 14px;
+}
+.maple-banner__text{
+    margin-top: 3px;
+    color:rgb(0,102,200);
+    cursor: pointer;
+}
+
+.a-lineitem {
+    display: flex;
+}
+
+
 
 .availability{
     font-size: 14px;
@@ -119,8 +167,15 @@
 
 .detail-table {
     margin-top: 20px;
+    padding-top: 30px;
     width: 100%;
 }
+#custbtn-btn {
+    width: 70px;
+    border: none;
+}
+
+/* Detail Component */
 
 /* About-List Component */
 
