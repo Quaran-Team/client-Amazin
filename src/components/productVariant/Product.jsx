@@ -324,12 +324,10 @@ class Product extends Component {
 							/>
 
 							<hr id="separator" />
-<<<<<<< HEAD
 							<h3><strong>Customer ratings by feature</strong></h3>
 							<Ratings 
 								id = {this.props.params}
 							/>
->>>>>>> 427222f0c22cac15cb254153172403e52df81459
 						</div>
 						<hr/>
 					</Grid>
