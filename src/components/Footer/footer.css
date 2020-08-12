@@ -1,0 +1,49 @@
+.bottomline{
+    display: inline-flex;
+    background-color: rgb(19,26,34);
+    color:rgb(252,252,253);
+    width:100%;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.bottomlinks{
+    text-decoration: none;
+    color:rgb(252,252,253);
+    padding:10px;
+}
+
+.bottomlinks:hover{
+    text-decoration: underline white;
+}
+
+.notalink{
+    text-decoration: none;
+    color:rgb(173, 173, 175);
+    cursor: default;
+}
+
+
+.bluefoot{
+    background-color: rgb(35,47,62);
+    color: aliceblue;
+    padding:13px;
+}
+
+.bluefoot,
+.prefoot,
+.bottomline{
+    margin:-3px;
+    max-width: 100%;
+    
+}
+
+
+
+
+.lowfootertable{
+    max-width: 100%;
+}

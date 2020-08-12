@@ -8,7 +8,7 @@ import Prime from "./Prime";
 import Cart from "./Cart";
 
 import './topbar.css';
-import Menu from "./Menu";
+import WorkinMenu from "./WorkinMenu";
 
 export default class TopBar extends Component {
   render() {

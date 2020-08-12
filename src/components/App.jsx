@@ -7,28 +7,32 @@ import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Appples from "./RatingSummary/Appples";
 import PhotoGallery from "./PhotoGallery/PhotoGallery";
 import TopBar from "./TopBar/TopBar";
+import Footer from "./Footer/Footer";
 
 // import "../Css/App.css";
 
 class App extends Component {
-	render() {
-		return (
-			<div className="app">
-				<div><TopBar/></div>
-				
-				<PhotoGallery />
-				<div id="PurchaseItemContainer_Placeholder">
-					place holder: replace when ready
-				</div>
-				<CustomerReviews />
-				<QAcomponent />
-				<ComparisonGrid />
-				<CImagesAll />
-				<CWBA />
-				<Appples />
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className="app">
+        <div>
+          <TopBar />
+        </div>
+
+        <PhotoGallery />
+        <div id="PurchaseItemContainer_Placeholder">
+          place holder: replace when ready
+        </div>
+        <CustomerReviews />
+        <QAcomponent />
+        <ComparisonGrid />
+        <CImagesAll />
+        <CWBA />
+        <Appples />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
