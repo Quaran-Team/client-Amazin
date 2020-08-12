@@ -30,18 +30,3 @@
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 }
-
-
-/* App.jsx STUFF */
-.item-div-container {
-	height:150vh;
-	display: flex;
-	flex-wrap: wrap;
-	
-}
-#frontpage-btn{
-	width: 150px;
-	height: 200px;
-	margin: 10px;
-	
-}

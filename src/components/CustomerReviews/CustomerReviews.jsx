@@ -9,9 +9,6 @@ import CustomerReviewsDataService from "../../service/CustomerReviewsDataService
 class CustomerReviews extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			response: null,
-		};
 		this.refreshCustomerReviews = this.refreshCustomerReviews.bind(this);
 	}
 
