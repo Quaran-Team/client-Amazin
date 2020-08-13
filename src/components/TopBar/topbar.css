@@ -1,0 +1,88 @@
+.topbar {
+	background-color: black;
+	display: inline-flex;
+	color: aliceblue;
+	width: 100%;
+	align-items: center;
+	align-content: center;
+}
+
+.paddinnn {
+	height: 30px;
+}
+
+.searchbar {
+	display: inline-flex;
+	align-items: center;
+}
+
+.catselect {
+	background-color: white;
+	color: black;
+	padding: 10px;
+}
+
+.logo,
+.flag,
+.signin,
+.cart,
+.returns,
+.prime {
+	color: aliceblue;
+	display: inline-flex;
+}
+
+.flag,
+.menu {
+	padding: 5px;
+	margin: 15px;
+	border: 1px solid black;
+}
+
+.notafingah,
+.notafingah:hover {
+	text-decoration: none;
+	color: aliceblue;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.menu:hover,
+.flag:hover,
+.notafingah:hover {
+	cursor: pointer;
+	border: 1px solid white;
+	padding: 5px;
+}
+
+.pickyflag,
+.pickyflag:hover {
+	text-decoration: none;
+}
+
+.barattop {
+	height: 33px;
+	align-items: center;
+	width: 40vw;
+}
+
+#magnifyglass {
+	background-color: orange;
+}
+
+.topbarflag {
+	height: 20px;
+}
+
+.topflagspacer {
+	padding: 5px;
+	color: aliceblue;
+}
+
+.hamburger {
+	height: 30px;
+}
+
+.buggyPic {
+	height: 30px;
+}

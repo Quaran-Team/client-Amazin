@@ -9,11 +9,11 @@ import  './CWBA.css';
 class CWBA extends Component {
     constructor(props) {
         super(props)
-            this.state = {
-            otherIdArray: [],
-            itemId: null,
-            containerWidth: 0,
-            
+        this.state = {
+        otherIdArray: [],
+        itemId: null,
+        containerWidth: 0,
+        position: 0
         }
         this.refreshCourses = this.refreshCourses.bind(this)
         this._handleWindowResize = this._handleWindowResize.bind(this)
@@ -32,27 +32,28 @@ class CWBA extends Component {
         window.removeEventListener('resize', this._handleWindowResize);
     }
 
-	_handleWindowResize () {
-		// if (this._isMounted) {
-			this.setState({
-				containerWidth: ReactDOM.findDOMNode(this._containerTarget).offsetWidth
-			});
-		// }
-	}
+    _handleWindowResize () {
+        // if(this._isMounted){
+            this.setState({
+                containerWidth: ReactDOM.findDOMNode(this._containerTarget).offsetWidth
+            // 
+        });}
 
     _truncateItems (items) {
-        var containerWidth = this.state.containerWidth;
-        var maxItemsToShow = Math.floor(containerWidth / 173);
-        var truncatedItems = items.slice(0, maxItemsToShow );
+        let containerWidth = this.state.containerWidth;
+        let position = this.state.position;
+        let maxItemsToShow = this.maximumItemsToShow(containerWidth);
+        let itemStart = position
+        let truncatedItems = items.slice(itemStart, maxItemsToShow );
         return truncatedItems;
       }
 
-      _pageOf(items){
-        var containerWidth = this.state.containerWidth;
-        var maxItemsToShow = Math.floor(containerWidth / 173);
-        var numberOfRemainingItems = Math.ceil(items.length / (maxItemsToShow ));
-        var pagesLeft = "Page X of "
-        var displayNumberHtml = (
+    _pageOf(items){
+        let containerWidth = this.state.containerWidth;
+        let maxItemsToShow = this.maximumItemsToShow(containerWidth);
+        let numberOfRemainingItems = this.numberOfRemainingItems(items, maxItemsToShow)
+        let pagesLeft = "Page X of "
+        let displayNumberHtml = (
             <p className="PageOf">
                 {pagesLeft}{numberOfRemainingItems}
             </p>
@@ -60,19 +61,34 @@ class CWBA extends Component {
         return displayNumberHtml
       }
       
+    itemArea = (whereAlreadyAt)=>{
+        whereEndUp = whereAlreadyAt
+        return whereEndUp
+    }
+
+    maximumItemsToShow = (cW) =>{
+        return Math.floor(cW / 173) + this.state.position
+    }
+
+    numberOfRemainingItems = (items, maxItemsToShow) => {
+        return Math.ceil(items.length / (maxItemsToShow ))
+    }
 
     refreshCourses() { //retrieve data currently set to one id. not dynamic
-        CustomerWhoBoughtAlsoDataService.retrieveAllCustomerWhoBoughtAlsos()
+        CustomerWhoBoughtAlsoDataService.retrieveCustomerWhoBoughtAlso(1)
             .then(
                 response => {
-                    this.setState({ itemId: response.data[0].id,
-                                    otherIdArray: response.data[0].otherIds.split(",")
+                    this.setState({ itemId: response.data.id,
+                                    otherIdArray: response.data.otherIds.split(",")
                     })
                 }
             )}
 
     goRight(){
-        console.log("go right")
+        containerWidth = this.state.containerWidth;
+        movement = 0 + maximumItemsToShow(containerWidth)
+        console.log(movement)
+        this.setState({position: movement})
     }
     goLeft(){
         console.log("go left")

@@ -1,16 +1,109 @@
-/* img {
-    border: 4px solid red;
-} */
-
 /* .review-mention {
     margin-bottom: 26px!important;
 } */
 
-.button {
-    padding: 10px;
-    color: #111111;
-    background: #D7E8EA;
+/* #rating-icon {
+  border-color: #d8650d;
+} */
+
+.review-product {
+  margin-top: 50px;
+  
 }
+
+#review-feature {
+  margin-top: 450px;
+}
+
+.vp {
+  color: #c45500!important;
+  font-size: 12px!important;
+  line-height: 16px!important;
+  font-weight: 700!important;
+}
+
+.review-date {
+  color: #565959!important;
+  font-size: 14px!important;
+  line-height: 20px!important;
+}
+
+.review-title {
+  color: #0F1111!important;
+  font-size: 14px!important;
+  line-height: 20px!important;
+  font-weight: 700!important;
+}
+
+.star-icon {
+  background-position: -53px -368px;
+  width: 80px;
+  height: 18px;
+  position: relative;
+  vertical-align: text-top;
+  background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonUIIcon-sprite_1x-e943461…._V2_.png);
+  background-size: 400px 900px;
+  background-repeat: no-repeat;
+  /* display: inline-block; */
+}
+
+#button {
+  padding: 10px;
+  color: #111111;
+  background: #D7E8EA;
+  width: 100px;
+  height:50px;
+}
+
+#review-button {
+  padding: 5px;
+  background-color: transparent;
+  color: #111111;
+  /* width: 200px;
+  height:30px; */
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0;
+  outline: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#count-btn {
+  color: #767676!important;
+  font-size: 13px!important;
+  line-height: 19px!important;
+}
+
+#helpful-button {
+  padding: 10px;
+  color: #111111;
+  background: #E7E9EC;
+  width: 77px;
+  /* height:50px; */
+  display: block;
+  box-sizing: border-box;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid gray;
+  /* line-height: 29px; */
+}
+
+#right-grid {
+  padding: 100px;
+  position: relative;
+  bottom: 100px;
+}
+
+#left-grid {
+  padding: 50px;
+  position: relative;
+  bottom: 50px;
+}
+
 
 /* .profile-avatar-img {
     border-radius: 34px;
@@ -28,6 +121,7 @@
     unicode-bidi: isolate;
     line-height: 19px;
     font-size: 15px;
+    margin-left: 5px;
 }
 
 .dropdown {
@@ -35,21 +129,23 @@
     display: inline-block;
   }
 
-  .dropbtn {
+  #dropbtn {
     background-color: transparent;
     border: 1px solid gray;
     font: 14px "Amazon Ember", Arial, sans-serif;
     margin: 0px 0px 10px;
-    padding: 0px 20px 0px 7px;
+    padding: 0px 7px 0px 7px;
     color: #0F1111;
     cursor: pointer;
+    height: 30px;
+    width: 115px;
   }
 
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #dad6d6;
-    min-width: 160px;
+    background-color: transparent;
+    min-width: 115px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
@@ -70,3 +166,50 @@
   .dropdown:hover .dropbtn {
     background-color: #d6ddd7;
   }
+
+  
+#drop {
+  border: 1px solid gray;
+  overflow: hidden;
+  height: 36px;
+  position: absolute;
+  width: 200px;
+  display: flex;
+}
+
+#down {
+  border: 1px solid gray;
+  overflow: hidden;
+  height: 72px;
+  position: absolute;
+  width: 200px;
+  display: flex;
+}
+
+#drop:hover {
+
+}
+
+#down:hover {
+
+}
+
+#top {
+  width: 200px;
+}
+#most {
+  width:200px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  float: right;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
