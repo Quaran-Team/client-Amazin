@@ -5,7 +5,7 @@ This is the client (front-end) side of our Amazin' project created by Talent Pat
 
 screenshot here
 
-The plan was to practice weekly agile sprints by creating an e-commerce product page(s) for 20-50 items in a very similiar theme to that big one named after the giant river in South America.
+The plan was to practice weekly agile sprints by creating an e-commerce product page(s) for 20-50 items in a very similar theme to that big one named after the giant river in South America.
 
 Each team member has made contributions to both client (front - end) and server (back - end) sides of the project connecting their data to their components.
 
@@ -15,10 +15,10 @@ And live deployed at ... {}.
 
 ******
 
-We did not use create-react-app from command line but we did use react to conjure up our HTML, CSS, and JavaScript.
-It is configured via webpack and package.json using node modules.
-We limited the number of external ibraries and frameworks as much as possible.
-Due to time constraints some parts ore just static mocks, while others are fully dynamic.
+We did not use create-react-app from command line, but we did use react to conjure up our HTML, CSS, and JavaScript.
+It is configured via webpack and package. json using node modules.
+We limited the number of external libraries and frameworks as much as possible.
+Due to time constraints some parts are just static mocks, while others are fully dynamic.
 
 to see it live
 [link](www.wherewhenever we deploy. com)
@@ -31,7 +31,7 @@ run 'npm install' in the command line to get all the node modules locally
 
 once that is done run 'npm start' to boot up a localhost version in your default web browser. 
 
-Some things might not appear correct without also having the server running. (those instructions are on the server github)
+Some things might not appear correct without also having the server running. (those instructions are on the server GitHub)
 
 npm test will run all the tests we made
 
