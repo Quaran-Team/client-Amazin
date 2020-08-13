@@ -3,6 +3,7 @@ import QAitem from "./QAitem";
 import "./qacomponent.css";
 
 class QAcomponent extends Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
   }
@@ -20,6 +21,26 @@ class QAcomponent extends Component {
       </div>
     );
   }
+=======
+
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <div className="QAcomponent">
+                <h1 id="title">Customer questions & answers</h1>
+                <ol>
+                    <QAitem
+                    key={this.props.id}
+                    id={this.props.params}
+                    />
+                </ol>
+            </div>
+        )
+    }
+>>>>>>> 5aabebd86394bd9fe6bd7fc995fceba79fb8e709
 }
 
 export default QAcomponent;

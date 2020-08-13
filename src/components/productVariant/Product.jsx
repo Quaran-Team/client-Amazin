@@ -9,14 +9,18 @@ import Axios from "axios";
 import AboutList from "./variant-Components/AboutList";
 import { Dropdown } from "react-bootstrap";
 import Grid from "@material-ui/core/Grid";
-import PhotoGallery from '../PhotoGallery/PhotoGallery';
+//import PhotoGallery from "../PhotoGallery/PhotoGallery";
 
 class Product extends Component {
 	constructor(props) {
 		super(props);
-	}
+    this.myRef = React.createRef()
+        console.log(this.myRef)
+  }
 
 	state = {
+		dropmenu: 'drop',
+		menuitem: 'top',
 		prodID: "",
 		seller: "",
 		user_rating: "",
@@ -47,6 +51,7 @@ class Product extends Component {
 		type_title: "",
 		type: [],
 		selection: 0,
+		height: 0,
 	};
 
 	componentDidMount() {
@@ -94,7 +99,6 @@ class Product extends Component {
 			//the default options have been separated out into this function which goes through how everything is
 			//displayed after selecting default options.
 			this.optionLogic(trueSelections);
-			console.log(defaultTrueSelection)
 			//catches the id of the selection
 			this.setState({
 				options: trueSelections,
@@ -119,7 +123,6 @@ class Product extends Component {
 	};
 
 	optionLogic = (options) => {
-
 		//function global variables initialized
 		let dropdownOption = [];
 		let imageOption = [];
@@ -136,7 +139,6 @@ class Product extends Component {
 					imageOption.push(option);
 					break;
 				case 3:
-					// console.log(option)
 					custombtnOption.push(option);
 					break;
 				default:
@@ -169,7 +171,7 @@ class Product extends Component {
 						{this.state.optionDropdown[0].type_title}
 					</Dropdown.Toggle>
 					<Dropdown.Menu>
-						{this.state.optionDropdown.map(option => (
+						{this.state.optionDropdown.map((option) => (
 							<Dropdown.Item
 								key={option.id}
 								id={option.id}
@@ -188,14 +190,18 @@ class Product extends Component {
 		if (this.state.optionCustomBtn.length > 0) {
 			return (
 				<div>
-					<div className="heading" id="custbtn-container">{this.state.optionCustomBtn[0].type_title}:</div>
+					<div className="heading" id="custbtn-container">
+						{this.state.optionCustomBtn[0].type_title}:
+					</div>
 					{this.state.optionCustomBtn.map((option) => (
 						<div
 							className="small-div-btn"
 							onClick={() => this.changeOption(option.id)}
 						>
 							{" "}
-							<button id="custbtn-btn">{option.selector_text} </button>{" "}
+							<button id="custbtn-btn">
+								{option.selector_text}{" "}
+							</button>{" "}
 						</div>
 					))}
 				</div>
@@ -207,10 +213,14 @@ class Product extends Component {
 		if (this.state.optionImage.length > 0) {
 			return (
 				<div>
-					<div className="heading image-container">{this.state.optionImage[0].type_title}:</div>
+					<div className="heading image-container">
+						{this.state.optionImage[0].type_title}:
+					</div>
 					{this.state.optionImage.map((option) => (
 						<div className="small-div-btn">
-							<div className="heading">{option.selector_text}</div>{" "}
+							<div className="heading">
+								{option.selector_text}
+							</div>{" "}
 							<img
 								id="image-option-variant"
 								src={option.selector_img}
@@ -228,7 +238,7 @@ class Product extends Component {
 		this.state.options.map((userpick) => {
 			if (userpick.id == newID) {
 				this.setState({
-					selection: userpick.id, 
+					selection: userpick.id,
 					title: userpick.title,
 					about_item: userpick.about_item,
 					discount: userpick.discount,
@@ -249,15 +259,12 @@ class Product extends Component {
 		});
 	};
 
+
 	render() {
+
 		return (
 			<div>
-				<Grid item xs={6} className="mainpage-grid photogallery-grid" id="photogallery-grid">
-                    <PhotoGallery 
-						selection = {this.state.selection}
-					/>
-                </Grid>
-				<Grid item xs={6} className="mainpage-grid productvariant-grid" id="productvariant-grid">
+				<Grid item xs={12}>
 					<Grid item xs={7} className="productVariant-grid">
 						<div className="productVariant">
 							<Header
@@ -273,7 +280,8 @@ class Product extends Component {
 								selection={this.state.selection}
 								title={this.state.title}
 							/>
-						<hr id="separator" />
+							<br />
+							<hr id="separator" />
 							<Availability
 								id={this.state.selection}
 								price={this.state.price}
@@ -298,33 +306,35 @@ class Product extends Component {
 									{this.custombtnOption()}
 								</div>
 							</div>
-
-							<Details
-								id={ this.state.selection }
-							/>
-
+							<br />
+							<Details id={this.state.selection} />
+							<br />
 							<hr id="separator" />
-							<AboutList
-								// key = { this.state.id }
-								about_item={this.state.about_item}
-							/>
+							<AboutList about_item={this.state.about_item} />
 
 							<Sponsored
 								id={this.state.prodID}
 								category={this.state.category}
 								category_link={this.state.category_link}
-								similar_item = {this.state.similar_item}
+								similar_item={this.state.similar_item}
 							/>
 
 							<hr id="separator" />
-							<Ratings 
-								id = {this.props.params}
+              
+							<h3>
+								<strong>Customer ratings by feature</strong>
+							</h3>
+							<Ratings
+								key={this.props.params}
+								id={this.props.params}
 							/>
 						</div>
+						<hr />
+
 					</Grid>
 					<Grid item xs={5} className="addcart-grid">
-                    	<div id="addcart-component"></div>
-                	</Grid>
+						<div id="addcart-component"></div>
+					</Grid>
 				</Grid>
 			</div>
 		);
