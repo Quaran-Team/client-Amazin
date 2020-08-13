@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Availability extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 	}
 
 	//main pricing set-up for this section is called here
@@ -58,12 +58,15 @@ class Availability extends Component {
 										</span>
 										{this.shippingLogic(
 											shipping,
-											ship_price, 
+											ship_price,
 											shipping_message
 										)}
 									</td>
 								</tr>
-								<tr id="regularprice-savings" className="availability-column3">
+								<tr
+									id="regularprice-savings"
+									className="availability-column3"
+								>
 									<td className="a-color-secondary a-size-base a-text-right a-nowrap a-col">
 										You Save:
 									</td>
@@ -82,7 +85,10 @@ class Availability extends Component {
 							</tbody>
 						</table>
 					</div>
-					<div className="a-section maple-banner__text" onClick={()=> this.outOfOrder()}>
+					<div
+						className="a-section maple-banner__text"
+						onClick={() => this.outOfOrder()}
+					>
 						{message}.
 					</div>
 				</div>
@@ -111,7 +117,11 @@ class Availability extends Component {
 									>
 										${price.toFixed(2)}{" "}
 									</span>
-									{this.shippingLogic(shipping, ship_price, shipping_message)}
+									{this.shippingLogic(
+										shipping,
+										ship_price,
+										shipping_message
+									)}
 								</td>
 							</tr>
 						</tbody>
@@ -152,7 +162,11 @@ class Availability extends Component {
 									>
 										${price.toFixed(2)}
 									</span>
-									{this.shippingLogic(shipping, ship_price, shipping_message)}
+									{this.shippingLogic(
+										shipping,
+										ship_price,
+										shipping_message
+									)}
 								</td>
 							</tr>
 						</tbody>
@@ -178,8 +192,8 @@ class Availability extends Component {
 					+ $
 					<span className="a-color-secondary a-size-base">
 						{ship_price.toFixed(2)}
-					</span>
-					{" "} shipping. {" "}{message}
+					</span>{" "}
+					shipping. {message}
 				</span>
 			);
 		} else {
@@ -188,8 +202,9 @@ class Availability extends Component {
 					id="ourprice_shippingmessage"
 					className="a-size-base a-color-base"
 				>
-					+{" "}<span className="a-color-secondary a-size-base">FREE</span>
-					shipping {" "}. {message}
+					+{" "}
+					<span className="a-color-secondary a-size-base">FREE</span>
+					shipping . {message}
 				</span>
 			);
 		}
@@ -197,8 +212,8 @@ class Availability extends Component {
 
 	//any logic that has not been handled can call this.
 	outOfOrder = () => {
-		alert("This feature is temporarily out of order.")
-	}
+		alert("This feature is temporarily out of order.");
+	};
 
 	render() {
 		return (
@@ -211,7 +226,7 @@ class Availability extends Component {
 					this.props.discount,
 					this.props.inStock,
 					this.props.message,
-					this.props.lowstock_message, 
+					this.props.lowstock_message,
 					this.props.shipping_message
 				)}
 			</div>
