@@ -33,7 +33,7 @@ class Ratings extends Component{
         let percent = Math.round((rating/5)*100);
         let percentage=percent+"%";
         return (
-        <div class="stars-inner" style={{width: percentage}}></div>
+        <div className="stars-inner" style={{width: percentage}}></div>
         )
     }
 
@@ -45,10 +45,10 @@ render(){
             <table className="star-rating-table">
                 <tbody>
                {this.state.features.map( feature =>
-                        <tr class="hotel_a">
+                        <tr className="hotel_a">
                         <td>{feature.title}</td>
                         <td>
-                        <div class="stars-outer">
+                        <div className="stars-outer">
                             {this.innerStar(feature.rating)}
                         </div>
                         </td>
