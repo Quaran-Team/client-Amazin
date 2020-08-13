@@ -36,7 +36,8 @@
 }
 
 .best {
-	width: 85px;
+	width: 130px;
+	color: white;
 	height: 0;
 	margin: 3px auto;
 	border-top: 11px solid rgb(228, 121, 17);
@@ -64,7 +65,7 @@
 }
 
 #best-wordplacement {
-	margin-top: -8px;
+	margin-top: -15px;
 	color: white;
 }
 #choice-wordplacement {
