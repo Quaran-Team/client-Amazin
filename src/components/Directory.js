@@ -4,16 +4,16 @@ import React, { Component } from "react";
 import PrimaryPage from "./PrimaryPage";
 
 class Directory extends Component {
-	render() {
-		return (
-			<Router>
-				<Switch>
-					<Route exact path="/" component={App} />
-					<Route path="/singleItem/:id" component={PrimaryPage} />
-				</Switch>
-			</Router>
-		);
-	}
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/singleItem/:id" component={PrimaryPage} />
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default Directory;

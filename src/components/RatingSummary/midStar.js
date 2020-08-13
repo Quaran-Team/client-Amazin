@@ -43,7 +43,6 @@ export default class MidStar extends Component {
             <span className="gold">&#9733;</span>
             <span className="gold">&#9733;</span>
             <span className="gold">&#9733;</span>
-
             <span className="gray">&#9733;</span>
             <span className="gray">&#9733;</span>
             <span className="tiny"> v </span>

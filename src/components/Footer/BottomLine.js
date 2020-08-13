@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./footer.css";
 
-
 export default class BottomLine extends Component {
   render() {
     return (
@@ -15,7 +14,10 @@ export default class BottomLine extends Component {
         <a href="#foot" className="bottomlinks">
           Interest-Based Ads
         </a>
-        <a href="#foot" className="notalink"> &#169; 2020, Talent Path or its affiliates </a>
+        <a href="#foot" className="notalink">
+          {" "}
+          &#169; 2020, Talent Path or its affiliates{" "}
+        </a>
       </div>
     );
   }

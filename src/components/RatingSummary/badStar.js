@@ -53,10 +53,15 @@ export default class BadStar extends Component {
           </div>
           {/* </Tooltip> */}
           <div className="bsratQs">
-            <a className="starLink"   href="#badChart"> 66,847 ratings</a>
+            <a className="starLink" href="#badChart">
+              {" "}
+              66,847 ratings
+            </a>
             <span className="line"> | </span>
 
-            <a  className="starLink"  href="#">1000+ answered questions</a>
+            <a className="starLink" href="#">
+              1000+ answered questions
+            </a>
           </div>
         </div>
         {this.state.isHovering && (

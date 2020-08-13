@@ -10,11 +10,9 @@ import BadChartMock from "./badChartmock";
 import DynamicStar from "./dynamicStar";
 
 export default class Appples extends Component {
-  constructor(props){
-    super(props)
-
+  constructor(props) {
+    super(props);
   }
-
 
   render() {
     return (
@@ -52,10 +50,7 @@ export default class Appples extends Component {
         <div>
           <h5>above is from hardcoded data static to client</h5>
           <h5>below is dynamic</h5>
-          <DynamicStar
-            key={this.props.key}
-            params={this.props.params}
-          />
+          <DynamicStar key={this.props.key} params={this.props.params} />
         </div>
       </div>
     );

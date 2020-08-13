@@ -20,7 +20,7 @@ export default class DynamicStar extends Component {
   componentDidMount() {
     this.loadItem(this.props.params);
   }
-/// load it
+  /// load it
   loadItem = (params) => {
     //calls the product by id
     Axios({
@@ -38,7 +38,6 @@ export default class DynamicStar extends Component {
         totalTwoStarRating: res.data.totalTwoStarRating,
         totalOneStarRating: res.data.totalOneStarRating,
       });
-      
     });
   };
 
@@ -67,8 +66,7 @@ export default class DynamicStar extends Component {
           //   onMouseLeave={this.handleMouseHover}
         >
           <div className="dynamichover">
-
-    {/* need to update class names to make stars based off of response from server */}
+            {/* need to update class names to make stars based off of response from server */}
             <span className="gold">&#9733;</span>
 
             <span className="gray">&#9733;</span>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import CustomerReviews from "./CustomerReviews/CustomerReviews";
+import Product from "./productVariant/Product.jsx";
+import CustomerReviewsContainer from "./CustomerReviews/CustomerReviews";
 import CWBA from "./CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll";
 import QAcomponent from "./QAcomponent";
 import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";

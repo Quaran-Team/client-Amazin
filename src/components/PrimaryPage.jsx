@@ -11,8 +11,6 @@ import TopBar from "./TopBar/TopBar";
 import Footer from "./Footer/Footer.js";
 import "./primarypage.css";
 
-
-
 class PrimaryPage extends Component {
   render() {
     return (
