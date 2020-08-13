@@ -25,7 +25,7 @@ describe("This component test should render for 1 star mock chart without crashi
 
 // test to see if component contains h5 ratings
 
-
+// comment
 
 describe("it should say customer ratings ", () => {
   it('contains the string "66,847 customer ratings" in an h5 element', () => {
