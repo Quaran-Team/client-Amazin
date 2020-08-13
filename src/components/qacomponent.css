@@ -1,3 +1,15 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .QAitem {
   font-family: "Lato", sans-serif;
 }
@@ -9,6 +21,7 @@ h4 {
 
 .section {
   display: flex;
+  padding-left: 10px;
 }
 
 .qAndA {
@@ -70,6 +83,7 @@ input {
 #votes {
   text-align: center;
   padding-left: 5px;
+  padding-right: 10px;
 }
 
 #add {
