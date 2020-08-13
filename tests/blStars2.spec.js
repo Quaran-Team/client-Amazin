@@ -25,7 +25,7 @@ describe("This component test should render for 2 star without crashing", () => 
 describe("it should have a/an ratings a tag", () => {
   it('contains the string "723 answered questions" in an a tag element', () => {
     const wrapper = shallow(<LowStar />);
-    const magicWords = <a href="#"> 723 answered questions</a>;
+    const magicWords = <a className="starLink"  href="#"> 723 answered questions</a>;
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });
@@ -35,7 +35,7 @@ describe("it should have a/an ratings a tag", () => {
 describe("it should have a/an ratings a tag", () => {
   it('contains the string "4,158 ratings" in an a tag element', () => {
     const wrapper = shallow(<LowStar />);
-    const magicWords = <a href="#lowChart"> 4,158 ratings</a>;
+    const magicWords = <a className="starLink"  href="#lowChart"> 4,158 ratings</a>;
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });

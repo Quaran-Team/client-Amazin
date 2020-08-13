@@ -24,7 +24,7 @@ describe("This component test should render for 1 star without crashing", () => 
 describe("it should have a/an ratings a tag", () => {
   it('contains the string "66,847 ratings" in an a tag element', () => {
     const wrapper = shallow(<BadStar />);
-    const magicWords = <a href="#badChart"> 66,847 ratings</a>;
+    const magicWords = <a className="starLink"  href="#badChart"> 66,847 ratings</a>;
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });

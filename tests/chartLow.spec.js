@@ -30,7 +30,7 @@ describe("it should show some customer ratings ", () => {
 describe("it should have an a tag for 5 star ratings ", () => {
   it('containsan a tag "5 star" in the component', () => {
     const wrapper = shallow(<LowChartMock />);
-    const magicWords =<a href="#">5 Star </a>;
+    const magicWords =<a className="chartLink"   href="#">5 Star </a>;
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });
