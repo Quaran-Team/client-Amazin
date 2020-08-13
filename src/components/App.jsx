@@ -13,7 +13,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="app">
-				<div><TopBar/></div>
+				{/* <div><TopBar/></div>
 				
 				<PhotoGallery />
 				<div id="PurchaseItemContainer_Placeholder">
@@ -21,10 +21,10 @@ class App extends Component {
 				</div>
 				<CustomerReviews />
 				<QAcomponent />
-				<ComparisonGrid />
+				<ComparisonGrid /> */}
 				<CImagesAll />
 				<CWBA />
-				<Appples />
+				{/* <Appples /> */}
 			</div>
 		);
 	}

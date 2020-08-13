@@ -30,13 +30,14 @@ export default class DynamicStar extends Component {
       console.log(res.data);
       //all the properties of the product are saved in state - these do not change upon selection.
       this.setState({
-        ratingId: res.data.ratingid,
-        overallRating: res.data.overallRating,
-        totalFiveStarRating: res.data.totalFiveStarRating,
-        totalFourStarRating: res.data.totalFourStarRating,
-        totalThreeStarRating: res.data.totalThreeStarRating,
-        totalTwoStarRating: res.data.totalTwoStarRating,
-        totalOneStarRating: res.data.totalOneStarRating,
+        ratingId: res.data
+        // .ratingid,
+        // overallRating: res.data.overallRating,
+        // totalFiveStarRating: res.data.totalFiveStarRating,
+        // totalFourStarRating: res.data.totalFourStarRating,
+        // totalThreeStarRating: res.data.totalThreeStarRating,
+        // totalTwoStarRating: res.data.totalTwoStarRating,
+        // totalOneStarRating: res.data.totalOneStarRating,
       });
       
     });

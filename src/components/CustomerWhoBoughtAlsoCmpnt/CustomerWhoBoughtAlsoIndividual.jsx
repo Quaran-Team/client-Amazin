@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import  './CWBA.css';
-import GoodStar from "../RatingSummary/goodStar";
+import DynamicStarSpecial from "../RatingSummary/dynamicStarForCWBA";
 class CWBAIndividual extends Component {
-
+    constructor(props) {
+        super(props)
+        this.state = {
+        associatedItem: this.props.associatedItem
+        }   
+    }
 
     render(){
         return(
@@ -20,7 +25,10 @@ class CWBAIndividual extends Component {
                     </a>
                 </div>
                 <div className="starSection">
-                    <GoodStar />
+                    <DynamicStarSpecial 
+                        key={this.props.associatedItem}
+                        associatedItem={this.props.associatedItem}
+                    />
                 </div>
                 <div className="priceAnd">
                     $Price and Prime Check
