@@ -50,10 +50,16 @@ export default class MidStar extends Component {
           </div>
           {/* </Tooltip> */}
           <div className="msratQs">
-            <a  className="starLink"  href="#midChart"> 458 ratings</a>
+            <a className="starLink" href="#midChart">
+              {" "}
+              458 ratings
+            </a>
             <span className="line"> | </span>
 
-            <a className="starLink"   href="#"> 72 answered questions</a>
+            <a className="starLink" href="#">
+              {" "}
+              72 answered questions
+            </a>
           </div>
         </div>
         {this.state.isHovering && (

@@ -1,5 +1,5 @@
 import React from "react";
-import PhotoGallery from "../src/components/PhotoGallery/PhotoGallery";
+import TopBar from "../src/components/TopBar/TopBar";
 import ReactDom from "react-dom";
 import { cleanup } from "@testing-library/react";
 import { shallow, configure } from "enzyme";
@@ -10,11 +10,11 @@ configure({ adapter: new Adapter() });
 afterEach(cleanup);
 // it kills anything after each test so need to unmount
 
-// basic crash test
+// basic crash test 
 
-describe("This component test should render for 1 star without crashing", () => {
-  it("Should render as expected!", () => {
+describe("This component test should render without crashing", () => {
+  it("Should render TopBar as expected!", () => {
     const div = document.createElement("div");
-    ReactDom.render(<PhotoGallery />, div);
+    ReactDom.render(<TopBar />, div);
   });
 });
