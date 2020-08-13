@@ -1,5 +1,4 @@
-import React from 'react';
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -7,59 +6,88 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import ComparisonItem from "./ComparisonItem.jsx";
+import axios from "axios";
+import { withStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
+const styles = theme => ({
+  root: {
+    backgroundColor: "red"
+  }
 });
 
-function createData(name, power, autoPrograms, manPrograms, crushing) {
-  return { name, power, autoPrograms, manPrograms, crushing };
-}
+class ComparisonGrid extends React.Component {
 
-const rows = [
-  createData("Power", 1100, 1000, 1200, 1300),
-  createData("Automatic Modes", 0, 4, 4, 0),
-  createData("Manual Modes", 4, 1, 0, 4),
-  createData("Price ($USD)", 305, 307, 607, 403),
-  createData("Rating", 2, 3, 5, 3),
-  createData("Hello", 2, 3, 5, 3),
-];
+  _isMounted = false;
 
-export default function ComparisonGrid() {
-  const classes = useStyles();
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+    };
+  }
+  componentDidMount() {
 
-  return (
-    <div >
-      <ComparisonItem />
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell data-testid="comparisonGrid">Category</TableCell>
-              <TableCell align="right">Product #1</TableCell>
-              <TableCell align="right">Product #2</TableCell>
-              <TableCell align="right">Product #3</TableCell>
-              <TableCell align="right">Product #4</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.name}>
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.power}</TableCell>
-                <TableCell align="right">{row.autoPrograms}</TableCell>
-                <TableCell align="right">{row.manPrograms}</TableCell>
-                <TableCell align="right">{row.crushing}</TableCell>
+    this._isMounted = true;
+
+    axios.get("http://localhost:8080/all/products/").then((response) => {
+    if (this._isMounted)  {
+      this.setState({
+        items: response.data,
+        });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  render() {
+    console.log(this.state.items);
+    const { comparisonGrid } = this.props;
+    return (
+      <div className="comparisonGrid.root">
+        <TableContainer component={Paper}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Product</TableCell>
+                {this.state.items.map((item) => (
+                  <TableCell key={item.itemId} align="right">{item.itemName}</TableCell>
+                ))}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
-  );
+            </TableHead>
+            <TableBody>
+              <TableRow>
+              <TableCell component="th" scope="row">ID</TableCell>
+                {this.state.items.map((item) => {
+                  return <TableCell key={item.itemId} align="right">{item.itemId}</TableCell>
+                })}
+              </TableRow>
+              <TableRow>
+              <TableCell component="th" scope="row">About</TableCell>
+                {this.state.items.map((item) => {
+                  return <TableCell key={item.itemId} align="right">{item.itemAbout}</TableCell>
+                })}
+              </TableRow>
+              <TableRow>
+              <TableCell component="th" scope="row">Title</TableCell>
+                {this.state.items.map((item) => {
+                  return <TableCell key={item.itemId} align="right">{item.itemTitle}</TableCell>
+                })}
+              </TableRow>
+              <TableRow>
+              <TableCell component="th" scope="row">Price</TableCell>
+                {this.state.items.map((item) => {
+                  return <TableCell key={item.itemId} align="right">{item.itemPrice}</TableCell>
+                })}
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
+    );
+  }
 }
+
+export default withStyles(styles, { withTheme: true })(ComparisonGrid);

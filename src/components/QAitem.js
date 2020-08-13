@@ -1,37 +1,91 @@
-import React, { Component } from 'react'
-import Answers from './Answers'
-import QAndADataService from '../service/QAndADataService'
-
+import React, { Component } from "react";
+import QAndADataService from "../service/QAndADataService";
+import Votes from "./Votes"
+import "./qacomponent.css";
 
 export default class QAitem extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            response:null,
-        }
-        this.refreshQAndA = this.refreshQAndA.bind(this)
-    }
+  state = {
+    response: [],
+    allAnswers: [],
+    sortedAnswers: [],
+    itemId: null,
+  };
 
-    componentDidMount() {
-        this.refreshQAndA();
-    }
+  refreshQAndA = this.refreshQAndA.bind(this);
+  refreshAnswers = this.refreshAnswers.bind(this);
 
-    refreshQAndA() {
-        QAndADataService.retrieveAllQAndAs()
-        .then(
-            response => {
-                this.setState({ response: response.data })
-            }
-        )
-    }
+  componentDidMount() {
+    this.refreshQAndA();
+    this.refreshAnswers();
+  }
 
-    render() {
-        return (
-            <div className="QAitem">
-                <h2>Question: </h2>
-                <h2><Answers/></h2>
+  componentWillUnmount() {
+    this.setState = (state,callback)=>{
+        return;
+    };
+  }
+
+  refreshQAndA() {
+    QAndADataService.retrieveAllQAndAs().then((response) => {
+      this.setState({ response: response.data });
+    });
+  }
+
+  refreshAnswers() {
+    QAndADataService.retrieveAllAnswers().then((allAnswers) => {
+      this.setState({ allAnswers: allAnswers.data });
+    });
+  }
+
+  sortQuestions = (id) => {
+      //using item id, filter through questions where item id equals question.itemid
+    const filterQuestionsArray = this.state.response.filter(
+      (question) => question.itemid == id
+    );
+    return (
+      <div>
+          {/* map through the filtered questions */}
+        {filterQuestionsArray.map((q) => (
+          <div className="section">
+            <Votes/>
+            <div className="qAndA">
+              <div className="question">
+                <h4>Question: </h4>
+                <p id="individual">{q.question}</p>
+              </div>
+              {/* do the same thing with the answers */}
+              <div>{this.sortAnswers(q.id)}</div>
             </div>
-        )
-    }
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  sortAnswers = (id) => {
+    const filterAnswersArray = this.state.allAnswers.filter(
+      (answer) => answer.questionid == id
+    );
+    return (
+      <div>
+        {filterAnswersArray.map((a) => (
+          <div className="section">
+            <h4>Answer: </h4>
+            <p id="individual" className="answer">
+              {a.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  render() {
+      //sort through questions by item id.
+    return <div className="QAitem">{this.sortQuestions(this.props.id)}</div>;
+  }
 }
