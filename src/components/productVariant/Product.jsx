@@ -14,13 +14,13 @@ import Grid from "@material-ui/core/Grid";
 class Product extends Component {
 	constructor(props) {
 		super(props);
-		this.myRef = React.createRef();
-		console.log(this.myRef);
-	}
+    this.myRef = React.createRef()
+        console.log(this.myRef)
+  }
 
 	state = {
-		dropmenu: "drop",
-		menuitem: "top",
+		dropmenu: 'drop',
+		menuitem: 'top',
 		prodID: "",
 		seller: "",
 		user_rating: "",
@@ -259,7 +259,9 @@ class Product extends Component {
 		});
 	};
 
+
 	render() {
+
 		return (
 			<div>
 				<Grid item xs={12}>
@@ -318,6 +320,7 @@ class Product extends Component {
 							/>
 
 							<hr id="separator" />
+              
 							<h3>
 								<strong>Customer ratings by feature</strong>
 							</h3>
@@ -327,6 +330,7 @@ class Product extends Component {
 							/>
 						</div>
 						<hr />
+
 					</Grid>
 					<Grid item xs={5} className="addcart-grid">
 						<div id="addcart-component"></div>
