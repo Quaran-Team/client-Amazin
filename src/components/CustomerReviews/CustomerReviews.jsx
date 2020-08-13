@@ -31,7 +31,9 @@ class CustomerReviews extends Component {
                 this.setState({ review: response.data })
                 // const filteredArray = response.data.filter( item => item.itemId == this.props.params)
                 //this.setState({ review: filteredArray})
-
+		}
+		)
+	}
 	menu = () => {
 		if (this.state.menuitem == "top") {
 			return (
@@ -54,9 +56,11 @@ class CustomerReviews extends Component {
 						Top Reviews{" "}
 					</button>
 				</div>
-			);
+			)
 		}
-	};
+	}
+
+
 	top = () => {
 		this.setState({ menuitem: "top" });
 		this.menu(this.state.menuitem);
@@ -90,15 +94,17 @@ class CustomerReviews extends Component {
 			return (
 				<div><button id="top" onClick={() => this.top()}>Top Reviews <i class="arrow down"></i></button><button id="most" onClick={() => this.most()}>Most Recent   </button></div>
 			)
-		} else if(this.state.menuitem == 'most')
+		} else if(this.state.menuitem == 'most'){
 			return (
 				<div><button id="most" onClick={() => this.most()}>Most Recent <i class="arrow down"></i></button><button id="top" onClick={() => this.top()}>Top Reviews   </button></div>
 			)
 		}
+	}
 		top = () => {
 			this.setState({ menuitem: 'top'})
 			this.menu(this.state.menuitem)
 		}
+
 		most = () => {
 			this.setState({ menuitem: 'most'})
 			this.menu(this.state.menuitem)
