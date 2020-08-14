@@ -17,7 +17,7 @@ class CustomerReviews extends Component {
     state={
         review: [], 
         dropmenu: 'drop',
-		menuitem: 'top'
+        menuitem: 'top'
     }
 
 	componentDidMount() {
@@ -28,21 +28,47 @@ class CustomerReviews extends Component {
         CustomerReviewsDataService.retrieveAllCustomerReviews()
         .then(
             response => {
-                this.setState({ review: response.data })
-                // const filteredArray = response.data.filter( item => item.itemId == this.props.params)
-                //this.setState({ review: filteredArray})
+                console.log(response.data)
+                const filteredArray = response.data.filter( item => item.itemId == this.props.params)
+                this.setState({ review: filteredArray})
 
             }
         )
     }
 
     mapping = () => {
-        console.log(this.state.review)
+        // console.log(this.state.review)
         return(
             <div>
-            {this.state.review.map( resp => <div><ReviewMentions id={resp.id} rate={resp.rating} body={resp.reviewBody} title={resp.reviewTitle} tag={resp.reviewTag} name={resp.reviewer}/></div>)}
+            {this.state.review.map( resp => 
+                <div>
+                    <ReviewMentions id={resp.id} rate={resp.rating} body={resp.reviewBody} title={resp.reviewTitle} tag={resp.reviewTag} name={resp.reviewer}/>
+                </div>)}
             </div>
         )
+    }
+
+    btnMapping = () => {
+        let tag = [];
+        let finalAllTag = [];
+        //this collects tags from each of reviews and saves all to a final array.
+        this.state.review.map( btn => {
+            tag = btn.reviewTag.split(", ");
+            tag.map( sendFinal => finalAllTag.push(sendFinal))
+        })
+        console.log(finalAllTag)
+
+        //to ensure no duplicates
+        const distinct = ( value, index, self) => {
+            return self.indexOf(value) === index;
+        }
+        const distinctTags = finalAllTag.filter(distinct)
+
+        //finally return the button to the user with it's distinct tag
+        return( 
+            distinctTags.map( tag =>
+            <button id="button">{tag}</button>
+        ))
     }
 
     drop = () => {
@@ -78,7 +104,7 @@ class CustomerReviews extends Component {
     render() { 
         return ( 
             <div>
-                <h1> Customer Reviews</h1>
+                <h2> Customer Reviews</h2>
                 
                 <Grid container justify="flex-start" alignItems="flex-start" id="left-grid">
                     <Grid item sm={4}>
@@ -94,17 +120,28 @@ class CustomerReviews extends Component {
                         <div><CustomerImages /></div> 
                         <br />
                         <div className="review-mention">
-                    <h3>Read reviews that mention</h3>
-                    <span><button id="button">filtered button</button></span>
-                </div>
-                    <br/>
-                    <br/>
+                            <h3>Read reviews that mention</h3>
+                            <span>
+                                {this.btnMapping()}
+                            </span>
+                        </div>
+        
                    <div className="dropdown">
                         <div id={this.state.dropmenu} onClick={()=> this.drop()}>
 					        {this.menu()}
 				        </div>
                    </div>
-                   {this.state.review.map( resp => <div><ReviewMentions id={resp.id} rate={resp.rating} body={resp.reviewBody} title={resp.reviewTitle} tag={resp.reviewTag} name={resp.reviewer}/></div>)}
+                   {this.state.review.map( resp => 
+                        <div>
+                            <ReviewMentions 
+                            id={resp.id} 
+                            rate={resp.rating} 
+                            body={resp.reviewBody} 
+                            title={resp.reviewTitle} 
+                            date={resp.date}
+                            tag={resp.reviewTag} 
+                            name={resp.reviewer}/>
+                        </div>)}
                     </Grid>
                 </Grid>
             
