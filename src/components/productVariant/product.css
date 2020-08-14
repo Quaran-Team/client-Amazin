@@ -51,9 +51,7 @@
 
 .choice {
 	float: left;
-
 	width: 100px;
-
 	color: white;
 	padding: 3px;
 	border-top: 20px solid black;
@@ -65,7 +63,7 @@
 }
 
 #best-wordplacement {
-	margin-top: -15px;
+	margin-top: -8px;
 	color: white;
 }
 #choice-wordplacement {
@@ -117,6 +115,27 @@
 #custbtn-btn {
 	width: 70px;
 	border: none;
+}
+
+#dropdown-basic {
+	width: 200px;
+}
+
+#drop-menu{
+	background-color: #fff;
+	border: 1px solid gray;
+	width: 200px;
+	text-align: center;
+}
+.drop-item{
+	margin: 4px;
+}
+.drop-btn{
+	width:200px;
+	margin: 0;
+}
+.drop-item:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* Detail Component */
