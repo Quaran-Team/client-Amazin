@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import "./CustomerReviews.css";
-// import BadStar from "../RatingSummary/badStar";
-// import LowStar from "../RatingSummary/lowStar";
-// import MidStar from "../RatingSummary/midStar";
-// import GoodStar from "../RatingSummary/goodStar";
-// import HighStar from "../RatingSummary/highStar";
 
 
 class ReviewMentions extends Component {
@@ -21,24 +16,6 @@ class ReviewMentions extends Component {
             count: count + 1
         }));
     };
-
-    // starLogic = (rate) =>{
-    //     if (rate <= 1){
-	// 		return(<BadStar />)
-	// 	} else if (rate <=2){
-	// 		console.log(rate, "lowstar")
-	// 		return(<LowStar />)
-	// 	} else if (rate <=3){
-	// 		console.log(rate, "midstar")
-	// 		return(<MidStar />)
-	// 	} else if (rate <= 4){
-	// 		return(<GoodStar />)
-	// 	} else if (rate <=5){
-	// 		console.log(rate, "hightstar")
-	// 		return(<HighStar />)
-	//     }
-    // }
-
 
     render() { 
 
@@ -57,7 +34,6 @@ class ReviewMentions extends Component {
                 <table>
                     <tr>
                         <td><h4>*star rating goes here*</h4></td>
-                        {/* <td><span className="star-icon"> {this.starLogic(this.props.rate)}</span></td>  */}
                         <td><a href="link to customer review summary page" 
                             className="review-title">{this.props.title}</a></td>
                     </tr>

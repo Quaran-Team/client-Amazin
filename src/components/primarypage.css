@@ -1,10 +1,32 @@
-.photogallery-grid{
-    float: left;
+* {
+	margin: 0;
+	box-sizing: border-box;
 }
-.productvariant-grid{
-    float: right;
+
+.productgrid-container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.photogallery-grid {
+	float: left;
+}
+.photogallery-grid-container {
+	grid-column: 1/7;
+}
+
+.productvariant-grid {
+	float: right;
+}
+.productvariant-grid-container {
+	grid-column: 7/13;
 }
 
 .app {
-	font-family: 'Lato', sans-serif;
+	font-family: "Lato", sans-serif;
+}
+
+.productgrid-container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
 }

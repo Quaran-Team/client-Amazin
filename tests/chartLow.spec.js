@@ -25,7 +25,7 @@ describe("it should show some customer ratings ", () => {
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });
-
+//// y
 
 describe("it should have an a tag for 5 star ratings ", () => {
   it('containsan a tag "5 star" in the component', () => {

@@ -1,0 +1,97 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.QAitem {
+  font-family: "Lato", sans-serif;
+}
+
+h4 {
+  font: bold;
+  margin: 5px;
+}
+
+.section {
+  display: flex;
+  padding-left: 10px;
+}
+
+.qAndA {
+  display: block;
+  font-size: 14px;
+}
+
+.question {
+  display: flex;
+  padding-top: 10px;
+}
+
+#individual {
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+#list {
+  padding: 0;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.answer {
+  padding-left: 10px;
+}
+
+.votes {
+  display: grid;
+  position: relative;
+  margin-top: 15px;
+  border-right: 1px solid rgb(212, 209, 209);
+}
+
+.qanda {
+  display: flex;
+}
+
+input {
+  width: 30px;
+  border: 0ex;
+}
+
+#votes {
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+#add {
+  width: 25px;
+  border-width: 0;
+}
+
+#subtract {
+  width: 25px;
+  border-width: 0;
+}
