@@ -5,7 +5,6 @@ import CWBA from "./CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll";
 import QAcomponent from "./QAcomponent";
 import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
 import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
-import Appples from "./RatingSummary/Appples";
 import Grid from "@material-ui/core/Grid";
 import TopBar from "./TopBar/TopBar";
 import PhotoGallery from "./PhotoGallery/PhotoGallery";
@@ -61,10 +60,6 @@ class PrimaryPage extends Component {
           <Grid>
             <CWBA />
           </Grid>
-          <Appples
-            key={this.props.match.params.id}
-            params={this.props.match.params.id}
-          />
         </Grid>
         <Footer />
       </div>
