@@ -29,11 +29,8 @@ class CustomerReviews extends Component {
         CustomerReviewsDataService.retrieveAllCustomerReviews()
         .then(
             response => {
-				console.log("REVIEWWW")
-				console.log(response.data)
-                this.setState({ review: response.data })
-                // const filteredArray = response.data.filter( item => item.itemId == this.props.params)
-                //this.setState({ review: filteredArray})
+                const filteredArray = response.data.filter( item => item.itemid == this.props.params)
+				this.setState({ review: filteredArray})
 		}
 		)
 	}
@@ -42,7 +39,7 @@ class CustomerReviews extends Component {
 			return (
 				<div>
 					<button id="top" onClick={() => this.top()}>
-						Top Reviews <i class="arrow down"></i>
+						Top Reviews <i className="arrow down"></i>
 					</button>
 					<button id="most" onClick={() => this.most()}>
 						Most Recent{" "}
@@ -53,7 +50,7 @@ class CustomerReviews extends Component {
 			return (
 				<div>
 					<button id="most" onClick={() => this.most()}>
-						Most Recent <i class="arrow down"></i>
+						Most Recent <i className="arrow down"></i>
 					</button>
 					<button id="top" onClick={() => this.top()}>
 						Top Reviews{" "}
@@ -62,25 +59,7 @@ class CustomerReviews extends Component {
 			)
 		}
 	}
-
-
-	top = () => {
-		this.setState({ menuitem: "top" });
-		this.menu(this.state.menuitem);
-	};
-	most = () => {
-		this.setState({ menuitem: "most" });
-		this.menu(this.state.menuitem);
-	};
-              
-    mapping = () => {
-        console.log(this.state.review)
-        return(
-            <div>
-            {this.state.review.map( resp => <div><ReviewMentions id={resp.id} rate={resp.rating} body={resp.reviewBody} title={resp.reviewTitle} tag={resp.reviewTag} name={resp.reviewer}/></div>)}
-            </div>
-        )
-    }
+            
 
     drop = () => {
 		if(this.state.dropmenu === "drop") {
@@ -95,11 +74,11 @@ class CustomerReviews extends Component {
 	menu = () => {
 		if(this.state.menuitem == 'top' ){
 			return (
-				<div><button id="top" onClick={() => this.top()}>Top Reviews <i class="arrow down"></i></button><button id="most" onClick={() => this.most()}>Most Recent   </button></div>
+				<div><button id="top" onClick={() => this.top()}>Top Reviews <i className="arrow down"></i></button><button id="most" onClick={() => this.most()}>Most Recent   </button></div>
 			)
 		} else if(this.state.menuitem == 'most'){
 			return (
-				<div><button id="most" onClick={() => this.most()}>Most Recent <i class="arrow down"></i></button><button id="top" onClick={() => this.top()}>Top Reviews   </button></div>
+				<div><button id="most" onClick={() => this.most()}>Most Recent <i className="arrow down"></i></button><button id="top" onClick={() => this.top()}>Top Reviews   </button></div>
 			)
 		}
 	}
