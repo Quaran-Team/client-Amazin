@@ -21,3 +21,62 @@
     border:1px solid white;
     cursor: pointer;
 }
+
+/*   to make them disappear like it does on the other site */
+
+@media screen and (max-width: 1192px) {
+
+  .registry{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1092px) {
+
+  .shipping{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1092px) {
+ 
+  .giftcards{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .foods{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 892px) {
+  
+
+  .giftfind{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 792px) {
+
+  .newreleases{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 692px) {
+
+  .deals{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 592px) {
+
+  .customerservice{
+    display: none;
+  }
+}
