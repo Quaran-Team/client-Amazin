@@ -18,6 +18,7 @@ class CustomerReviews extends Component {
 		review: [],
 		dropmenu: "drop",
 		menuitem: "top",
+		tags: []
 	};
 
 	componentDidMount() {
@@ -28,6 +29,8 @@ class CustomerReviews extends Component {
         CustomerReviewsDataService.retrieveAllCustomerReviews()
         .then(
             response => {
+				console.log("REVIEWWW")
+				console.log(response.data)
                 this.setState({ review: response.data })
                 // const filteredArray = response.data.filter( item => item.itemId == this.props.params)
                 //this.setState({ review: filteredArray})
@@ -109,6 +112,29 @@ class CustomerReviews extends Component {
 			this.setState({ menuitem: 'most'})
 			this.menu(this.state.menuitem)
 		}
+
+		btnMapping = () => {
+			let tag = [];
+			let finalAllTag = [];
+			//this collects tags from each of reviews and saves all to a final array.
+			this.state.review.map( btn => {
+				tag = btn.reviewTag.split(", ");
+				tag.map( sendFinal => finalAllTag.push(sendFinal))
+			})
+			console.log(finalAllTag)
+
+			//to ensure no duplicates
+			const distinct = ( value, index, self) =>{
+				return self.indexOf(value) === index;
+			}
+			const distinctTags = finalAllTag.filter(distinct)
+
+			//finally return the button to the user with it's distinct tag
+			return( 
+				distinctTags.map( tag =>
+				<button id="button">{tag}</button>
+			))
+		}
 		
     
     render() { 
@@ -131,7 +157,7 @@ class CustomerReviews extends Component {
                         <br />
                         <div className="review-mention">
                     <h3>Read reviews that mention</h3>
-                    <span><button id="button">filtered button</button></span>
+                    <span>{this.btnMapping()}</span>
                 </div>
                     <br/>
                     <br/>
