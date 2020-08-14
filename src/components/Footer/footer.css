@@ -4,7 +4,6 @@
   color: rgb(252, 252, 253);
   width: 100%;
   align-content: center;
-  text-align: center;
   align-items: center;
   align-self: center;
   justify-content: center;
@@ -41,4 +40,76 @@
 
 .lowfootertable {
   max-width: 100%;
+}
+
+.foottopbluebox {
+  display: inline-flex;
+}
+
+.boldrows,
+.regrows {
+  text-decoration: none;
+}
+
+.topfooterlist {
+  list-style-type: none;
+}
+
+.tothetop {
+  text-decoration: none;
+  color: aliceblue;
+  text-align: center;
+}
+
+
+
+.boxfortoplink {
+  background-color: rgb(55, 71, 90);
+  height: 60px;
+  width: 100%;
+  padding: 20px 10px;
+  margin: -10px 0px;
+  align-items: center;
+  align-content: center;
+}
+
+
+.boxfortoplink:hover{
+  background-color: rgb(81, 103, 131);
+}
+
+.foottopbluebox {
+  padding: 40px;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  align-items: flex-start;
+  width:100%;
+}
+
+.gap{
+  height:10px;
+}
+
+.boldrow{
+  color: white;
+  font-weight: 900;
+  margin:0px 0px 0px 10px;
+}
+
+.bottombooty{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width:100%;
+  
+}
+
+.topfoot,
+.topfootb,
+.topfootc,
+.topfootd{
+  text-align: left;
+  
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logo from "./logo";
+import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import Flag from "./Flag";
 import SignIn from "./SignIn";
@@ -13,7 +13,7 @@ import Menu from "./Menu";
 export default class TopBar extends Component {
   render() {
     return (
-      <div className="topbar">
+      <div className="topbar" id="tiptopofpage">
         <WorkinMenu/>
         {/* <Menu/> */}
         <Logo/>
