@@ -85,6 +85,7 @@
   align-self: center;
   align-items: flex-start;
   width:100%;
+  flex-wrap: no-wrap;
 }
 
 .gap{
@@ -111,5 +112,6 @@
 .topfootc,
 .topfootd{
   text-align: left;
+  flex-wrap: wrap;
   
 }
