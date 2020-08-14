@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 import "./stars.css";
+import  "../CustomerWhoBoughtAlsoCmpnt/CWBA.css";
 
-export default class zFiveStar extends Component {
+export default class ZFiveStar extends Component {
   render() {
     return (
-      <div>
-        <div className="dynamicstar">
-          <div className="dynamichover">
+        <div className="dynamicstarz">
             <span className="gold">&#9733;</span>
             <span className="gold">&#9733;</span>
             <span className="gold">&#9733;</span>
             <span className="gold">&#9733;</span>
             <span className="gold">&#9733;</span>
-          </div>
         </div>
-      </div>
     );
   }
 }

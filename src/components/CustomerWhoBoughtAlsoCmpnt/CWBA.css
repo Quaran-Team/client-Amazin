@@ -26,6 +26,8 @@
 }
 .individualCWBA{
     margin: 0px 0px 0px 20px;
+    
+    
 }
 .CWBAHeading{
     display: flex;
@@ -92,4 +94,21 @@ h3{
 button{
     height: 36px;
     width: 39px;
+}
+.namer{
+    overflow-wrap: break-word;
+    width: 160px;
+}
+.dynamicstarz{
+    width: 50px;
+    margin: 0px 3px 0px 0px;
+}
+.dynamichover {
+    display: flex;
+    flex-direction: row;
+}
+.tinyPrime{
+    width: 42px;
+    height: 12px;
+    object-fit: cover;
 }
