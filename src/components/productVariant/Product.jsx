@@ -170,14 +170,15 @@ class Product extends Component {
 					<Dropdown.Toggle variant="success" id="dropdown-basic">
 						{this.state.optionDropdown[0].type_title}
 					</Dropdown.Toggle>
-					<Dropdown.Menu>
+					<Dropdown.Menu id="drop-menu">
 						{this.state.optionDropdown.map((option) => (
 							<Dropdown.Item
+								className="drop-item"
 								key={option.id}
-								id={option.id}
+								id={"drop"+option.id}
 								onClick={() => this.changeOption(option.id)}
 							>
-								<div>{option.selector_text}</div>
+								<button className="drop-btn">{option.selector_text}</button>
 							</Dropdown.Item>
 						))}
 					</Dropdown.Menu>
