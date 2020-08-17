@@ -136,7 +136,10 @@ class CustomerReviews extends Component {
                     </Grid>
                     
                     <Grid item sm id="right-grid">
-                        <div><CustomerImages /></div> 
+                        <div><CustomerImages 
+							              key={this.props.params}
+										  params={this.props.params}
+						/></div> 
                         <br />
                         <div className="review-mention">
                     <h3>Read reviews that mention</h3>
