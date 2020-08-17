@@ -5,7 +5,7 @@ import ZTwoStar from "./zTwoStar2";
 import ZThreeStar from "./zThreeStar3";
 import ZFourStar from "./zFourStar4";
 import ZFiveStar from "./zFiveStar5";
-import  "../CustomerWhoBoughtAlsoCmpnt/CWBA.css";
+import "../CustomerWhoBoughtAlsoCmpnt/CWBA.css";
 
 import axios from "axios";
 
@@ -16,7 +16,7 @@ export default class DynamicStarSpecial extends Component {
   state = {
     totalRating: "",
     floorRating: null,
-    itemId: this.props.associatedItem //**************************************************** */
+    itemId: this.props.associatedItem, //**************************************************** */
   };
 
   componentDidMount() {
@@ -25,7 +25,7 @@ export default class DynamicStarSpecial extends Component {
 
   // used from Brians and modified
   loadItem = (params) => {
-    params = this.state.itemId
+    params = this.state.itemId;
     //calls the product by id
     axios({
       method: "GET",
@@ -34,44 +34,46 @@ export default class DynamicStarSpecial extends Component {
       //all the properties of the product are saved in state - these do not change upon selection.
       this.setState({
         willRoundRating: res.data.overallRating,
-        totalRating: res.data.totalFiveStarRating + res.data.totalFourStarRating + res.data.totalThreeStarRating + res.data.totalTwoStarRating + res.data.totalOneStarRating
+        totalRating:
+          res.data.totalFiveStarRating +
+          res.data.totalFourStarRating +
+          res.data.totalThreeStarRating +
+          res.data.totalTwoStarRating +
+          res.data.totalOneStarRating,
       });
-      
     });
   };
 
-
   render() {
     function formatNumber(num) {
-      return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+      return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
     }
-    const numberOfReview = formatNumber(this.state.totalRating)
-    const goldAndGreyRender =()=> {
-      const roundRating = Math.round(this.state.willRoundRating)
-      switch(roundRating){
+    const numberOfReview = formatNumber(this.state.totalRating);
+    const goldAndGreyRender = () => {
+      const roundRating = Math.round(this.state.willRoundRating);
+      switch (roundRating) {
         case 0:
         case 1:
-          return (<ZOneStar className="StarZ"/>)
+          return <ZOneStar className="StarZ" />;
         case 2:
-          return (<ZTwoStar className="StarZ"/>)
+          return <ZTwoStar className="StarZ" />;
         case 3:
-          return (<ZThreeStar className="StarZ"/>)
+          return <ZThreeStar className="StarZ" />;
         case 4:
-          return (<ZFourStar className="StarZ"/>)
+          return <ZFourStar className="StarZ" />;
         case 5:
-          return (<ZFiveStar className="StarZ"/>)
+          return <ZFiveStar className="StarZ" />;
         default:
-          return (<ZOneStar className="StarZ"/>)
+          return <ZOneStar className="StarZ" />;
       }
-    }
+    };
     return (
       <div>
-        <div
-          className="dynamicstar"
-        >
+        <div className="dynamicstar">
           <div className="dynamichover">
             {goldAndGreyRender()}
-            {numberOfReview} 
+            {"  "}
+            {numberOfReview}
           </div>
         </div>
       </div>

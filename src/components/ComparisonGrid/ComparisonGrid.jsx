@@ -7,7 +7,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
-import { withStyles } from "@material-ui/core/styles";
 
 class ComparisonGrid extends React.Component {
   _isMounted = false;
@@ -132,11 +131,24 @@ class ComparisonGrid extends React.Component {
               <TableRow>
                 <TableCell align="center">Sounds</TableCell>
                 {this.state.items.map((item) => {
-                  return (
+                  console.log(item.itemSound);
+                  if (item.itemSound == "true") {
+                    return (
+                      <TableCell key={item.itemId} align="center">
+                        <p>&#10004;</p>
+                      </TableCell>
+                    );
+                  } else if (item.itemSound == "false") {
+                    return (
+                      <TableCell key={item.itemId} align="center">
+                        <p>&#10008;</p>
+                      </TableCell>
+                    );
+                  } else {
                     <TableCell key={item.itemId} align="center">
                       {item.itemSound}
-                    </TableCell>
-                  );
+                    </TableCell>;
+                  }
                 })}
               </TableRow>
               <TableRow>
