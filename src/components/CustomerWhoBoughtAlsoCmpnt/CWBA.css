@@ -4,7 +4,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 10px;
 } 
+.CWBADiv {
+    padding: 0px 20px;
+}
 .CWBAPagination button {
     height: 40px;
     width: 40px;
@@ -75,6 +79,10 @@ h3{
 .imageArrayList{
     display: flex;
     flex-direction: row;
+    margin: 10px 0px;
+}
+.customerImagesAll{
+    margin: 10px 0px 18px -10px;
 }
 .CImage{
     margin: 0px 0px 0px 10px;
@@ -111,4 +119,7 @@ button{
     width: 42px;
     height: 12px;
     object-fit: cover;
+}
+.scootRight {
+    margin: 0px 0px 0px 10px
 }
