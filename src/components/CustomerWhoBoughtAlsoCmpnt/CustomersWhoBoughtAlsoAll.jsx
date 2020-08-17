@@ -52,7 +52,7 @@ class CWBA extends Component {
         let containerWidth = this.state.containerWidth;
         let maxItemsToShow = this.maximumItemsToShow(containerWidth);
         let numberOfRemainingItems = this.numberOfRemainingItems(items, maxItemsToShow)
-        let pagesLeft = "Page X of "
+        let pagesLeft = "Page 1 of "
         let displayNumberHtml = (
             <p className="PageOf">
                 {pagesLeft}{numberOfRemainingItems}

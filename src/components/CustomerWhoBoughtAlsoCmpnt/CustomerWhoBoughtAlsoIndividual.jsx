@@ -8,8 +8,13 @@ class CWBAIndividual extends Component {
         super(props)
         this.state = {
             associatedItem: this.props.associatedItem,
-            items: null
+            items: null,
+            prime: null,
+            itemrul: null,
+            itemName: null,
+            itemPrice: null
         }   
+        // this.primeCheck = this.primeCheck.bind(this)
     }
     componentDidMount() {
         this._isMounted = true;
@@ -31,16 +36,20 @@ class CWBAIndividual extends Component {
         })
       }
 
-    //   primeCheck(){
-    //       if(){
-    //           return 
-    //       }
-    //   }
+      primeCheck(){
+          let imager = <img src="https://images-na.ssl-images-amazon.com/images/G/15/marketing/prime/mom/family/landing/checkPrime._CB507233612_.png" className="tinyPrime"/> 
+          if(this.state.prime == "yes"){
+              return imager
+          } else {
+              return 
+          }
+      }
 
 
     render(){
         const namer = this.state.itemName
         const pricer = this.state.itemPrice
+        // const primeChecker = this.primeCheck()
 
         return(
             <div className="individualCWBA">
@@ -64,7 +73,7 @@ class CWBAIndividual extends Component {
                     />
                 </div>
                 <div className="priceAnd">
-                    $ {pricer} <img src="https://images-na.ssl-images-amazon.com/images/G/15/marketing/prime/mom/family/landing/checkPrime._CB507233612_.png" className="tinyPrime"></img>
+                    $ {pricer} {this.primeCheck()}
                 </div>
             </div>
         )
