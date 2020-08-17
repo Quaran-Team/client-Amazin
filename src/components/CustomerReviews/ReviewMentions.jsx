@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./CustomerReviews.css";
-// import DynamicStarCustRev from '../RatingSummary/dynamicStarCustRev';
+import DynamicStarCustRev from '../RatingSummary/dynamicStarCustRev';
 
 
 class ReviewMentions extends Component {
@@ -34,7 +34,7 @@ class ReviewMentions extends Component {
                 </div>
                 <table>
                     <tr>
-                        {/* <td><DynamicStarCustRev /></td> */}
+                        <td><DynamicStarCustRev /></td>
                         <td><a href="link to customer review summary page" 
                             className="review-title">{this.props.title}</a></td>
                     </tr>

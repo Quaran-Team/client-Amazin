@@ -1,18 +1,10 @@
-/* .review-mention {
-    margin-bottom: 26px!important;
-} */
-
-/* #rating-icon {
-  border-color: #d8650d;
-} */
-
 .review-product {
   margin-top: 50px;
   
 }
 
 #review-feature {
-  margin-top: 450px;
+  margin-top: 350px;
 }
 
 .vp {
@@ -34,6 +26,7 @@
   line-height: 20px!important;
   font-weight: 700!important;
   text-decoration: underline;
+  margin-left: 20px;
 }
 
 .star-icon {

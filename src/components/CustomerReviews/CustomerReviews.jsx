@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReviewProduct from "./ReviewProduct";
 import CustomerImages from "./CustomerImages";
 import ReviewMentions from "./ReviewMentions";
-import StarRating from "./StarRating";
+// import StarRating from "./StarRating";
 import Grid from "@material-ui/core/Grid";
 import CustomerReviewsDataService from "../../service/CustomerReviewsDataService";
 import GoodChartMock from "../RatingSummary/goodChartmock";
@@ -127,11 +127,11 @@ class CustomerReviews extends Component {
                 
                 <Grid container justify="flex-start" alignItems="flex-start" id="left-grid">
                     <Grid item sm={4}>
-                        <div><GoodChartMock/></div>
+                        <div><GoodChartMock /></div>
                         
-                        <div id="review-feature"> <hr/> <h3><strong>By feature</strong></h3><Ratings id={this.props.params} /></div>
+                        <div id="review-feature"> <hr/><br/> <h3><strong>By feature</strong></h3><Ratings id={this.props.params} /></div>
                         <a>See more</a><hr/>
-                          
+					
                         <div className="review-product"><ReviewProduct /></div>
                     </Grid>
                     
@@ -148,7 +148,8 @@ class CustomerReviews extends Component {
 					        {this.menu()}
 				        </div>
                    </div>
-                   {this.state.review.map( resp => 
+				   {this.state.review.map( resp => 
+				  
                         <div>
                             <ReviewMentions 
                             id={resp.id} 
