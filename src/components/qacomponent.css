@@ -21,7 +21,6 @@ h4 {
 
 .section {
   display: flex;
-  padding-left: 10px;
 }
 
 .qAndA {
@@ -43,8 +42,18 @@ h4 {
   padding: 0;
 }
 
+.answers {
+  display: flex;
+  flex-direction: column;
+}
+
 .answer {
   padding-left: 10px;
+}
+
+.stackAnswers {
+  display: flex;
+  flex-direction: column;
 }
 
 .votes {
