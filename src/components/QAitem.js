@@ -55,7 +55,7 @@ export default class QAitem extends Component {
             <div className="qAndA">
               <div className="question">
                 <h4>Question: </h4>
-                <p id="individual">{q.question}</p>
+                <p id="individual"><a href="">{q.question}</a></p>
               </div>
               {/* do the same thing with the answers */}
               <div>{this.sortAnswers(q.id)}</div>

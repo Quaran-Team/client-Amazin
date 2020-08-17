@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import QAitem from "./QAitem";
+import QASearch from "./QASearch"
 import "./qacomponent.css";
 
 class QAcomponent extends Component {
@@ -11,6 +12,7 @@ class QAcomponent extends Component {
     return (
       <div className="QAcomponent">
         <h1 id="title">Customer questions & answers</h1>
+        <QASearch/>
         <div className="qanda">
           <ol id="list">
               {/* pass down item id to child component */}
