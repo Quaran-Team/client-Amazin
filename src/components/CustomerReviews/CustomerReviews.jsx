@@ -31,10 +31,10 @@ class CustomerReviews extends Component {
             response => {
 				console.log("REVIEWWW")
 				console.log(response.data)
-                this.setState({ review: response.data })
-                // const filteredArray = response.data.filter( item => item.itemId == this.props.params)
-                //this.setState({ review: filteredArray})
-		}
+                // this.setState({ review: response.data })
+                const filteredArray = response.data.filter( item => item.itemid == this.props.params)
+                this.setState({ review: filteredArray})
+	 }
 		)
 	}
 	menu = () => {
@@ -185,7 +185,6 @@ class CustomerReviews extends Component {
                     <h3>Read reviews that mention</h3>
                     <span>{this.btnMapping()}</span>
                 </div>
-                    <br/>
                     <br/>
                    <div className="dropdown">
                         <div id={this.state.dropmenu} onClick={()=> this.drop()}>

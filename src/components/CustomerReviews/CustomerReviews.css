@@ -60,9 +60,10 @@
   border: 0;
   box-sizing: border-box;
   border-bottom: solid 1px #969696;
-  padding: 0px 14px;
+  /* padding: 0px 14px; */
   line-height: 29px;
   margin: 0px 10px 14px 0px;
+  margin-top: 30px;
 }
 
 #review-button {
