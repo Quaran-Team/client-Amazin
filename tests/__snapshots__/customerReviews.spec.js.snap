@@ -7,21 +7,188 @@ exports[`matches snapshot 1`] = `
   </h1>
   <div
     className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
+    id="left-grid"
   >
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-4"
     >
       <div>
-        <div>
-          <h3>
-            Star Ratings
-          </h3>
-          <br />
-          <br />
+        <div
+          className="chart"
+          id="goodChart"
+        >
+          <h4>
+             
+            <span
+              className="gold"
+            >
+              ★
+            </span>
+            <span
+              className="gold"
+            >
+              ★
+            </span>
+            <span
+              className="gold"
+            >
+              ★
+            </span>
+            <span
+              className="gold"
+            >
+              ★
+            </span>
+            <span
+              className="gray"
+            >
+              ★
+            </span>
+             4.1 out of 5
+          </h4>
+          <h5>
+            26,547 customer ratings
+          </h5>
+          <h5>
+            <a
+              className="chartLink"
+              href="#"
+            >
+              5 Star 
+            </a>
+             
+            <progress
+              max="100"
+              value="15"
+            />
+             
+            <a
+              className="chartLink"
+              href="#"
+            >
+              15%
+            </a>
+             
+          </h5>
+          <h5>
+            <a
+              className="chartLink"
+              href="#"
+            >
+              4 Star 
+            </a>
+             
+            <progress
+              max="100"
+              value="64"
+            />
+             
+            <a
+              className="chartLink"
+              href="#"
+            >
+              64%
+            </a>
+             
+          </h5>
+          <h5>
+            <a
+              className="chartLink"
+              href="#"
+            >
+              3 Star 
+            </a>
+             
+            <progress
+              max="100"
+              value="7"
+            />
+             
+            <a
+              className="chartLink"
+              href="#"
+            >
+              7%
+            </a>
+             
+          </h5>
+          <h5>
+            <a
+              className="chartLink"
+              href="#"
+            >
+              2 Star 
+            </a>
+             
+            <progress
+              max="100"
+              value="9"
+            />
+             
+            <a
+              className="chartLink"
+              href="#"
+            >
+              9%
+            </a>
+             
+          </h5>
+          <h5>
+            <a
+              className="chartLink"
+              href="#"
+            >
+              1 Star 
+            </a>
+             
+            <progress
+              max="100"
+              value="5"
+            />
+             
+            <a
+              className="chartLink"
+              href="#"
+            >
+              5%
+            </a>
+             
+          </h5>
+          <hr />
+          <a
+            className="chartLink"
+            href="#"
+          >
+            See all customer reviews &gt; 
+          </a>
         </div>
       </div>
-      <br />
-      <div>
+      <div
+        id="review-feature"
+      >
+         
+        <hr />
+         
+        <h3>
+          <strong>
+            By feature
+          </strong>
+        </h3>
+        <div>
+          <table
+            className="star-rating-table"
+          >
+            <tbody />
+          </table>
+        </div>
+      </div>
+      <a>
+        See more
+      </a>
+      <hr />
+      <div
+        className="review-product"
+      >
         <div>
           <h3>
             Review this product
@@ -33,6 +200,7 @@ exports[`matches snapshot 1`] = `
             href="link to review form"
           >
             <button
+              id="review-button"
               onClick={[Function]}
             >
               Write a customer review
@@ -43,119 +211,60 @@ exports[`matches snapshot 1`] = `
     </div>
     <div
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-true"
+      id="right-grid"
     >
       <div>
         <div>
-          <h3>
-            Customer Images
-          </h3>
           <div>
-            <img
-              src="http://placehold.it/150x150"
+            <h3>
+              Customer Images
+            </h3>
+            <div
+              className="imageArrayList"
             />
+            <div>
+              <a>
+                See all customer images 
+              </a>
+            </div>
           </div>
         </div>
       </div>
       <br />
-      <div>
-        <div>
-          <div
-            className="review-mention"
-          >
-            <h3>
-              Read reviews that mention
-            </h3>
-            <span>
-              <button
-                className="button"
-              >
-                filtered button
-              </button>
-            </span>
-          </div>
-          <br />
-          <br />
-          <div
-            className="dropdown"
-          >
+      <div
+        className="review-mention"
+      >
+        <h3>
+          Read reviews that mention
+        </h3>
+        <span />
+      </div>
+      <br />
+      <br />
+      <div
+        className="dropdown"
+      >
+        <div
+          id="drop"
+          onClick={[Function]}
+        >
+          <div>
             <button
-              className="dropbtn"
+              id="top"
+              onClick={[Function]}
             >
-              Top reviews
-            </button>
-            <div
-              className="dropdown-content"
-            >
-              <a
-                href="#"
-              >
-                Most recent
-              </a>
-            </div>
-          </div>
-          <br />
-          <br />
-          <div>
-            <div
-              className="profile-avatar"
-            >
-              <img
-                className="profile-avatar-img"
-                src="https://www.amazon.com/images/S/amazon-avatars-global/default._CR0,0,1024,1024_SX48_.png"
+              Top Reviews 
+              <i
+                className="arrow down"
               />
-              <span
-                className="profile-name"
-              >
-                Customer Name
-              </span>
-            </div>
+            </button>
+            <button
+              id="most"
+              onClick={[Function]}
+            >
+              Most Recent   
+            </button>
           </div>
-          <tr>
-            <td>
-              <span
-                className="star-icon"
-              >
-                *Star rating icon* 
-                <a
-                  className="review-title"
-                  href="link to customer review summary page"
-                >
-                  Review title!
-                </a>
-              </span>
-            </td>
-          </tr>
-          <div
-            className="review-date"
-          >
-            Review Date
-          </div>
-          <span
-            className="vp"
-          >
-            Verified Purchase
-          </span>
-          <div>
-            <p>
-              Submitted review form goes here
-            </p>
-          </div>
-          <table>
-            <tr>
-              <td>
-                <button>
-                  Helpful
-                </button>
-              </td>
-              <td>
-                <a
-                  href="/"
-                >
-                  Comment
-                </a>
-              </td>
-            </tr>
-          </table>
         </div>
       </div>
     </div>

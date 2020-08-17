@@ -3,14 +3,14 @@ import TopBar from "./TopBar/TopBar";
 import BlueSecondTopLine from "./SecondTopLine/BlueSecondTopline";
 import Footer from "./Footer/Footer";
 import Axios from "axios";
+import Appples from "./RatingSummary/Appples";
 
 class App extends Component {
-
   state = {
-    items: []
-  }
+    items: [],
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     this.Items();
   }
 
@@ -18,11 +18,10 @@ class App extends Component {
     Axios({
       method: "GET",
       url: `http://localhost:8080/all/products/`,
-    }).then(res => {
-      this.setState({ items: res.data.slice(1)})
-    })
-  }
-
+    }).then((res) => {
+      this.setState({ items: res.data.slice(1) });
+    });
+  };
 
   render() {
     return (
@@ -30,17 +29,20 @@ class App extends Component {
         <div>
           <TopBar />
         </div>
-        <BlueSecondTopLine/>
-          <h1 style={{ textAlign: "center"}}>View our Products</h1>
-          <div className="item-div-container">
-          {this.state.items.map( item => <a href={"/singleItem/"+ item.itemId}>
-                <button id="frontpage-btn">
-                  <h3>{item.itemName}</h3>
-                  <p>{item.itemCategory}</p>
-                </button>
-              </a>)}
+        <BlueSecondTopLine />
+        <h1 style={{ textAlign: "center" }}>View our Products</h1>
+        <div className="item-div-container">
+          {this.state.items.map((item) => (
+            <a href={"/singleItem/" + item.itemId}>
+              <button id="frontpage-btn">
+                <h3>{item.itemName}</h3>
+                <p>{item.itemCategory}</p>
+              </button>
+            </a>
+          ))}
         </div>
         <Footer />
+        <Appples />
       </div>
     );
   }
