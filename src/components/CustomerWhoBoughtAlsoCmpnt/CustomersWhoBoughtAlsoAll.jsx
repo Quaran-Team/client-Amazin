@@ -124,14 +124,12 @@ class CWBA extends Component {
             let containerWidths = this.state.containerWidth;
             let movement = 0 - this.maximumItemsToShow(containerWidths)
             let pageIs = this.pageIsL()
-            console.log(movement)
             this.setState({
                 position: movement,
                 pageOn: pageIs,
             })
         } 
         else {
-            console.log("you cant go more left")
             this.setState({
                 position: 0,
                 pageOn: 1,
