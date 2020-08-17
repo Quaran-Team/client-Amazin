@@ -3,10 +3,11 @@
   margin: 40px 5px;
   background-color: whitesmoke;
   z-index: 2;
-  width: 210px;
-  height: 350px;
+  width: 300px;
+  height: 250px;
   padding: 5px;
-  border: rgb(216, 201, 201) 2px solid;
+  /* border: rgb(216, 201, 201) 2px solid; */
+  font-size: 20px;
 }
 
 .chartLink {

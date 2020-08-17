@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import "./CustomerReviews.css";
-import BadStar from "../RatingSummary/badStar";
-import LowStar from "../RatingSummary/lowStar";
-import MidStar from "../RatingSummary/midStar";
-import GoodStar from "../RatingSummary/goodStar";
-import HighStar from "../RatingSummary/highStar";
+import DynamicStarCustRev from '../RatingSummary/dynamicStarCustRev';
 
 
 class ReviewMentions extends Component {
@@ -22,30 +18,11 @@ class ReviewMentions extends Component {
         }));
     };
 
-    starLogic = (rate) =>{
-        if (rate <= 1){
-			return(<BadStar />)
-		} else if (rate <=2){
-			console.log(rate, "lowstar")
-			return(<LowStar />)
-		} else if (rate <=3){
-			console.log(rate, "midstar")
-			return(<MidStar />)
-		} else if (rate <= 4){
-			return(<GoodStar />)
-		} else if (rate <=5){
-			console.log(rate, "hightstar")
-			return(<HighStar />)
-	    }
-    }
-
-
     render() { 
 
         return ( 
             <div>
-
-
+                <br/>
                 <br />
                 <br />
                 <div>
@@ -55,11 +32,14 @@ class ReviewMentions extends Component {
                         </img>
                     <span className="profile-name">{this.props.name}</span></div>
                 </div>
-                <tr>
-                    <td><span className="star-icon"> {this.starLogic(this.props.rate)} <a href="link to customer review summary page" className="review-title">{this.props.title}</a></span>
-                    </td>    
-                </tr>
-                <div className="review-date">Review Date</div>
+                <table>
+                    <tr>
+                        <td><DynamicStarCustRev /></td>
+                        <td><a href="link to customer review summary page" 
+                            className="review-title">{this.props.title}</a></td>
+                    </tr>
+                </table>
+        <div className="review-date">{this.props.date}</div>
                 <span className="vp" >Verified Purchase</span>
                 
                 <div>
