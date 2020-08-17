@@ -25,7 +25,7 @@ export default class DynamicStar extends Component {
     //calls the product by id
     Axios({
       method: "GET",
-      url: `http://localhost:8080/api/v1/totalstars/${params}`,
+      url: `http://localhost:8080/api/v1/totalstars/`,
     }).then((res) => {
       console.log(res.data);
       //all the properties of the product are saved in state - these do not change upon selection.

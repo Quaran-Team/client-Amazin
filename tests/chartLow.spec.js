@@ -3,8 +3,8 @@ import LowChartMock from "../src/components/RatingSummary/lowChartmock";
 import ReactDom from "react-dom";
 import { cleanup } from "@testing-library/react";
 import { shallow, configure } from "enzyme";
-import Adapter from 'enzyme-adapter-react-16';
-configure({adapter: new Adapter()});
+import Adapter from "enzyme-adapter-react-16";
+configure({ adapter: new Adapter() });
 
 afterEach(cleanup);
 
@@ -12,11 +12,10 @@ afterEach(cleanup);
 
 describe("This component test should render for 2 star mock chart without crashing", () => {
   it("Should render as expected!", () => {
-    const div=document.createElement("div"); 
+    const div = document.createElement("div");
     ReactDom.render(<LowChartMock />, div);
   });
 });
-
 
 describe("it should show some customer ratings ", () => {
   it('contains the string "9,548 customer ratings" in an h5 element', () => {
@@ -25,12 +24,16 @@ describe("it should show some customer ratings ", () => {
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });
-//// y
+
 
 describe("it should have an a tag for 5 star ratings ", () => {
   it('containsan a tag "5 star" in the component', () => {
     const wrapper = shallow(<LowChartMock />);
-    const magicWords =<a href="#">5 Star </a>;
+    const magicWords = (
+      <a className="chartLink" href="#">
+        5 Star{" "}
+      </a>
+    );
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });
