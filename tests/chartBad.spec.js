@@ -3,8 +3,8 @@ import BadChartMock from "../src/components/RatingSummary/badChartmock";
 import ReactDom from "react-dom";
 import { cleanup } from "@testing-library/react";
 import { shallow, configure } from "enzyme";
-import Adapter from 'enzyme-adapter-react-16';
-configure({adapter: new Adapter()});
+import Adapter from "enzyme-adapter-react-16";
+configure({ adapter: new Adapter() });
 
 afterEach(cleanup);
 
@@ -34,4 +34,3 @@ describe("it should say customer ratings ", () => {
     expect(wrapper.contains(magicWords)).toEqual(true);
   });
 });
-

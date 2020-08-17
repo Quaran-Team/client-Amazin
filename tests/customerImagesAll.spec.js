@@ -8,6 +8,6 @@ describe('My Test q', () => {
   });
 
 
-test('Cimage',()=>{
-  expect(styled.width).toBe(153)
-})
+// test('Cimage',()=>{
+//   expect(styled.width).toBe(153)
+// })
