@@ -20,7 +20,7 @@
 .CWBASet{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     width: 100%;
     margin: 0px 0px 0px 0px;
 }
