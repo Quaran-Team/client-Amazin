@@ -6,7 +6,7 @@ export default class Votes extends Component {
     super(props);
     this.handleChangeAdd = this.handleChangeAdd.bind(this);
     this.handleChangeSubtract = this.handleChangeSubtract.bind(this);
-  }
+  };
 
   state = {
     votes: 0,
@@ -15,12 +15,12 @@ export default class Votes extends Component {
   handleChangeAdd(e) {
     let currentVotes = parseInt(e);
     this.setState({ votes: currentVotes + 1 });
-  }
+  };
 
   handleChangeSubtract(e) {
     let currentVotes = parseInt(e);
     this.setState({ votes: currentVotes - 1 });
-  }
+  };
 
   render() {
     return (

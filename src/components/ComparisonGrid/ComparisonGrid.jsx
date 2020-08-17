@@ -51,7 +51,6 @@ class ComparisonGrid extends React.Component {
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                <TableCell>Product</TableCell>
                 {this.state.items.map((item) => (
                   <TableCell key={item.itemId} align="right">{item.itemName}</TableCell>
                 ))}
@@ -59,29 +58,35 @@ class ComparisonGrid extends React.Component {
             </TableHead>
             <TableBody>
               <TableRow>
-              <TableCell component="th" scope="row">ID</TableCell>
                 {this.state.items.map((item) => {
-                  return <TableCell key={item.itemId} align="right">{item.itemId}</TableCell>
+                  return <TableCell key={item.itemId} align="right" component="th" scope="row">{item.itemPrice}</TableCell>
                 })}
               </TableRow>
               <TableRow>
-              <TableCell component="th" scope="row">About</TableCell>
                 {this.state.items.map((item) => {
-                  return <TableCell key={item.itemId} align="right">{item.itemAbout}</TableCell>
+                  return <TableCell key={item.itemId} align="right">{item.itemRating}</TableCell>
                 })}
               </TableRow>
               <TableRow>
-              <TableCell component="th" scope="row">Title</TableCell>
                 {this.state.items.map((item) => {
-                  return <TableCell key={item.itemId} align="right">{item.itemTitle}</TableCell>
+                  return <TableCell key={item.itemId} align="right">{item.itemColor}</TableCell>
                 })}
               </TableRow>
               <TableRow>
-              <TableCell component="th" scope="row">Price</TableCell>
-                {this.state.items.map((item) => {
-                  return <TableCell key={item.itemId} align="right">{item.itemPrice}</TableCell>
-                })}
-              </TableRow>
+              {this.state.items.map((item) => {
+                return <TableCell key={item.itemId} align="right">{item.itemMode}</TableCell>
+              })}
+            </TableRow>
+            <TableRow>
+            {this.state.items.map((item) => {
+              return <TableCell key={item.itemId} align="right">{item.itemSound}</TableCell>
+            })}
+          </TableRow>
+          <TableRow>
+          {this.state.items.map((item) => {
+            return <TableCell key={item.itemId} align="right">{item.itemCapacity}</TableCell>
+          })}
+        </TableRow>
             </TableBody>
           </Table>
         </TableContainer>

@@ -21,7 +21,7 @@ h4 {
 
 .section {
   display: flex;
-  padding-left: 0px;
+  padding-left: 10px;
 }
 
 .qAndA {
