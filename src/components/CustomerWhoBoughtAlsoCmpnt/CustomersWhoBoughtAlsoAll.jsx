@@ -1,179 +1,149 @@
-import React, { Component } from 'react';
-import CWBAIndividual from './CustomerWhoBoughtAlsoIndividual'
-import CustomerWhoBoughtAlsoDataService from '../../service/CustomerWhoBoughtAlsoDataService'
+import React, { Component } from "react";
+import CWBAIndividual from "./CustomerWhoBoughtAlsoIndividual";
+import CustomerWhoBoughtAlsoDataService from "../../service/CustomerWhoBoughtAlsoDataService";
 import ReactDOM from "react-dom";
 
-import  './CWBA.css';
-
+import "./CWBA.css";
 
 class CWBA extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-        otherIdArray: [],
-        itemId: null,
-        containerWidth: 0,
-        position: 0,
-        individualItemWidth: 173,
-        pageOn: 1,
-        pagesRemaining: 2
-        }
-        this.refreshCourses = this.refreshCourses.bind(this)
-        this._handleWindowResize = this._handleWindowResize.bind(this)
-        this._pageOf = this._pageOf.bind(this)
-        this.goRight = this.goRight.bind(this)
-        this.goLeft = this.goLeft.bind(this)
-        this._isMounted = false;
-    }
-    
-    componentDidMount() {
-        this._isMounted = true;
-        this.refreshCourses();
-        window.addEventListener('resize', this._handleWindowResize);
-    }
+	constructor(props) {
+		super(props);
+		this.state = {
+			otherIdArray: [],
+			itemId: null,
+			containerWidth: 0,
+			position: 0,
+		};
+		this.refreshCourses = this.refreshCourses.bind(this);
+		this._handleWindowResize = this._handleWindowResize.bind(this);
+		this._pageOf = this._pageOf.bind(this);
+		this._isMounted = false;
+	}
 
-    componentWillUnmount() {
-        this._isMounted = false;
-        window.removeEventListener('resize', this._handleWindowResize);
-    }
- //sets size of space available to the container
-    _handleWindowResize () {
-            this.setState({
-                containerWidth: ReactDOM.findDOMNode(this._containerTarget).offsetWidth
-        });}
+	componentDidMount() {
+		this._isMounted = true;
+		this.refreshCourses();
+		window.addEventListener("resize", this._handleWindowResize);
+	}
 
-//slices items for display
-    _truncateItems (items) {
-        let containerWidth = this.state.containerWidth;
-        let position = this.state.position;
-        let maxItemsToShow = this.maximumItemsToShow(containerWidth);
-        let itemStart = position
-        let truncatedItems = items.slice(itemStart, maxItemsToShow );
-        return truncatedItems;
-      }
+	componentWillUnmount() {
+		this._isMounted = false;
+		window.removeEventListener("resize", this._handleWindowResize);
+	}
 
-//displays pagination
-    _pageOf(items){
-        let containerWidth = this.state.containerWidth;
-        let maxItemsToShowWithOutPositioning = this.maximumItemsToShowWithOutPositioning(containerWidth)
-        let numberOfRemainingPages = this.numberOfRemainingPages(maxItemsToShowWithOutPositioning)
-        let pagesLeft = this.pagesLefter()
-        let displayNumberHtml = (
-            <p className="PageOf">
-                Page {pagesLeft} of {numberOfRemainingPages}
-            </p>
-        );
-        return displayNumberHtml
-      }
+	_handleWindowResize() {
+		// if(this._isMounted){
+		this.setState({
+			containerWidth: ReactDOM.findDOMNode(this._containerTarget)
+				.offsetWidth,
+			//
+		});
+	}
 
-//calculates the remaining pages
-    numberOfRemainingPages(maxItemsToShowWithOutPositioning){
-        return Math.ceil(this.state.otherIdArray.length / maxItemsToShowWithOutPositioning)
-    }
+	_truncateItems(items) {
+		let containerWidth = this.state.containerWidth;
+		let position = this.state.position;
+		let maxItemsToShow = this.maximumItemsToShow(containerWidth);
+		let itemStart = position;
+		let truncatedItems = items.slice(itemStart, maxItemsToShow);
+		return truncatedItems;
+	}
 
-//returns the pages remaining
-    pagesLefter = () => {
-        return this.state.pageOn
-    }
+	_pageOf(items) {
+		let containerWidth = this.state.containerWidth;
+		let maxItemsToShow = this.maximumItemsToShow(containerWidth);
+		let numberOfRemainingItems = this.numberOfRemainingItems(
+			items,
+			maxItemsToShow
+		);
+		let pagesLeft = "Page X of ";
+		let displayNumberHtml = (
+			<p className="PageOf">
+				{pagesLeft}
+				{numberOfRemainingItems}
+			</p>
+		);
+		return displayNumberHtml;
+	}
 
-    //calculates the max items to show with positioning
-    maximumItemsToShow = (cW) =>{
-        return Math.floor(cW / this.state.individualItemWidth) + this.state.position
-    }
+	itemArea = (whereAlreadyAt) => {
+		let whereEndUp = whereAlreadyAt;
+		return whereEndUp;
+	};
 
-    //calculates the max items to show without positioning
-    maximumItemsToShowWithOutPositioning= (cW) => {
-        return Math.floor(cW / this.state.individualItemWidth)
-    }
+	maximumItemsToShow = (cW) => {
+		return Math.floor(cW / 173) + this.state.position;
+	};
 
-    refreshCourses() { 
-        CustomerWhoBoughtAlsoDataService.retrieveCustomerWhoBoughtAlso(this.props.params)
-            .then(
-                response => {
-                    this.setState({ itemId: response.data.id,
-                                    otherIdArray: response.data.otherIds.split(",")
-                    })
-                }
-            )}
+	numberOfRemainingItems = (items, maxItemsToShow) => {
+		return Math.ceil(items.length / maxItemsToShow);
+	};
 
-    //handles on click to the right
-    goRight(){
-        let containerWidths = this.state.containerWidth;
-        let movement = this.maximumItemsToShow(containerWidths)
-        let maxItemsToShowWithOutPositioning = this.maximumItemsToShowWithOutPositioning(containerWidths)
-        let pageIs = this.pageIsR(1)
-        if(this.state.pageOn >= this.numberOfRemainingPages(maxItemsToShowWithOutPositioning)){
-            return
-        } else {
-            this.setState({ 
-                position: movement,
-                pageOn: pageIs,
-            })
-        }
-    }
-    // increments page forward or backward
-    pageIsR = (direction) => {
-        return this.state.pageOn + direction
-    }
+	refreshCourses() {
+		//retrieve data currently set to one id. not dynamic
+		CustomerWhoBoughtAlsoDataService.retrieveCustomerWhoBoughtAlso(1).then(
+			(response) => {
+				this.setState({
+					itemId: response.data.id,
+					otherIdArray: response.data.otherIds.split(","),
+				});
+			}
+		);
+	}
 
-    //handle on click to the left
-    goLeft(){
-        let containerWidths = this.state.containerWidth;
-        let movement = this.state.position - this.maximumItemsToShowWithOutPositioning(containerWidths)
-        let pageIs = this.pageIsR(-1)
-        if(this.state.pageOn-1 >= 1){ // sets state for moving
-            this.setState({
-                position: movement,
-                pageOn: pageIs,
-            })
-        } 
-        else { //handles error that was taking array out of range
-            this.setState({
-                position: 0,
-                pageOn: 1,
-            })
-    }
-    }
+	goRight() {
+		let containerWidth = this.state.containerWidth;
+		let movement = 0 + maximumItemsToShow(containerWidth);
+		console.log(movement);
+		this.setState({ position: movement });
+	}
+	goLeft() {
+		console.log("go left");
+	}
 
-
-    render(){
-        const items = this.state.otherIdArray.map((otherItems)=>
-                <CWBAIndividual
-                    className= '-item'
-                    key={otherItems}
-                    associatedItem={otherItems}
-                />
-        )
-        return(
-            <div className="CWBADiv">
-                <div className="CWBAHeading">
-                    <h2>
-                        Popular products inspired by this item
-                    </h2>
-                    {this._pageOf(items)}
-                </div>
-                <div className="CWBAPagination">
-                    <button className="leftButton button" onClick={this.goLeft}>Left</button>
-                    <div className="CWBASet -items"
-                        ref={node => {
-                            // this callback executes before componentDidMount
-                            if (node !== null) {
-                            this._containerTarget = node;
-                            if (!this._isMounted) {
-                                this._isMounted = true;
-                                this._handleWindowResize();
-                            }
-                            }
-                        }}
-                    >
-                            {this._truncateItems(items)}
-                    </div>
-                    <button className="rightButton button" onClick={this.goRight}>Right</button>
-                </div>
-
-            </div>
-        )
-    }
+	render() {
+		const items = this.state.otherIdArray.map((otherItems) => (
+			<CWBAIndividual
+				className="-item"
+				key={otherItems}
+				associatedItem={otherItems}
+			/>
+		));
+		return (
+			<div>
+				<div className="CWBAHeading">
+					<h2>Customers who bought also...</h2>
+					{this._pageOf(items)}
+				</div>
+				<div className="CWBAPagination">
+					<button className="leftButton button" onClick={this.goLeft}>
+						Left
+					</button>
+					<div
+						className="CWBASet -items"
+						ref={(node) => {
+							// this callback executes before componentDidMount
+							if (node !== null) {
+								this._containerTarget = node;
+								if (!this._isMounted) {
+									this._isMounted = true;
+									this._handleWindowResize();
+								}
+							}
+						}}
+					>
+						{this._truncateItems(items)}
+					</div>
+					<button
+						className="rightButton button"
+						onClick={this.goRight}
+					>
+						Right
+					</button>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default CWBA;
