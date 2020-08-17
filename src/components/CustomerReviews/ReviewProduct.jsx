@@ -20,7 +20,9 @@ class ReviewProduct extends Component {
         return ( 
             <div>
                 <h3>Review this product</h3>
-                <h5>Share your thoughts with other customers</h5>
+                <br />
+                <p>Share your thoughts with other customers</p>
+                <br />
                 <a href="link to review form"><button id="review-button" onClick={this.handleReview}>Write a customer review</button></a>
             </div>
          );
