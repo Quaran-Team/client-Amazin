@@ -36,7 +36,7 @@ class App extends Component {
             <a href={"/singleItem/" + item.itemId}>
               <button id="frontpage-btn">
                 <h3>{item.itemName}</h3>
-                <p>{item.itemCategory}</p>
+                <p>{item.category}</p>
               </button>
             </a>
           ))}
