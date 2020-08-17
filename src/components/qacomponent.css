@@ -21,7 +21,7 @@ h4 {
 
 .section {
   display: flex;
-  padding-left: 10px;
+  padding-left: 0px;
 }
 
 .qAndA {
@@ -43,31 +43,16 @@ h4 {
   padding: 0;
 }
 
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
-
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-}
-
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-
 .answer {
   padding-left: 10px;
 }
 
 .votes {
   display: grid;
+  text-align: center;
   position: relative;
   margin-top: 15px;
+  margin-left: 10px;
   border-right: 1px solid rgb(212, 209, 209);
 }
 
@@ -89,9 +74,60 @@ input {
 #add {
   width: 25px;
   border-width: 0;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+#add:hover {
+    border-width: 1;
+    transition: ease-in;
 }
 
 #subtract {
   width: 25px;
   border-width: 0;
+  background-color: white;
+  padding-top: 10px;
 }
+
+#subtract:hover {
+    border-width: 1;
+    transition: ease-in;
+}
+
+.searchbar{
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.bar{
+    border: 2px solid gray;
+    width: 400px;
+    height: 30px;
+}
+
+.search{
+    background-color: gray 50%;
+    width: 60px;
+    height: 30px;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgb(158, 158, 158);
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  
+  border-top: 10px solid rgb(158, 158, 158);
+}
+
+
