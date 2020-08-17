@@ -9,14 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import axios from "axios";
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = theme => ({
-  root: {
-    backgroundColor: "red"
-  }
-});
-
 class ComparisonGrid extends React.Component {
-
   _isMounted = false;
 
   constructor(props) {
@@ -26,16 +19,43 @@ class ComparisonGrid extends React.Component {
     };
   }
   componentDidMount() {
-
     this._isMounted = true;
 
-    axios.get("http://localhost:8080/all/products/").then((response) => {
-    if (this._isMounted)  {
-      this.setState({
-        items: response.data,
-        });
-      }
-    });
+    if (this.props.params < 6) {
+      axios.get("http://localhost:8080/products/microwave").then((response) => {
+        if (this._isMounted) {
+          this.setState({
+            items: response.data,
+          });
+        }
+      });
+    } else if (this.props.params > 5 && this.props.params < 11) {
+      axios.get("http://localhost:8080/products/blender").then((response) => {
+        if (this._isMounted) {
+          this.setState({
+            items: response.data,
+          });
+        }
+      });
+    } else if (this.props.params > 10 && this.props.params < 16) {
+      axios.get("http://localhost:8080/products/mixer").then((response) => {
+        if (this._isMounted) {
+          this.setState({
+            items: response.data,
+          });
+        }
+      });
+    } else if (this.props.params > 15 && this.props.params < 21) {
+      axios.get("http://localhost:8080/products/toaster").then((response) => {
+        if (this._isMounted) {
+          this.setState({
+            items: response.data,
+          });
+        }
+      });
+    } else {
+      return;
+    }
   }
 
   componentWillUnmount() {
@@ -44,49 +64,91 @@ class ComparisonGrid extends React.Component {
 
   render() {
     console.log(this.state.items);
-    const { comparisonGrid } = this.props;
+    const picsum = "https://picsum.photos/120";
     return (
       <div className="comparisonGrid.root">
         <TableContainer component={Paper}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
+                <TableCell align="center"></TableCell>
                 {this.state.items.map((item) => (
-                  <TableCell key={item.itemId} align="right">{item.itemName}</TableCell>
+                  <TableCell key={item.itemId} align="center">
+                    <img src={picsum}></img>
+                    <br />
+                    {item.itemName}
+                  </TableCell>
                 ))}
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
+                <TableCell align="center" sortDirection="asc">
+                  Price (USD$)
+                </TableCell>
                 {this.state.items.map((item) => {
-                  return <TableCell key={item.itemId} align="right" component="th" scope="row">{item.itemPrice}</TableCell>
+                  return (
+                    <TableCell
+                      key={item.itemId}
+                      align="center"
+                      component="th"
+                      scope="row"
+                    >
+                      {item.itemPrice}
+                    </TableCell>
+                  );
                 })}
               </TableRow>
               <TableRow>
+                <TableCell align="center">Rating</TableCell>
                 {this.state.items.map((item) => {
-                  return <TableCell key={item.itemId} align="right">{item.itemRating}</TableCell>
+                  return (
+                    <TableCell key={item.itemId} align="center">
+                      {item.itemRating}
+                    </TableCell>
+                  );
                 })}
               </TableRow>
               <TableRow>
+                <TableCell align="center">Colors</TableCell>
                 {this.state.items.map((item) => {
-                  return <TableCell key={item.itemId} align="right">{item.itemColor}</TableCell>
+                  return (
+                    <TableCell key={item.itemId} align="center">
+                      {item.itemColor}
+                    </TableCell>
+                  );
                 })}
               </TableRow>
               <TableRow>
-              {this.state.items.map((item) => {
-                return <TableCell key={item.itemId} align="right">{item.itemMode}</TableCell>
-              })}
-            </TableRow>
-            <TableRow>
-            {this.state.items.map((item) => {
-              return <TableCell key={item.itemId} align="right">{item.itemSound}</TableCell>
-            })}
-          </TableRow>
-          <TableRow>
-          {this.state.items.map((item) => {
-            return <TableCell key={item.itemId} align="right">{item.itemCapacity}</TableCell>
-          })}
-        </TableRow>
+                <TableCell align="center">Modes</TableCell>
+                {this.state.items.map((item) => {
+                  return (
+                    <TableCell key={item.itemId} align="center">
+                      {item.itemMode}
+                    </TableCell>
+                  );
+                })}
+              </TableRow>
+              <TableRow>
+                <TableCell align="center">Sounds</TableCell>
+                {this.state.items.map((item) => {
+                  return (
+                    <TableCell key={item.itemId} align="center">
+                      {item.itemSound}
+                    </TableCell>
+                  );
+                })}
+              </TableRow>
+              <TableRow>
+                <TableCell align="center">Capacity</TableCell>
+                {this.state.items.map((item) => {
+                  return (
+                    <TableCell key={item.itemId} align="center">
+                      {item.itemCapacity}
+                    </TableCell>
+                  );
+                })}
+              </TableRow>
             </TableBody>
           </Table>
         </TableContainer>
@@ -95,4 +157,4 @@ class ComparisonGrid extends React.Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(ComparisonGrid);
+export default ComparisonGrid;
