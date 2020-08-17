@@ -25,18 +25,19 @@ export default class DynamicStar extends Component {
     //calls the product by id
     Axios({
       method: "GET",
-      url: `http://localhost:8080/api/v1/totalstars/${params}`,
+      url: `http://localhost:8080/api/v1/totalstars/`,
     }).then((res) => {
       console.log(res.data);
       //all the properties of the product are saved in state - these do not change upon selection.
       this.setState({
-        ratingId: res.data.ratingid,
-        overallRating: res.data.overallRating,
-        totalFiveStarRating: res.data.totalFiveStarRating,
-        totalFourStarRating: res.data.totalFourStarRating,
-        totalThreeStarRating: res.data.totalThreeStarRating,
-        totalTwoStarRating: res.data.totalTwoStarRating,
-        totalOneStarRating: res.data.totalOneStarRating,
+        ratingId: res.data
+        // .ratingid,
+        // overallRating: res.data.overallRating,
+        // totalFiveStarRating: res.data.totalFiveStarRating,
+        // totalFourStarRating: res.data.totalFourStarRating,
+        // totalThreeStarRating: res.data.totalThreeStarRating,
+        // totalTwoStarRating: res.data.totalTwoStarRating,
+        // totalOneStarRating: res.data.totalOneStarRating,
       });
       
     });

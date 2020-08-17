@@ -45,10 +45,16 @@ export default class LowStar extends Component {
           </div>
           {/* </Tooltip> */}
           <div className="lsratQs">
-            <a  className="starLink"  href="#lowChart"> 4,158 ratings</a>
+            <a className="starLink" href="#lowChart">
+              {" "}
+              4,158 ratings
+            </a>
             <span className="line"> | </span>
 
-            <a className="starLink"   href="#"> 723 answered questions</a>
+            <a className="starLink" href="#">
+              {" "}
+              723 answered questions
+            </a>
           </div>
         </div>
         {this.state.isHovering && (

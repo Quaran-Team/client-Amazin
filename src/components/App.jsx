@@ -1,19 +1,28 @@
 import React, { Component } from "react";
-import Product from "./productVariant/Product.jsx";
-import CustomerReviews from "./CustomerReviews/CustomerReviews";
-import CWBA from "./CustomerWhoBoughtAlsoCmpnt/CustomersWhoBoughtAlsoAll";
-import QAcomponent from "./QAcomponent";
-import ComparisonGrid from "./ComparisonGrid/ComparisonGrid.jsx";
-import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
-import Appples from "./RatingSummary/Appples";
-import PhotoGallery from "./PhotoGallery/PhotoGallery";
 import TopBar from "./TopBar/TopBar";
 import BlueSecondTopLine from "./SecondTopLine/BlueSecondTopline";
 import Footer from "./Footer/Footer";
-
-// import "../Css/App.css";
+import Axios from "axios";
+import Appples from "./RatingSummary/Appples";
 
 class App extends Component {
+  state = {
+    items: [],
+  };
+
+  componentDidMount() {
+    this.Items();
+  }
+
+  Items = () => {
+    Axios({
+      method: "GET",
+      url: `http://localhost:8080/all/products/`,
+    }).then((res) => {
+      this.setState({ items: res.data.slice(1) });
+    });
+  };
+
   render() {
     return (
       <div className="app">
@@ -21,18 +30,19 @@ class App extends Component {
           <TopBar />
         </div>
         <BlueSecondTopLine />
-
-        <PhotoGallery />
-        <div id="PurchaseItemContainer_Placeholder">
-          {/*place holder: replace when ready*/}
+        <h1 style={{ textAlign: "center" }}>View our Products</h1>
+        <div className="item-div-container">
+          {this.state.items.map((item) => (
+            <a href={"/singleItem/" + item.itemId}>
+              <button id="frontpage-btn">
+                <h3>{item.itemName}</h3>
+                <p>{item.itemCategory}</p>
+              </button>
+            </a>
+          ))}
         </div>
-        <CustomerReviews />
-        <QAcomponent />
-        <ComparisonGrid />
-        <CImagesAll />
-        <CWBA />
-        <Appples />
         <Footer />
+        <Appples />
       </div>
     );
   }

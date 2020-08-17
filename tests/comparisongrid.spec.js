@@ -14,8 +14,8 @@ it("renders without crashing", () => {
     ReactDOM.render(<ComparisonGrid/>, div);
 })
 
-it("renders component correctly", () => {
-    const { getByTestId } = render(<ComparisonGrid/>);
-    expect(getByTestId('comparisonGrid')).toHaveTextContent("Product");
-})
+// it("renders component correctly", () => {
+//     const { getByTestId } = render(<ComparisonGrid/>);
+//     expect(getByTestId('comparisonGrid')).toHaveTextContent("Product");
+// })
 
