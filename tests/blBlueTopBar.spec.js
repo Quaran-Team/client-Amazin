@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() });
 afterEach(cleanup);
 // it kills anything after each test so need to unmount
 
-// basic crash test 1 star
+// basic crash test
 
 describe("This component test should render 2nd blue top bar without crashing", () => {
   it("Should render as expected!", () => {

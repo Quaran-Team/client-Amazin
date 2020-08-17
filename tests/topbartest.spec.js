@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() });
 afterEach(cleanup);
 // it kills anything after each test so need to unmount
 
-// basic crash test 
+// basic crash test
 
 describe("This component test should render without crashing", () => {
   it("Should render TopBar as expected!", () => {
