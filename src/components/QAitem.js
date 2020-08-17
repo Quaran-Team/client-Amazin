@@ -71,15 +71,17 @@ export default class QAitem extends Component {
       (answer) => answer.questionid == id
     );
     return (
-      <div>
+      <div className="section">
+        <h4>Answer: </h4>
+        <div className="stackAnswers">
         {filterAnswersArray.map((a) => (
-          <div className="section">
-            <h4>Answer: </h4>
+          <div className="answers">
             <p id="individual" className="answer">
               {a.answer}
             </p>
           </div>
         ))}
+        </div>
       </div>
     );
   };
