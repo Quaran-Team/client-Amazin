@@ -26,6 +26,8 @@ class CImagesAll extends Component {
                 }
             )}
     render(){
+
+
         const listImageArray = this.state.imageArray.slice(0, 4).map((item)=>
                 <CImage
                     key={item}
@@ -40,7 +42,10 @@ class CImagesAll extends Component {
                 </h3>
                 <div className="imageArrayList">{listImageArray}</div>
                 <div className="scootRight">
-                    <a>See all customer images </a>
+                    <a href="" className="hoverAction">See all customer images 
+                    </a>
+                    <div>
+                    </div>
                 </div>
             </div>
         )
