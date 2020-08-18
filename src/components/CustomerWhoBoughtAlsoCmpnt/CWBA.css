@@ -8,6 +8,8 @@
 } 
 .CWBADiv {
     padding: 0px 20px;
+    margin-bottom: 30px;
+    line-height: 19px;
 }
 .CWBAPagination button {
     height: 40px;
@@ -27,6 +29,7 @@
     justify-content: flex-start;
     width: 100%;
     margin: 0px 0px 0px 0px;
+    height: 232px;
 }
 .individualCWBA{
     margin: 0px 0px 0px 20px;
@@ -37,6 +40,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 18px 0px;
 }
 .CWBAHeading h1, .CWBAHeading p {
     width: 50%;
@@ -81,6 +85,7 @@ h3{
     display: flex;
     flex-direction: row;
     margin: 10px 0px;
+    min-height: 153px;
 }
 .customerImagesAll{
     margin: 10px 0px 18px -10px;
@@ -108,6 +113,12 @@ button{
     overflow-wrap: break-word;
     width: 160px;
 }
+.hoverEffect{
+    color: rgba(0,102,192,1);
+}
+.namer:hover, .hoverEffect:hover{
+    color: #C45500;
+}
 .dynamicstarz{
     width: 50px;
     margin: 0px 3px 0px 0px;
@@ -123,4 +134,16 @@ button{
 }
 .scootRight {
     margin: 0px 0px 0px 10px
+}
+.rhf-border{
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+.Shoveler{
+    padding: 10px
+}
+.hoverAction:hover{
+    color: #C45500;
+    text-decoration: underline;
 }
