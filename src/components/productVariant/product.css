@@ -86,19 +86,6 @@
 	display: flex;
 }
 
-.availability {
-	font-size: 14px;
-}
-.maple-banner__text {
-	margin-top: 3px;
-	color: rgb(0, 102, 200);
-	cursor: pointer;
-}
-
-.a-lineitem {
-	display: flex;
-}
-
 .a-col {
 	width: 100px;
 	padding: 3px;

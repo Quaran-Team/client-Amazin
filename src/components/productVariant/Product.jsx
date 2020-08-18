@@ -318,6 +318,7 @@ class Product extends Component {
 							/>
 
 							<hr id="separator" />
+
 							<h3>
 								<strong>Customer ratings by feature</strong>
 							</h3>
