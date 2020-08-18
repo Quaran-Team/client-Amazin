@@ -72,12 +72,7 @@ export default class DynamicStarSpecial extends Component {
         <div className="dynamicstar">
           <div className="dynamichover">
             {goldAndGreyRender()}
-<<<<<<< HEAD
-            {"  "}
-            {numberOfReview}
-=======
             <div className="hoverEffect">{numberOfReview } </div>
->>>>>>> 781b0ad23f203d29ba7e35e559e0dd55b3c769cd
           </div>
         </div>
       </div>
