@@ -103,7 +103,10 @@ class CWBA extends Component {
         let maxItemsToShowWithOutPositioning = this.maximumItemsToShowWithOutPositioning(containerWidths)
         let pageIs = this.pageIsR(1)
         if(this.state.pageOn >= this.numberOfRemainingPages(maxItemsToShowWithOutPositioning)){
-            return
+            this.setState({
+                position: 0,
+                pageOn: 1,
+            })
         } else {
             this.setState({ 
                 position: movement,
@@ -120,7 +123,12 @@ class CWBA extends Component {
     goLeft(){
         let containerWidths = this.state.containerWidth;
         let movement = this.state.position - this.maximumItemsToShowWithOutPositioning(containerWidths)
+        let maxItemsToShowWithOutPositioning = this.maximumItemsToShowWithOutPositioning(containerWidths)
         let pageIs = this.pageIsR(-1)
+        let maximumPages = this.numberOfRemainingPages(maxItemsToShowWithOutPositioning)
+        console.log("NUMBER OF Total PAGES: "+maximumPages)
+        console.log("NUMBER OF max items PAGES: "+maxItemsToShowWithOutPositioning)
+        let maximumPagesPosition = maxItemsToShowWithOutPositioning * (maximumPages-1)+1
         if(this.state.pageOn-1 >= 1){ // sets state for moving
             this.setState({
                 position: movement,
@@ -129,8 +137,8 @@ class CWBA extends Component {
         } 
         else { //handles error that was taking array out of range
             this.setState({
-                position: 0,
-                pageOn: 1,
+                position: maximumPagesPosition,
+                pageOn: maximumPages,
             })
     }
     }
@@ -145,7 +153,8 @@ class CWBA extends Component {
                 />
         )
         return(
-            <div className="CWBADiv">
+            <div className="CWBADiv rhf-border">
+                <div className="Shoveler">
                 <div className="CWBAHeading">
                     <h2>
                         Popular products inspired by this item
@@ -170,7 +179,9 @@ class CWBA extends Component {
                     </div>
                     <button className="rightButton button" onClick={this.goRight}>Right</button>
                 </div>
-
+                <div className="rhf-divider-no-gradient">
+                </div>
+                </div>
             </div>
         )
     }
