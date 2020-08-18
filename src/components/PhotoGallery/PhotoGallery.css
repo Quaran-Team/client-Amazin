@@ -37,7 +37,8 @@
 	overflow: hidden;
 	overflow-y: scroll;
 	box-sizing: border-box;
-	border: 2px solid #9292925e;
+	border: 3px solid #9292924d;
+	background: #e4e4e4ab;
 }
 
 .photo-gallery-container .pg_thumbnails::-webkit-scrollbar {
