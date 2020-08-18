@@ -10,6 +10,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.QAcomponent {
+  border-bottom: 2px solid rgb(212, 209, 209);
+}
+
 .QAitem {
   font-family: "Lato", sans-serif;
 }
@@ -31,11 +35,13 @@ h4 {
 .question {
   display: flex;
   padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 #individual {
   margin-left: 20px;
   margin-top: 5px;
+  max-width: 650px;
 }
 
 #list {
@@ -45,6 +51,8 @@ h4 {
 .answers {
   display: flex;
   flex-direction: column;
+  padding-bottom: 10px;
+  max-width: 650px;
 }
 
 .answer {
@@ -63,6 +71,7 @@ h4 {
   margin-top: 15px;
   margin-left: 10px;
   border-right: 1px solid rgb(212, 209, 209);
+  max-height: 120px;
 }
 
 .qanda {
