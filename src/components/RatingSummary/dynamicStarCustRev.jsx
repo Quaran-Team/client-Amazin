@@ -16,7 +16,7 @@ export default class DynamicStarSpecial extends Component {
   state = {
     totalRating: "",
     floorRating: null,
-    itemId: this.props.associatedItem //**************************************************** */
+    // itemId: this.props.associatedItem //**************************************************** */
   };
 
   componentDidMount() {
@@ -71,7 +71,7 @@ export default class DynamicStarSpecial extends Component {
         >
           <div className="dynamichover">
             {goldAndGreyRender()}
-            <div className="hoverEffect">{numberOfReview } </div>
+            {/* {numberOfReview}  */}
           </div>
         </div>
       </div>

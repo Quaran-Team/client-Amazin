@@ -17,7 +17,7 @@ class CImagesAll extends Component {
     }
     
     refreshCourses() { 
-        CustomerImageDataService.retrieveCustomerImage(1)
+        CustomerImageDataService.retrieveCustomerImage(this.props.params)
             .then(
                 response => {
                     this.setState({ itemId: response.data.id,
@@ -26,6 +26,8 @@ class CImagesAll extends Component {
                 }
             )}
     render(){
+
+
         const listImageArray = this.state.imageArray.slice(0, 4).map((item)=>
                 <CImage
                     key={item}
@@ -34,13 +36,16 @@ class CImagesAll extends Component {
                 />
         );
         return(
-            <div>
-                <h3>
+            <div className="customerImagesAll">
+                <h3 className="scootRight">
                     Customer Images
                 </h3>
                 <div className="imageArrayList">{listImageArray}</div>
-                <div>
-                    <a>See all customer images </a>
+                <div className="scootRight">
+                    <a href="" className="hoverAction">See all customer images 
+                    </a>
+                    <div>
+                    </div>
                 </div>
             </div>
         )
