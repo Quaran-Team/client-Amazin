@@ -54,11 +54,17 @@ class PrimaryPage extends Component {
               params={this.props.match.params.id}
             />
           </Grid>
+          {/* <Grid>
+            <CImagesAll 
+              key={this.props.match.params.id}
+              params={this.props.match.params.id}
+            />
+          </Grid> */}
           <Grid>
-            <CImagesAll />
-          </Grid>
-          <Grid>
-            <CWBA />
+            <CWBA 
+              key={this.props.match.params.id}
+              params={this.props.match.params.id}
+            />
           </Grid>
         </Grid>
         <Footer />

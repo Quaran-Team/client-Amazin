@@ -62,7 +62,7 @@ class CWBAIndividual extends Component {
                         }}> 
                 </img>
                 <div>
-                    <a href="Link to other product" >
+                    <a href={this.state.associatedItem} >
                         <div className="namer">{namer}</div>
                     </a>
                 </div>
