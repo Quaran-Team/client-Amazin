@@ -40,8 +40,7 @@ export class PhotoGalleryPhotoExpanded extends Component {
 							height: heightLarge,
 						},
 						lensStyle: {
-							// background: "hsla(0, 0%, 100%, .3)",
-							border: "1px solid #ccc",
+							border: "1px solid #9292925e",
 						},
 						isHintEnabled: true,
 						shouldHideHintAfterFirstActivation: false,
