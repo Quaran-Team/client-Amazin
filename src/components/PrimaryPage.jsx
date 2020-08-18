@@ -8,6 +8,8 @@ import CImagesAll from "./CustomerImageCmpnt/CustomerImagesAll";
 import Grid from "@material-ui/core/Grid";
 import TopBar from "./TopBar/TopBar";
 import PhotoGallery from "./PhotoGallery/PhotoGallery";
+import BlueSecondTopLine from "./SecondTopLine/BlueSecondTopline";
+import Footer from "./Footer/Footer";
 import "./primarypage.css";
 
 class PrimaryPage extends Component {
@@ -16,6 +18,7 @@ class PrimaryPage extends Component {
 			<div className="app">
 				<Grid>
 					<TopBar />
+					<BlueSecondTopLine />
 					<Grid>
 						<div className="productgrid-container">
 							<div className="photogallery-grid-container">
@@ -51,17 +54,20 @@ class PrimaryPage extends Component {
 							params={this.props.match.params.id}
 						/>
 					</Grid>
+					{/* <Grid>
+            <CImagesAll 
+              key={this.props.match.params.id}
+              params={this.props.match.params.id}
+            />
+          </Grid> */}
 					<Grid>
-						<CImagesAll />
+						<CWBA
+							key={this.props.match.params.id}
+							params={this.props.match.params.id}
+						/>
 					</Grid>
-					<Grid>
-						<CWBA />
-					</Grid>
-					<Appples
-						key={this.props.match.params.id}
-						params={this.props.match.params.id}
-					/>
 				</Grid>
+				<Footer />
 			</div>
 		);
 	}

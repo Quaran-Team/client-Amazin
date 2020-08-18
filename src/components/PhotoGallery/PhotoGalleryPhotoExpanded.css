@@ -1,5 +1,7 @@
 .photo-expanded.fluid__image-container {
-	margin: 0.5em 0 auto 0.5em;
+	object-fit: cover;
+	width: auto;
+	height: 100%;
 }
 
 .photo-expanded.fluid__image-container .smallImg {

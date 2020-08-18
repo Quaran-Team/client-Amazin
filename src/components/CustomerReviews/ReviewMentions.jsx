@@ -22,6 +22,7 @@ class ReviewMentions extends Component {
 			<div>
 				<br />
 				<br />
+				<br />
 				<div>
 					<div className="profile-avatar">
 						<img
@@ -31,21 +32,22 @@ class ReviewMentions extends Component {
 						<span className="profile-name">{this.props.name}</span>
 					</div>
 				</div>
-				<tr>
-					<td>
-						<span className="star-icon">
-							{" "}
-							{this.starLogic(this.props.rate)}{" "}
+				<table>
+					<tr>
+						<td>
+							<DynamicStarCustRev />
+						</td>
+						<td>
 							<a
 								href="link to customer review summary page"
 								className="review-title"
 							>
 								{this.props.title}
 							</a>
-						</span>
-					</td>
-				</tr>
-				<div className="review-date">Review Date</div>
+						</td>
+					</tr>
+				</table>
+				<div className="review-date">{this.props.date}</div>
 				<span className="vp">Verified Purchase</span>
 
 				<div>{this.props.body}</div>
