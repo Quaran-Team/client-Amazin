@@ -7,7 +7,7 @@ export class PhotoGalleryThumbnail extends Component {
 	render() {
 		const width = 40;
 		const height = 30;
-		const imgCount = 10;
+		const imgCount = 15;
 		var ids = [];
 		for (let i = 0; i < imgCount; i++) {
 			ids.push(i);
