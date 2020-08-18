@@ -7,6 +7,12 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import axios from "axios";
+import BadStar from "../RatingSummary/badStar";
+import LowStar from "../RatingSummary/lowStar";
+import MidStar from "../RatingSummary/midStar";
+import GoodStar from "../RatingSummary/goodStar";
+import HighStar from "../RatingSummary/highStar";
+import "./ComparisonGrid.css";
 
 class ComparisonGrid extends React.Component {
   _isMounted = false;
@@ -62,7 +68,6 @@ class ComparisonGrid extends React.Component {
   }
 
   render() {
-    console.log(this.state.items);
     const picsum = "https://picsum.photos/120";
     return (
       <div className="comparisonGrid.root">
@@ -73,7 +78,10 @@ class ComparisonGrid extends React.Component {
                 <TableCell align="center"></TableCell>
                 {this.state.items.map((item) => (
                   <TableCell key={item.itemId} align="center">
-                    <img src={picsum}></img>
+                    <img
+                      src={`https://amazin.s3.amazonaws.com/${item.itemId}.jpg`}
+                      className="productPic"
+                    ></img>
                     <br />
                     {item.itemName}
                   </TableCell>
@@ -81,7 +89,7 @@ class ComparisonGrid extends React.Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              <TableRow>
+              <TableRow selected={true}>
                 <TableCell align="center" sortDirection="asc">
                   Price (USD$)
                 </TableCell>
@@ -101,14 +109,40 @@ class ComparisonGrid extends React.Component {
               <TableRow>
                 <TableCell align="center">Rating</TableCell>
                 {this.state.items.map((item) => {
-                  return (
-                    <TableCell key={item.itemId} align="center">
-                      {item.itemRating}
-                    </TableCell>
-                  );
+                  if (item.itemRating >= 1 && item.itemRating < 2) {
+                    return (
+                      <TableCell key={item.itemId} align="center">
+                        {item.itemRating} <BadStar />
+                      </TableCell>
+                    );
+                  } else if (item.itemRating >= 2 && item.itemRating < 3) {
+                    return (
+                      <TableCell key={item.itemId} align="center">
+                        {item.itemRating} <LowStar />
+                      </TableCell>
+                    );
+                  } else if (item.itemRating >= 3 && item.itemRating < 4) {
+                    return (
+                      <TableCell key={item.itemId} align="center">
+                        {item.itemRating} <MidStar />
+                      </TableCell>
+                    );
+                  } else if (item.itemRating >= 4 && item.itemRating < 5) {
+                    return (
+                      <TableCell key={item.itemId} align="center">
+                        {item.itemRating} <GoodStar />
+                      </TableCell>
+                    );
+                  } else {
+                    return (
+                      <TableCell key={item.itemId} align="center">
+                        {item.itemRating} <HighStar />
+                      </TableCell>
+                    );
+                  }
                 })}
               </TableRow>
-              <TableRow>
+              <TableRow selected={true}>
                 <TableCell align="center">Colors</TableCell>
                 {this.state.items.map((item) => {
                   return (
@@ -128,10 +162,9 @@ class ComparisonGrid extends React.Component {
                   );
                 })}
               </TableRow>
-              <TableRow>
+              <TableRow selected={true}>
                 <TableCell align="center">Sounds</TableCell>
                 {this.state.items.map((item) => {
-                  console.log(item.itemSound);
                   if (item.itemSound == "true") {
                     return (
                       <TableCell key={item.itemId} align="center">
