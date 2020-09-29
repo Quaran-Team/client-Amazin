@@ -14,7 +14,10 @@ Each team member has made contributions to both client (front - end) and server 
 
 The server can be found here _-_ GitHub Repo = https://github.com/Quaran-Team/server-Amazin .
 
-And live deployed at ... {}.
+
+## **Demo Link:**
+
+https://www.youtube.com/watch?v=kjp33e7CMuE&feature=youtu.be
 
 ---
 
